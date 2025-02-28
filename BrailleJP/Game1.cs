@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using CrossSpeak;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -19,8 +21,11 @@ public class Game1 : Game
   protected override void Initialize()
   {
     base.Initialize();
+    this.Exiting += onExit;
+    CrossSpeakManager.Instance.Initialize();
   }
 
+  
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -42,4 +47,9 @@ public class Game1 : Game
     // TODO: Add your drawing code here
     base.Draw(gameTime);
   }
+  private void onExit(object sender, ExitingEventArgs e)
+  {
+    CrossSpeak.CrossSpeakManager.Instance.Close();
+  }
+
 }
