@@ -35,7 +35,7 @@ jobs:
       run: dotnet publish --no-build --configuration Release --output ./publish
     
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app-build
         path: ./publish
@@ -46,7 +46,7 @@ jobs:
     runs-on: self-hosted  # Use your Raspberry Pi runner
     steps:
     - name: Download build artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: app-build
         path: ./app-build
