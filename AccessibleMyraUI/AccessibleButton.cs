@@ -2,7 +2,7 @@
 using Myra.Graphics2D.UI;
 using System;
 
-namespace BrailleJP.AccessibleUI;
+namespace AccessibleMyraUI;
 
 public class AccessibleButton : Button
 {

@@ -40,17 +40,10 @@
 		<PackageReference Include="TOWK.Utility.CrossSpeak" Version="1.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="AccessibleUI\AccessibilityResources.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>AccessibilityResources.resx</DependentUpon>
-	  </Compile>
+	  <Folder Include="AccessibleUI\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <EmbeddedResource Update="AccessibleUI\AccessibilityResources.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>AccessibilityResources.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+	  <ProjectReference Include="..\AccessibleMyraUI\AccessibleMyraUI.csproj" />
 	</ItemGroup>
 	<Target Name="RestoreDotnetTools" BeforeTargets="Restore">
 		<Message Text="Restoring dotnet tools" Importance="High" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BrailleJP.AccessibleUI {
+namespace AccessibleMyraUI {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BrailleJP.AccessibleUI {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BrailleJP.AccessibleUI.AccessibilityResources", typeof(AccessibilityResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AccessibleMyraUI.AccessibilityResources", typeof(AccessibilityResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

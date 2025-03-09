@@ -6,7 +6,7 @@ using Myra;
 using Myra.Graphics2D.UI;
 using CrossSpeak;
 using AssetManagementBase;
-using BrailleJP.AccessibleUI;
+using AccessibleMyraUI;
 
 namespace BrailleJP;
 

@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossSpeak;
 using Myra.Graphics2D.UI;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace BrailleJP.AccessibleUI;
-public class AccessibleListBox : ListBox
+namespace AccessibleMyraUI;
+
+public class AccessibleComboBox : ComboBox
 {
-  public AccessibleListBox(int width = 200, int height = 200)
+  public AccessibleComboBox(int width = 200)
   {
     Width = width;
-    Height = height;
     AcceptsKeyboardFocus = true;
 
     KeyboardFocusChanged += OnAccessibleKeyboardFocusChanged;
@@ -35,9 +30,9 @@ public class AccessibleListBox : ListBox
   {
     string announcement;
     if (SelectedItem != null)
-      announcement = string.Format(AccessibilityResources.ListBox_Selected, SelectedItem);
+      announcement = string.Format(AccessibilityResources.ComboBox_Selected, SelectedItem);
     else
-      announcement = AccessibilityResources.ListBox_NoSelection;
+      announcement = AccessibilityResources.ComboBox_Focus;
 
     CrossSpeakManager.Instance.Speak(announcement);
   }

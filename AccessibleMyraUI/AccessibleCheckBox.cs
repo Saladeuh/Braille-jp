@@ -2,7 +2,7 @@
 using CrossSpeak;
 using Myra.Graphics2D.UI;
 
-namespace BrailleJP.AccessibleUI;
+namespace AccessibleMyraUI;
 
 public class AccessibleCheckBox : CheckBox
 {

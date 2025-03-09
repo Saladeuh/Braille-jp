@@ -3,7 +3,7 @@ using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Myra.Graphics2D.UI;
 
-namespace BrailleJP.AccessibleUI;
+namespace AccessibleMyraUI;
 
 public class AccessibleLabel : Label
 {
