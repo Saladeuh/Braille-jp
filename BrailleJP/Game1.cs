@@ -9,6 +9,7 @@ using AssetManagementBase;
 
 namespace BrailleJP;
 
+
 public class Game1 : Game
 {
   private GraphicsDeviceManager _graphics;
@@ -68,7 +69,8 @@ public class Game1 : Game
       HorizontalAlignment = HorizontalAlignment.Center,
       VerticalAlignment = VerticalAlignment.Center
     };
-    // title
+
+    // Title
     var titleLabel = new Label
     {
       Text = "BRAILLE JP",
@@ -79,87 +81,37 @@ public class Game1 : Game
     // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    var playButton = new Button
-    {
-      Id = "playButton",
-      Content = new Label { Text = "Jouer" },
-      Width = 200,
-      HorizontalAlignment = HorizontalAlignment.Center
-    };
-
-    // keyboard navigation
-    playButton.AcceptsKeyboardFocus = true;
-
+    // Bouton Jouer
+    var playButton = new AccessibleButton("Jouer");
+    playButton.Id = "playButton";
     playButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.Game);
       CrossSpeakManager.Instance.Speak("Jeu démarré");
     };
-
-    // Annonce vocale quand le focus arrive sur ce bouton
-    playButton.TouchDown += (s, a) => CrossSpeakManager.Instance.Speak("Bouton Jouer");
-    playButton.KeyboardFocusChanged += (s, a) =>
-    {
-      if (playButton.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Speak("Bouton Jouer");
-    };
-
     mainMenuGrid.Widgets.Add(playButton);
 
     // Bouton Paramètres
-    var settingsButton = new Button
-    {
-      Id = "settingsButton",
-      Content = new Label { Text = "Paramètres" },
-      Width = 200,
-      HorizontalAlignment = HorizontalAlignment.Center
-    };
-    settingsButton.AcceptsKeyboardFocus = true;
-
+    var settingsButton = new AccessibleButton("Paramètres");
+    settingsButton.Id = "settingsButton";
     settingsButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.Settings);
       CrossSpeakManager.Instance.Speak("Menu des paramètres");
     };
-
-    // Annonce vocale quand le focus arrive sur ce bouton
-    settingsButton.TouchDown += (s, a) => CrossSpeakManager.Instance.Speak("Bouton Paramètres");
-    settingsButton.KeyboardFocusChanged += (s, a) =>
-    {
-      if (settingsButton.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Speak("Bouton Paramètres");
-    };
-
     mainMenuGrid.Widgets.Add(settingsButton);
 
     // Bouton Quitter
-    var quitButton = new Button
-    {
-      Id = "quitButton",
-      Content = new Label { Text = "Quitter" },
-      Width = 200,
-      HorizontalAlignment = HorizontalAlignment.Center
-    };
-    quitButton.AcceptsKeyboardFocus = true;
-
+    var quitButton = new AccessibleButton("Quitter");
+    quitButton.Id = "quitButton";
     quitButton.Click += (s, a) =>
     {
       Exit();
     };
-
-    // Annonce vocale quand le focus arrive sur ce bouton
-    quitButton.TouchDown += (s, a) => CrossSpeakManager.Instance.Speak("Bouton Quitter");
-    quitButton.KeyboardFocusChanged += (s, a) =>
-    {
-      if (quitButton.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Speak("Bouton Quitter");
-    };
-
     mainMenuGrid.Widgets.Add(quitButton);
 
     _mainMenuPanel.Widgets.Add(mainMenuGrid);
-    _desktop.FocusedKeyboardWidget=playButton;
-    //playButton.SetKeyboardFocus();
+    _desktop.FocusedKeyboardWidget = playButton;
   }
 
   private void CreateGameUI()
@@ -183,14 +135,9 @@ public class Game1 : Game
     gameGrid.Widgets.Add(scoreLabel);
 
     // Bouton de pause
-    var pauseButton = new Button
-    {
-      Id = "pauseButton",
-      Content = new Label { Text = "Pause" },
-      Width = 100,
-      HorizontalAlignment = HorizontalAlignment.Right,
-      VerticalAlignment = VerticalAlignment.Top
-    };
+    var pauseButton = new AccessibleButton("Pause", 100, HorizontalAlignment.Right);
+    pauseButton.Id = "pauseButton";
+    pauseButton.VerticalAlignment = VerticalAlignment.Top;
     pauseButton.AcceptsKeyboardFocus = false;
 
     pauseButton.Click += (s, a) =>
@@ -214,48 +161,24 @@ public class Game1 : Game
           TextColor = Color.Yellow
         });
 
-        var resumeButton = new Button
-        {
-          Id = "resumeButton",
-          Content = new Label { Text = "Reprendre" }
-        };
-        resumeButton.AcceptsKeyboardFocus = true;
-
+        // Bouton Reprendre
+        var resumeButton = new AccessibleButton("Reprendre");
+        resumeButton.Id = "resumeButton";
         resumeButton.Click += (sender, args) =>
         {
           _gameState.IsPaused = false;
           ((Label)pauseButton.Content).Text = "Pause";
           gameGrid.Widgets.Remove(gameGrid.FindWidgetById("pauseMenu"));
         };
-
-        // Annonce vocale
-        resumeButton.KeyboardFocusChanged += (sender, args) =>
-        {
-          if (resumeButton.IsKeyboardFocused)
-            CrossSpeakManager.Instance.Speak("Bouton Reprendre");
-        };
-
         pauseMenu.Widgets.Add(resumeButton);
 
-        var returnToMenuButton = new Button
-        {
-          Id = "returnButton",
-          Content = new Label { Text = "Menu Principal" }
-        };
-        returnToMenuButton.AcceptsKeyboardFocus = true;
-
+        // Bouton Menu Principal
+        var returnToMenuButton = new AccessibleButton("Menu Principal");
+        returnToMenuButton.Id = "returnButton";
         returnToMenuButton.Click += (sender, args) =>
         {
           SwitchToScreen(GameScreen.MainMenu);
         };
-
-        // Annonce vocale
-        returnToMenuButton.KeyboardFocusChanged += (sender, args) =>
-        {
-          if (returnToMenuButton.IsKeyboardFocused)
-            CrossSpeakManager.Instance.Speak("Bouton Menu Principal");
-        };
-
         pauseMenu.Widgets.Add(returnToMenuButton);
 
         gameGrid.Widgets.Add(pauseMenu);
@@ -274,13 +197,6 @@ public class Game1 : Game
         // Redonner le focus au bouton de pause
         pauseButton.SetKeyboardFocus();
       }
-    };
-
-    // Annonce vocale
-    pauseButton.KeyboardFocusChanged += (s, a) =>
-    {
-      if (pauseButton.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Speak("Bouton Pause");
     };
 
     gameGrid.Widgets.Add(pauseButton);
@@ -335,32 +251,17 @@ public class Game1 : Game
     // Espace
     settingsGrid.Widgets.Add(new Label { Text = "" });
 
-    var backButton = new Button
-    {
-      Id = "backButton",
-      Content = new Label { Text = "Retour au menu" },
-      Width = 200,
-      HorizontalAlignment = HorizontalAlignment.Center
-    };
-    backButton.AcceptsKeyboardFocus = true;
-
+    // Bouton Retour au menu
+    var backButton = new AccessibleButton("Retour au menu");
+    backButton.Id = "backButton";
     backButton.Click += (s, a) =>
     {
       // TODO save settings
       SwitchToScreen(GameScreen.MainMenu);
     };
-
-    backButton.KeyboardFocusChanged += (s, a) =>
-    {
-      if (backButton.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Speak("Bouton Retour au menu");
-    };
-
     settingsGrid.Widgets.Add(backButton);
 
     _settingsPanel.Widgets.Add(settingsGrid);
-
-    //volumeSlider.SetKeyboardFocus();
   }
 
   private void SwitchToScreen(GameScreen screen)
@@ -426,13 +327,9 @@ public class Game1 : Game
               TextColor = Color.Yellow
             });
 
-            var resumeButton = new Button
-            {
-              Id = "resumeButton",
-              Content = new Label { Text = "Reprendre" }
-            };
-            resumeButton.AcceptsKeyboardFocus = true;
-
+            // Bouton Reprendre
+            var resumeButton = new AccessibleButton("Reprendre");
+            resumeButton.Id = "resumeButton";
             resumeButton.Click += (sender, args) =>
             {
               _gameState.IsPaused = false;
@@ -440,21 +337,15 @@ public class Game1 : Game
               var grid = _gamePanel.Widgets[0] as Grid;
               grid?.Widgets.Remove(grid.FindWidgetById("pauseMenu"));
             };
-
             pauseMenu.Widgets.Add(resumeButton);
 
-            var returnToMenuButton = new Button
-            {
-              Id = "returnButton",
-              Content = new Label { Text = "Menu Principal" }
-            };
-            returnToMenuButton.AcceptsKeyboardFocus = true;
-
+            // Bouton Menu Principal
+            var returnToMenuButton = new AccessibleButton("Menu Principal");
+            returnToMenuButton.Id = "returnButton";
             returnToMenuButton.Click += (sender, args) =>
             {
               SwitchToScreen(GameScreen.MainMenu);
             };
-
             pauseMenu.Widgets.Add(returnToMenuButton);
 
             var grid = _gamePanel.Widgets[0] as Grid;
@@ -475,7 +366,7 @@ public class Game1 : Game
       }
     }
 
-   // Ne mettre à jour la logique de jeu que si on est en écran de jeu et non en pause
+    // Ne mettre à jour la logique de jeu que si on est en écran de jeu et non en pause
     if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
     {
       UpdateGameLogic(gameTime);
@@ -522,7 +413,6 @@ public class Game1 : Game
     {
       _gameState.AddPoints(1);
     }
-
   }
 
   private void UpdateUIState()
@@ -534,7 +424,6 @@ public class Game1 : Game
       {
         scoreLabel.Text = $"Score: {_gameState.Score}";
       }
-
     }
   }
 
