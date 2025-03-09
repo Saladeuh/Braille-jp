@@ -36,38 +36,30 @@ jobs:
         sudo apt install wine64 p7zip-full curl
         wget -qO- https://raw.githubusercontent.com/MonoGame/MonoGame/78636f8056fa981584e3a2a3e0f22e2efbc43ef8/Tools/MonoGame.Effect.Compiler/mgfxc_wine_setup.sh | sh
 
-    - name: Find main project
-      id: find-project
-      run: |
-        PROJECT_FILE=$(find . -name "*.csproj" -type f -not -path "*/obj/*" -not -path "*/bin/*" -not -path "*/test/*" | head -1)
-        echo "Main project file found: $PROJECT_FILE"
-        echo "project-file=$PROJECT_FILE" >> $GITHUB_OUTPUT
-      shell: bash
-
     - name: Build Windows
-      run: dotnet publish ${{ steps.find-project.outputs.project-file }} -r win-x64 -c Release --self-contained --output artifacts/windows
+      run: dotnet publish BrailleJP/BrailleJP.csproj -r win-x64 -c Release --self-contained --output artifacts/windows
 
     - name: Build macOS
-      run: dotnet publish ${{ steps.find-project.outputs.project-file }} -r osx-x64 -c Release --self-contained --output artifacts/macos
+      run: dotnet publish BrailleJP/BrailleJP.csproj -r osx-x64 -c Release --self-contained --output artifacts/macos
 
     - name: Build Linux
-      run: dotnet publish ${{ steps.find-project.outputs.project-file }} -r linux-x64 -c Release --self-contained --output artifacts/linux
+      run: dotnet publish BrailleJP/BrailleJP.csproj -r linux-x64 -c Release --self-contained --output artifacts/linux
 
     - name: Package Builds
       run: |
         cd artifacts
-        zip -r windows.zip windows
-        zip -r macos.zip macos
-        zip -r linux.zip linux
+        zip -r BrailleJP-Windows-${{ env.TAGVERSION }}.zip windows
+        zip -r BrailleJP-macOS-${{ env.TAGVERSION }}.zip macos
+        zip -r BrailleJP-Linux-${{ env.TAGVERSION }}.zip linux
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          artifacts/windows.zip
-          artifacts/macos.zip
-          artifacts/linux.zip
-        name: Release ${{ env.TAGVERSION }}
+          artifacts/BrailleJP-Windows-${{ env.TAGVERSION }}.zip
+          artifacts/BrailleJP-macOS-${{ env.TAGVERSION }}.zip
+          artifacts/BrailleJP-Linux-${{ env.TAGVERSION }}.zip
+        name: BrailleJP Release ${{ env.TAGVERSION }}
         tag_name: v${{ env.TAGVERSION }}
         draft: false
         prerelease: false
