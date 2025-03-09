@@ -47,7 +47,7 @@ public static class DesktopExtensions
     if (widgets.Count == 0)
       return;
 
-    // Trouver l'index du widget actuellement focalisé
+    // Find focused widget index
     int currentIndex = -1;
     for (int i = 0; i < widgets.Count; i++)
     {
@@ -58,7 +58,7 @@ public static class DesktopExtensions
       }
     }
 
-    // Calculer le prochain index
+    // Next index
     int nextIndex = (currentIndex + 1) % widgets.Count;
     widgets[nextIndex].SetKeyboardFocus();
   }

@@ -20,8 +20,6 @@ public class Game1 : Game
   private Panel _mainMenuPanel;
   private Panel _gamePanel;
   private Panel _settingsPanel;
-
-  // Pour la gestion des entrées clavier
   private KeyboardState _previousKeyboardState;
   private MouseState _previousMouseState;
 
@@ -38,8 +36,6 @@ public class Game1 : Game
     base.Initialize();
     this.Exiting += onExit;
     CrossSpeakManager.Instance.Initialize();
-
-    // Initialiser les états d'entrée
     _previousKeyboardState = Keyboard.GetState();
     _previousMouseState = Mouse.GetState();
   }
@@ -48,11 +44,8 @@ public class Game1 : Game
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
     MyraEnvironment.Game = this;
-
-    // Initialiser l'environnement Myra
     _desktop = new Desktop();
 
-    // Configurer la gestion des entrées texte
     _desktop.HasExternalTextInput = true;
     Window.TextInput += (s, a) =>
     {
@@ -75,7 +68,7 @@ public class Game1 : Game
       HorizontalAlignment = HorizontalAlignment.Center,
       VerticalAlignment = VerticalAlignment.Center
     };
-    // Titre du jeu
+    // title
     var titleLabel = new Label
     {
       Text = "BRAILLE JP",
@@ -83,10 +76,9 @@ public class Game1 : Game
     };
     mainMenuGrid.Widgets.Add(titleLabel);
 
-    // Espacement
+    // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    // Bouton Jouer
     var playButton = new Button
     {
       Id = "playButton",
@@ -95,7 +87,7 @@ public class Game1 : Game
       HorizontalAlignment = HorizontalAlignment.Center
     };
 
-    // Configuration importante pour la navigation clavier
+    // keyboard navigation
     playButton.AcceptsKeyboardFocus = true;
 
     playButton.Click += (s, a) =>
@@ -165,10 +157,7 @@ public class Game1 : Game
 
     mainMenuGrid.Widgets.Add(quitButton);
 
-    // Ajouter le grid au panel du menu
     _mainMenuPanel.Widgets.Add(mainMenuGrid);
-
-    // Définir le premier bouton comme ayant le focus par défaut
     _desktop.FocusedKeyboardWidget=playButton;
     //playButton.SetKeyboardFocus();
   }
@@ -177,14 +166,12 @@ public class Game1 : Game
   {
     _gamePanel = new Panel();
 
-    // Interface du jeu
     var gameGrid = new Grid
     {
       RowSpacing = 8,
       ColumnSpacing = 8
     };
 
-    // Ajouter les éléments d'interface du jeu
     var scoreLabel = new Label
     {
       Id = "scoreLabel",
@@ -204,7 +191,7 @@ public class Game1 : Game
       HorizontalAlignment = HorizontalAlignment.Right,
       VerticalAlignment = VerticalAlignment.Top
     };
-    pauseButton.AcceptsKeyboardFocus = true;
+    pauseButton.AcceptsKeyboardFocus = false;
 
     pauseButton.Click += (s, a) =>
     {
@@ -312,7 +299,6 @@ public class Game1 : Game
       VerticalAlignment = VerticalAlignment.Center
     };
 
-    // Titre
     settingsGrid.Widgets.Add(new Label
     {
       Text = "PARAMÈTRES",
@@ -320,7 +306,6 @@ public class Game1 : Game
       HorizontalAlignment = HorizontalAlignment.Center
     });
 
-    // Paramètre de volume
     var volumePanel = new HorizontalStackPanel { Spacing = 5 };
     volumePanel.Widgets.Add(new Label { Text = "Volume:" });
 
@@ -350,7 +335,6 @@ public class Game1 : Game
     // Espace
     settingsGrid.Widgets.Add(new Label { Text = "" });
 
-    // Bouton Retour
     var backButton = new Button
     {
       Id = "backButton",
@@ -362,7 +346,7 @@ public class Game1 : Game
 
     backButton.Click += (s, a) =>
     {
-      // Sauvegarder les paramètres ici si nécessaire
+      // TODO save settings
       SwitchToScreen(GameScreen.MainMenu);
     };
 
@@ -376,7 +360,6 @@ public class Game1 : Game
 
     _settingsPanel.Widgets.Add(settingsGrid);
 
-    // Donner le focus au slider au démarrage
     //volumeSlider.SetKeyboardFocus();
   }
 
@@ -384,12 +367,10 @@ public class Game1 : Game
   {
     _gameState.CurrentScreen = screen;
 
-    // Définir le widget racine en fonction de l'écran actuel
     switch (screen)
     {
       case GameScreen.MainMenu:
         _desktop.Root = _mainMenuPanel;
-        // Donner le focus au premier bouton du menu
         var playButton = _mainMenuPanel.FindWidgetById("playButton");
         playButton?.SetKeyboardFocus();
         break;
@@ -399,13 +380,9 @@ public class Game1 : Game
         _gameState.IsPaused = false;
         _gameState.Score = 0;
         UpdateUIState();
-        // Donner le focus au bouton de pause
-        var pauseButton = _gamePanel.FindWidgetById("pauseButton");
-        pauseButton?.SetKeyboardFocus();
         break;
       case GameScreen.Settings:
         _desktop.Root = _settingsPanel;
-        // Donner le focus au slider de volume
         var volumeSlider = _settingsPanel.FindWidgetById("volumeSlider");
         volumeSlider?.SetKeyboardFocus();
         break;
@@ -417,20 +394,17 @@ public class Game1 : Game
     var currentKeyboardState = Keyboard.GetState();
     var currentMouseState = Mouse.GetState();
 
-    // Mettre à jour l'état du desktop avec les entrées souris
     _desktop.UpdateInput();
-
-    // Gestion de la navigation au clavier personnalisée
     HandleKeyboardNavigation(currentKeyboardState);
 
-    // Vérifier la touche Échap pour le menu principal
+    // quit on escape key
     if (IsKeyPressed(Keys.Escape, currentKeyboardState))
     {
       if (_gameState.CurrentScreen != GameScreen.MainMenu)
       {
         if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
         {
-          // Mettre en pause plutôt que de revenir directement au menu
+          // paused in game
           _gameState.IsPaused = true;
           var pauseButton = _gamePanel.FindWidgetById("pauseButton") as Button;
           if (pauseButton != null)
@@ -501,16 +475,14 @@ public class Game1 : Game
       }
     }
 
-    // Ne mettre à jour la logique de jeu que si on est en écran de jeu et non en pause
+   // Ne mettre à jour la logique de jeu que si on est en écran de jeu et non en pause
     if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
     {
       UpdateGameLogic(gameTime);
     }
 
-    // Mettre à jour l'interface utilisateur
     UpdateUIState();
 
-    // Mettre à jour les états d'entrée précédents
     _previousKeyboardState = currentKeyboardState;
     _previousMouseState = currentMouseState;
 
@@ -519,7 +491,7 @@ public class Game1 : Game
 
   private void HandleKeyboardNavigation(KeyboardState currentKeyboardState)
   {
-    // Gestion des touches de navigation (flèches, Tab, Entrée)
+    // navigation keys (arrows, tab, entrance)
     if (IsKeyPressed(Keys.Down, currentKeyboardState) || IsKeyPressed(Keys.Right, currentKeyboardState))
     {
       _desktop.FocusNext();
@@ -529,24 +501,16 @@ public class Game1 : Game
     {
       _desktop.FocusPrevious();
     }
-    // Simuler un clic avec la touche Entrée sur l'élément ayant le focus
     if (IsKeyPressed(Keys.Enter, currentKeyboardState))
     {
       Widget focused = _desktop.FocusedKeyboardWidget;
       if (focused is Button button)
       {
-        // Simuler un clic sur le bouton
         button.DoClick();
-      }
-      else if (focused is HorizontalSlider slider)
-      {
-        // Pour les sliders, on pourrait ajuster la valeur
-        // Mais généralement les flèches gauche/droite font déjà cela
       }
     }
   }
 
-  // Fonction d'aide pour détecter si une touche vient d'être pressée
   private bool IsKeyPressed(Keys key, KeyboardState currentKeyboardState)
   {
     return currentKeyboardState.IsKeyDown(key) && !_previousKeyboardState.IsKeyDown(key);
@@ -554,19 +518,15 @@ public class Game1 : Game
 
   private void UpdateGameLogic(GameTime gameTime)
   {
-    // Exemple : incrémente le score avec le temps
     if (gameTime.TotalGameTime.Milliseconds % 1000 == 0)
     {
       _gameState.AddPoints(1);
     }
 
-    // Autre logique de jeu ici
-    // Déplacement des personnages, détection de collision, etc.
   }
 
   private void UpdateUIState()
   {
-    // Mettre à jour l'interface en fonction de l'état du jeu
     if (_gameState.CurrentScreen == GameScreen.Game)
     {
       var scoreLabel = _gamePanel.FindWidgetById("scoreLabel") as Label;
@@ -575,7 +535,6 @@ public class Game1 : Game
         scoreLabel.Text = $"Score: {_gameState.Score}";
       }
 
-      // Autres mises à jour UI liées au jeu
     }
   }
 
@@ -583,15 +542,13 @@ public class Game1 : Game
   {
     GraphicsDevice.Clear(Color.Black);
 
-    // Dessiner les éléments de jeu si nécessaire
     if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
     {
       _spriteBatch.Begin();
-      // Dessiner les éléments de jeu ici
       _spriteBatch.End();
     }
 
-    // Rendre l'interface Myra
+    // Make myra interface
     _desktop.Render();
 
     base.Draw(gameTime);
