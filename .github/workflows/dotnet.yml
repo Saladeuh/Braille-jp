@@ -31,8 +31,16 @@ jobs:
     - name: Test
       run: dotnet test --no-build --configuration Release --verbosity normal
     
-    - name: Publish
-      run: dotnet publish --no-build --configuration Release --output ./publish
+    - name: Find main project
+      id: find-project
+      run: |
+        PROJECT_FILE=$(find . -name "*.csproj" -type f -not -path "*/obj/*" -not -path "*/bin/*" -not -path "*/test/*" | head -1)
+        echo "Main project file found: $PROJECT_FILE"
+        echo "project-file=$PROJECT_FILE" >> $GITHUB_OUTPUT
+      shell: bash
+    
+    - name: Publish main project
+      run: dotnet publish ${{ steps.find-project.outputs.project-file }} --configuration Release --output ./publish
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
