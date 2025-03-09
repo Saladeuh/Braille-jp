@@ -7,9 +7,9 @@ using Myra.Graphics2D.UI;
 using CrossSpeak;
 using AssetManagementBase;
 using AccessibleMyraUI;
+using Microsoft.Xna.Framework.Media;
 
 namespace BrailleJP;
-
 
 public class Game1 : Game
 {
@@ -18,13 +18,13 @@ public class Game1 : Game
   private Desktop _desktop;
   private GameState _gameState;
 
-  // Interfaces utilisateur pour chaque écran
   private Panel _mainMenuPanel;
   private Panel _gamePanel;
   private Panel _settingsPanel;
   private KeyboardState _previousKeyboardState;
   private MouseState _previousMouseState;
 
+  private Song titleScreenSong;
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
@@ -45,6 +45,8 @@ public class Game1 : Game
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
+    titleScreenSong = Content.Load<Song>("GoodbyeGeno");
+    MediaPlayer.Play(titleScreenSong);
     MyraEnvironment.Game = this;
     _desktop = new Desktop();
 

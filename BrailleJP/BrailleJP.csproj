@@ -40,9 +40,6 @@
 		<PackageReference Include="TOWK.Utility.CrossSpeak" Version="1.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="AccessibleUI\" />
-	</ItemGroup>
-	<ItemGroup>
 	  <ProjectReference Include="..\AccessibleMyraUI\AccessibleMyraUI.csproj" />
 	</ItemGroup>
 	<Target Name="RestoreDotnetTools" BeforeTargets="Restore">
