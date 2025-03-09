@@ -36,14 +36,22 @@ jobs:
         sudo apt install wine64 p7zip-full curl
         wget -qO- https://raw.githubusercontent.com/MonoGame/MonoGame/78636f8056fa981584e3a2a3e0f22e2efbc43ef8/Tools/MonoGame.Effect.Compiler/mgfxc_wine_setup.sh | sh
 
+    - name: Find main project
+      id: find-project
+      run: |
+        PROJECT_FILE=$(find . -name "*.csproj" -type f -not -path "*/obj/*" -not -path "*/bin/*" -not -path "*/test/*" | head -1)
+        echo "Main project file found: $PROJECT_FILE"
+        echo "project-file=$PROJECT_FILE" >> $GITHUB_OUTPUT
+      shell: bash
+
     - name: Build Windows
-      run: dotnet publish Platforms/DesktopGL -r win-x64 -c Release --self-contained --output artifacts/windows
+      run: dotnet publish ${{ steps.find-project.outputs.project-file }} -r win-x64 -c Release --self-contained --output artifacts/windows
 
     - name: Build macOS
-      run: dotnet publish Platforms/DesktopGL -r osx-x64 -c Release --self-contained --output artifacts/macos
+      run: dotnet publish ${{ steps.find-project.outputs.project-file }} -r osx-x64 -c Release --self-contained --output artifacts/macos
 
     - name: Build Linux
-      run: dotnet publish Platforms/DesktopGL -r linux-x64 -c Release --self-contained --output artifacts/linux
+      run: dotnet publish ${{ steps.find-project.outputs.project-file }} -r linux-x64 -c Release --self-contained --output artifacts/linux
 
     - name: Package Builds
       run: |
