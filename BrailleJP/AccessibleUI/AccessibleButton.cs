@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CrossSpeak;
 using Myra.Graphics2D.UI;
-using CrossSpeak;
+using System;
 
-namespace BrailleJP;
+namespace BrailleJP.AccessibleUI;
 
 public class AccessibleButton : Button
 {
@@ -13,7 +13,6 @@ public class AccessibleButton : Button
     HorizontalAlignment = horizontalAlignment;
     AcceptsKeyboardFocus = true;
 
-    // Ajouter les gestionnaires d'événements pour l'accessibilité
     TouchDown += OnAccessibleTouchDown;
     KeyboardFocusChanged += OnAccessibleKeyboardFocusChanged;
   }
@@ -33,7 +32,8 @@ public class AccessibleButton : Button
   {
     if (Content is Label label)
     {
-      CrossSpeakManager.Instance.Speak(label.Text);
+      string announcement = string.Format(AccessibilityResources.Button_Focus, label.Text);
+      CrossSpeakManager.Instance.Speak(announcement);
     }
   }
 }

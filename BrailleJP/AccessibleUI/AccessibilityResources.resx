@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+	</resheader>
+
+	<data name="Button_Focus" xml:space="preserve">
+    <value>Button: {0}</value>
+  </data>
+	<data name="Label_Focus" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+	<data name="TextBox_Focus" xml:space="preserve">
+    <value>Text box: {0}</value>
+  </data>
+	<data name="TextBox_Empty" xml:space="preserve">
+    <value>Empty text box</value>
+  </data>
+	<data name="CheckBox_Checked" xml:space="preserve">
+    <value>{0}, checked</value>
+  </data>
+	<data name="CheckBox_Unchecked" xml:space="preserve">
+    <value>{0}, unchecked</value>
+  </data>
+	<data name="Slider_Value" xml:space="preserve">
+    <value>Value: {0} percent</value>
+  </data>
+	<data name="ComboBox_Focus" xml:space="preserve">
+    <value>Dropdown list</value>
+  </data>
+	<data name="ComboBox_Selected" xml:space="preserve">
+    <value>Dropdown list, selected: {0}</value>
+  </data>
+	<data name="RadioButton_Selected" xml:space="preserve">
+    <value>Option {0}, selected</value>
+  </data>
+	<data name="RadioButton_Unselected" xml:space="preserve">
+    <value>Option {0}, not selected</value>
+  </data>
+	<data name="Tab_Selected" xml:space="preserve">
+    <value>Tab {0} selected</value>
+  </data>
+	<data name="Tab_Unnamed" xml:space="preserve">
+    <value>Unnamed tab</value>
+  </data>
+	<data name="ListBox_Focus" xml:space="preserve">
+    <value>List</value>
+  </data>
+	<data name="ListBox_Selected" xml:space="preserve">
+    <value>List, selected: {0}</value>
+  </data>
+	<data name="ListBox_NoSelection" xml:space="preserve">
+    <value>List, no selection</value>
+  </data>
+</root>
