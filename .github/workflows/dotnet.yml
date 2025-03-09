@@ -9,13 +9,18 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Add permissions needed for creating releases
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
   build:
-    runs-on: ubuntu-latest  # Using default GitHub-hosted runner
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # This is important for versioning
+        fetch-depth: 0
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -43,18 +48,18 @@ jobs:
       run: dotnet publish ${{ steps.find-project.outputs.project-file }} --configuration Release --output ./publish
     
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: app-build
         path: ./publish
 
   create-release:
     needs: build
-    if: startsWith(github.ref, 'refs/tags/v')  # Only run on version tags
-    runs-on: ubuntu-latest  # Using default GitHub-hosted runner
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
     steps:
     - name: Download build artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v3
       with:
         name: app-build
         path: ./app-build
@@ -65,7 +70,6 @@ jobs:
         zip -r ../app-release.zip *
     
     - name: Create GitHub Release
-      id: create_release
       uses: softprops/action-gh-release@v1
       with:
         files: app-release.zip
@@ -73,3 +77,4 @@ jobs:
         draft: false
         prerelease: false
         generate_release_notes: true
+        token: ${{ secrets.GITHUB_TOKEN }}
