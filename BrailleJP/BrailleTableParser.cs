@@ -12,7 +12,7 @@ public partial class BrailleTableParser
   private readonly string baseDirectory;
   private readonly HashSet<string> processedFiles;
   private readonly Dictionary<string, string> escapeSequences;
-  private static readonly string[] separator = new[] { "\r\n", "\r", "\n" };
+  private static readonly string[] separator = ["\r\n", "\r", "\n"];
 
   public BrailleTableParser(string baseDirectory = "")
   {
