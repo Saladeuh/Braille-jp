@@ -47,6 +47,7 @@ public class Game1 : Game
     _spriteBatch = new SpriteBatch(GraphicsDevice);
     titleScreenSong = Content.Load<Song>("GoodbyeGeno");
     MediaPlayer.Play(titleScreenSong);
+    MediaPlayer.IsRepeating = true;
     MyraEnvironment.Game = this;
     _desktop = new Desktop();
 
