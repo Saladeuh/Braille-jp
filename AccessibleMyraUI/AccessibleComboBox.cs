@@ -4,7 +4,7 @@ using Myra.Graphics2D.UI;
 
 namespace AccessibleMyraUI;
 
-public class AccessibleComboBox : ComboBox
+public class AccessibleComboBox : ComboView
 {
   public AccessibleComboBox(int width = 200)
   {

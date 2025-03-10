@@ -8,7 +8,7 @@ public class AccessibleRadioButton : RadioButton
 {
   public AccessibleRadioButton(string text, bool isChecked = false)
   {
-    Text = text;
+    Content = new Label { Text = text };
     Enabled = isChecked;
     AcceptsKeyboardFocus = true;
 
@@ -33,8 +33,10 @@ public class AccessibleRadioButton : RadioButton
     string resourceKey = Enabled ?
         AccessibilityResources.RadioButton_Selected :
         AccessibilityResources.RadioButton_Unselected;
-
-    string announcement = string.Format(resourceKey, Text);
-    CrossSpeakManager.Instance.Speak(announcement);
+    if (Content is Label label)
+    {
+      string announcement = string.Format(resourceKey, label.Text);
+      CrossSpeakManager.Instance.Speak(announcement);
+    }
   }
 }

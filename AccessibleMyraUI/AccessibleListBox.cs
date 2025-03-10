@@ -8,7 +8,7 @@ using Myra.Graphics2D.UI;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace AccessibleMyraUI;
-public class AccessibleListBox : ListBox
+public class AccessibleListBox : ListView
 {
   public AccessibleListBox(int width = 200, int height = 200)
   {

@@ -4,11 +4,11 @@ using Myra.Graphics2D.UI;
 
 namespace AccessibleMyraUI;
 
-public class AccessibleCheckBox : CheckBox
+public class AccessibleCheckBox : CheckButton
 {
   public AccessibleCheckBox(string text, bool isChecked = false)
   {
-    Text = text;
+    Content = new Label { Text = text };
     IsChecked = isChecked;
     AcceptsKeyboardFocus = true;
 
@@ -32,8 +32,10 @@ public class AccessibleCheckBox : CheckBox
     string resourceKey = IsChecked ?
         AccessibilityResources.CheckBox_Checked :
         AccessibilityResources.CheckBox_Unchecked;
-
-    string announcement = string.Format(resourceKey, Text);
-    CrossSpeakManager.Instance.Speak(announcement);
-  }
+    if (Content is Label label)
+    {
+      var announcement = string.Format(resourceKey, label.Text);
+      CrossSpeakManager.Instance.Speak(announcement);
+    }
+    }
 }
