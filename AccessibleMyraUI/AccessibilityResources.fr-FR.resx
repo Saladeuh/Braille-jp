@@ -48,4 +48,13 @@
 	<data name="ListBox_NoSelection" xml:space="preserve">
     <value>Liste, aucun élément sélectionné</value>
   </data>
+  <data name="ToggleButton_On" xml:space="preserve">
+    <value>{0}, activé</value>
+  </data>
+  <data name="ToggleButton_Off" xml:space="preserve">
+    <value>{0}, désactivé</value>
+  </data>
+  <data name="SpinButton_Value" xml:space="preserve">
+    <value>{0}</value>
+  </data>
 </root>

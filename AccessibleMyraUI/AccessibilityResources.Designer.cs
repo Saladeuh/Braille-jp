@@ -169,6 +169,15 @@ namespace AccessibleMyraUI {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Numeric value: {0}.
+        /// </summary>
+        internal static string SpinButton_Value {
+            get {
+                return ResourceManager.GetString("SpinButton_Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Tab {0} selected.
         /// </summary>
         internal static string Tab_Selected {
@@ -201,6 +210,24 @@ namespace AccessibleMyraUI {
         internal static string TextBox_Focus {
             get {
                 return ResourceManager.GetString("TextBox_Focus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à {0}, off.
+        /// </summary>
+        internal static string ToggleButton_Off {
+            get {
+                return ResourceManager.GetString("ToggleButton_Off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à {0}, on.
+        /// </summary>
+        internal static string ToggleButton_On {
+            get {
+                return ResourceManager.GetString("ToggleButton_On", resourceCulture);
             }
         }
     }
