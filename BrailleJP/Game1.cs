@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Input;
 using Myra;
 using Myra.Graphics2D.UI;
 using CrossSpeak;
-using AssetManagementBase;
 using AccessibleMyraUI;
 using Microsoft.Xna.Framework.Media;
 
@@ -24,7 +23,7 @@ public class Game1 : Game
   private KeyboardState _previousKeyboardState;
   private MouseState _previousMouseState;
 
-  private Song titleScreenSong;
+  private Song _titleScreenSong;
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
@@ -45,13 +44,14 @@ public class Game1 : Game
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
-    titleScreenSong = Content.Load<Song>("GoodbyeGeno");
-    MediaPlayer.Play(titleScreenSong);
+    _titleScreenSong = Content.Load<Song>("GoodbyeGeno");
+    MediaPlayer.Play(_titleScreenSong);
     MediaPlayer.IsRepeating = true;
     MyraEnvironment.Game = this;
-    _desktop = new Desktop();
-
-    _desktop.HasExternalTextInput = true;
+    _desktop = new Desktop
+    {
+      HasExternalTextInput = true
+    };
     Window.TextInput += (s, a) =>
     {
       _desktop.OnChar(a.Character);
@@ -86,8 +86,10 @@ public class Game1 : Game
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
     // Bouton Jouer
-    var playButton = new AccessibleButton("Jouer");
-    playButton.Id = "playButton";
+    var playButton = new AccessibleButton("Jouer")
+    {
+      Id = "playButton"
+    };
     playButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.Game);
@@ -96,8 +98,10 @@ public class Game1 : Game
     mainMenuGrid.Widgets.Add(playButton);
 
     // Bouton Paramètres
-    var settingsButton = new AccessibleButton("Paramètres");
-    settingsButton.Id = "settingsButton";
+    var settingsButton = new AccessibleButton("Paramètres")
+    {
+      Id = "settingsButton"
+    };
     settingsButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.Settings);
@@ -106,8 +110,10 @@ public class Game1 : Game
     mainMenuGrid.Widgets.Add(settingsButton);
 
     // Bouton Quitter
-    var quitButton = new AccessibleButton("Quitter");
-    quitButton.Id = "quitButton";
+    var quitButton = new AccessibleButton("Quitter")
+    {
+      Id = "quitButton"
+    };
     quitButton.Click += (s, a) =>
     {
       Exit();
@@ -139,10 +145,12 @@ public class Game1 : Game
     gameGrid.Widgets.Add(scoreLabel);
 
     // Bouton de pause
-    var pauseButton = new AccessibleButton("Pause", 100, HorizontalAlignment.Right);
-    pauseButton.Id = "pauseButton";
-    pauseButton.VerticalAlignment = VerticalAlignment.Top;
-    pauseButton.AcceptsKeyboardFocus = false;
+    var pauseButton = new AccessibleButton("Pause", 100, HorizontalAlignment.Right)
+    {
+      Id = "pauseButton",
+      VerticalAlignment = VerticalAlignment.Top,
+      AcceptsKeyboardFocus = false
+    };
 
     pauseButton.Click += (s, a) =>
     {
@@ -166,19 +174,23 @@ public class Game1 : Game
         });
 
         // Bouton Reprendre
-        var resumeButton = new AccessibleButton("Reprendre");
-        resumeButton.Id = "resumeButton";
+        var resumeButton = new AccessibleButton("Reprendre")
+        {
+          Id = "resumeButton"
+        };
         resumeButton.Click += (sender, args) =>
         {
           _gameState.IsPaused = false;
           ((Label)pauseButton.Content).Text = "Pause";
-          gameGrid.Widgets.Remove(gameGrid.FindWidgetById("pauseMenu"));
+          gameGrid.Widgets.Remove(gameGrid.FindChildById("pauseMenu"));
         };
         pauseMenu.Widgets.Add(resumeButton);
 
         // Bouton Menu Principal
-        var returnToMenuButton = new AccessibleButton("Menu Principal");
-        returnToMenuButton.Id = "returnButton";
+        var returnToMenuButton = new AccessibleButton("Menu Principal")
+        {
+          Id = "returnButton"
+        };
         returnToMenuButton.Click += (sender, args) =>
         {
           SwitchToScreen(GameScreen.MainMenu);
@@ -192,7 +204,7 @@ public class Game1 : Game
       }
       else
       {
-        var pauseMenu = gameGrid.FindWidgetById("pauseMenu");
+        var pauseMenu = gameGrid.FindChildById("pauseMenu");
         if (pauseMenu != null)
         {
           gameGrid.Widgets.Remove(pauseMenu);
@@ -229,13 +241,11 @@ public class Game1 : Game
     var volumePanel = new HorizontalStackPanel { Spacing = 5 };
     volumePanel.Widgets.Add(new Label { Text = "Volume:" });
 
-    var volumeSlider = new HorizontalSlider
+    var volumeSlider = new AccessibleSlider(0.8f)
     {
       Id = "volumeSlider",
-      Width = 200,
-      Value = 0.8f
+      AcceptsKeyboardFocus = true
     };
-    volumeSlider.AcceptsKeyboardFocus = true;
 
     // Annonce vocale du niveau de volume
     volumeSlider.ValueChanged += (s, a) =>
@@ -256,8 +266,10 @@ public class Game1 : Game
     settingsGrid.Widgets.Add(new Label { Text = "" });
 
     // Bouton Retour au menu
-    var backButton = new AccessibleButton("Retour au menu");
-    backButton.Id = "backButton";
+    var backButton = new AccessibleButton("Retour au menu")
+    {
+      Id = "backButton"
+    };
     backButton.Click += (s, a) =>
     {
       // TODO save settings
@@ -276,7 +288,7 @@ public class Game1 : Game
     {
       case GameScreen.MainMenu:
         _desktop.Root = _mainMenuPanel;
-        var playButton = _mainMenuPanel.FindWidgetById("playButton");
+        var playButton = _mainMenuPanel.FindChildById("playButton");
         playButton?.SetKeyboardFocus();
         break;
       case GameScreen.Game:
@@ -288,7 +300,7 @@ public class Game1 : Game
         break;
       case GameScreen.Settings:
         _desktop.Root = _settingsPanel;
-        var volumeSlider = _settingsPanel.FindWidgetById("volumeSlider");
+        var volumeSlider = _settingsPanel.FindChildById("volumeSlider");
         volumeSlider?.SetKeyboardFocus();
         break;
     }
@@ -311,7 +323,7 @@ public class Game1 : Game
         {
           // paused in game
           _gameState.IsPaused = true;
-          var pauseButton = _gamePanel.FindWidgetById("pauseButton") as Button;
+          var pauseButton = _gamePanel.FindChildById("pauseButton") as Button;
           if (pauseButton != null)
           {
             ((Label)pauseButton.Content).Text = "Reprendre";
@@ -332,20 +344,24 @@ public class Game1 : Game
             });
 
             // Bouton Reprendre
-            var resumeButton = new AccessibleButton("Reprendre");
-            resumeButton.Id = "resumeButton";
+            var resumeButton = new AccessibleButton("Reprendre")
+            {
+              Id = "resumeButton"
+            };
             resumeButton.Click += (sender, args) =>
             {
               _gameState.IsPaused = false;
               ((Label)pauseButton.Content).Text = "Pause";
               var grid = _gamePanel.Widgets[0] as Grid;
-              grid?.Widgets.Remove(grid.FindWidgetById("pauseMenu"));
+              grid?.Widgets.Remove(grid.FindChildById("pauseMenu"));
             };
             pauseMenu.Widgets.Add(resumeButton);
 
             // Bouton Menu Principal
-            var returnToMenuButton = new AccessibleButton("Menu Principal");
-            returnToMenuButton.Id = "returnButton";
+            var returnToMenuButton = new AccessibleButton("Menu Principal")
+            {
+              Id = "returnButton"
+            };
             returnToMenuButton.Click += (sender, args) =>
             {
               SwitchToScreen(GameScreen.MainMenu);
@@ -423,7 +439,7 @@ public class Game1 : Game
   {
     if (_gameState.CurrentScreen == GameScreen.Game)
     {
-      var scoreLabel = _gamePanel.FindWidgetById("scoreLabel") as Label;
+      var scoreLabel = _gamePanel.FindChildById("scoreLabel") as Label;
       if (scoreLabel != null)
       {
         scoreLabel.Text = $"Score: {_gameState.Score}";
