@@ -1,4 +1,6 @@
 ﻿using System;
+
+using SharpHook;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -7,6 +9,11 @@ using Myra.Graphics2D.UI;
 using CrossSpeak;
 using AccessibleMyraUI;
 using Microsoft.Xna.Framework.Media;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Linq;
+using SharpHook.Native;
+using System.Collections.Generic;
 
 namespace BrailleJP;
 
@@ -24,6 +31,8 @@ public class Game1 : Game
   private MouseState _previousMouseState;
 
   private Song _titleScreenSong;
+  private KeyboardState _currentKeyboardState;
+
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
@@ -37,15 +46,33 @@ public class Game1 : Game
     base.Initialize();
     this.Exiting += onExit;
     CrossSpeakManager.Instance.Initialize();
+    // create hook to get keyboard and simulated keyboard (e.g. screen readers inputs) 
+    var hook = new TaskPoolGlobalHook();
+    hook.KeyPressed += OnKeyPressed;
+    Task.Run(() => hook.Run());
     _previousKeyboardState = Keyboard.GetState();
     _previousMouseState = Mouse.GetState();
   }
+  private void OnKeyPressed(object sender, KeyboardHookEventArgs e)
+  {
+    var pressedKeys = _currentKeyboardState.GetPressedKeys().ToList();
 
+    Keys monogameKey = Utils.ConvertKeyCodeToMonogameKey(e.Data.KeyCode);
+
+    if (monogameKey != Keys.None)
+    {
+      pressedKeys.Add(monogameKey);
+    }
+
+    _currentKeyboardState = new KeyboardState(pressedKeys.ToArray());
+  }
+
+  // Méthode pour convertir un KeyCode en Keys de Monogame
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
     _titleScreenSong = Content.Load<Song>("GoodbyeGeno");
-    MediaPlayer.Play(_titleScreenSong);
+    //MediaPlayer.Play(_titleScreenSong);
     MediaPlayer.IsRepeating = true;
     MyraEnvironment.Game = this;
     _desktop = new Desktop
@@ -308,14 +335,13 @@ public class Game1 : Game
 
   protected override void Update(GameTime gameTime)
   {
-    var currentKeyboardState = Keyboard.GetState();
+    _currentKeyboardState = Keyboard.GetState();
     var currentMouseState = Mouse.GetState();
 
     _desktop.UpdateInput();
-    HandleKeyboardNavigation(currentKeyboardState);
-
+    HandleKeyboardNavigation(_currentKeyboardState);
     // quit on escape key
-    if (IsKeyPressed(Keys.Escape, currentKeyboardState))
+    if (IsKeyPressed(Keys.Escape, _currentKeyboardState))
     {
       if (_gameState.CurrentScreen != GameScreen.MainMenu)
       {
@@ -394,7 +420,7 @@ public class Game1 : Game
 
     UpdateUIState();
 
-    _previousKeyboardState = currentKeyboardState;
+    _previousKeyboardState = _currentKeyboardState;
     _previousMouseState = currentMouseState;
 
     base.Update(gameTime);
