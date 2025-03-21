@@ -42,7 +42,7 @@ public class AccessibleToggleButton : Button
           AccessibilityResources.ToggleButton_Off;
 
       string announcement = string.Format(resourceKey, label.Text);
-      CrossSpeakManager.Instance.Speak(announcement);
+      CrossSpeakManager.Instance.Output(announcement);
     }
   }
 }

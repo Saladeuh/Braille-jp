@@ -19,7 +19,7 @@ public class AccessibleTabControl : TabControl
     {
       string tabText = tabItem.Text ?? AccessibilityResources.Tab_Unnamed;
       string announcement = string.Format(AccessibilityResources.Tab_Selected, tabText);
-      CrossSpeakManager.Instance.Speak(announcement);
+      CrossSpeakManager.Instance.Output(announcement);
     }
   }
 }

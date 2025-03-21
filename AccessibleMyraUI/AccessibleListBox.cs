@@ -39,6 +39,6 @@ public class AccessibleListBox : ListView
     else
       announcement = AccessibilityResources.ListBox_NoSelection;
 
-    CrossSpeakManager.Instance.Speak(announcement);
+    CrossSpeakManager.Instance.Output(announcement);
   }
 }

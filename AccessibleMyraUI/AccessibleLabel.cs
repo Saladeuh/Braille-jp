@@ -22,7 +22,7 @@ public class AccessibleLabel : Label
     if (IsKeyboardFocused)
     {
       string announcement = string.Format(AccessibilityResources.Label_Focus, Text);
-      CrossSpeakManager.Instance.Speak(announcement);
+      CrossSpeakManager.Instance.Output(announcement);
     }
   }
 }

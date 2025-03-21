@@ -34,6 +34,6 @@ public class AccessibleComboBox : ComboView
     else
       announcement = AccessibilityResources.ComboBox_Focus;
 
-    CrossSpeakManager.Instance.Speak(announcement);
+    CrossSpeakManager.Instance.Output(announcement);
   }
 }

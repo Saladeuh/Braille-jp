@@ -36,6 +36,6 @@ public class AccessibleTextBox : TextBox
     else
       announcement = string.Format(AccessibilityResources.TextBox_Focus, Text);
 
-    CrossSpeakManager.Instance.Speak(announcement);
+    CrossSpeakManager.Instance.Output(announcement);
   }
 }

@@ -33,7 +33,7 @@ public class AccessibleButton : Button
     if (Content is Label label)
     {
       string announcement = string.Format(AccessibilityResources.Button_Focus, label.Text);
-      CrossSpeakManager.Instance.Speak(announcement);
+      CrossSpeakManager.Instance.Output(announcement);
     }
   }
 }

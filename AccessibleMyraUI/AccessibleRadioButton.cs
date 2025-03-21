@@ -36,7 +36,7 @@ public class AccessibleRadioButton : RadioButton
     if (Content is Label label)
     {
       string announcement = string.Format(resourceKey, label.Text);
-      CrossSpeakManager.Instance.Speak(announcement);
+      CrossSpeakManager.Instance.Output(announcement);
     }
   }
 }

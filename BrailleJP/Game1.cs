@@ -136,7 +136,7 @@ public class Game1 : Game
     playButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.Game);
-      CrossSpeakManager.Instance.Speak("Jeu démarré");
+      CrossSpeakManager.Instance.Output("Jeu démarré");
     };
     mainMenuGrid.Widgets.Add(playButton);
 
@@ -148,7 +148,7 @@ public class Game1 : Game
     settingsButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.Settings);
-      CrossSpeakManager.Instance.Speak("Menu des paramètres");
+      CrossSpeakManager.Instance.Output("Menu des paramètres");
     };
     mainMenuGrid.Widgets.Add(settingsButton);
 
@@ -293,13 +293,13 @@ public class Game1 : Game
     // Annonce vocale du niveau de volume
     volumeSlider.ValueChanged += (s, a) =>
     {
-      CrossSpeakManager.Instance.Speak($"Volume: {(int)(volumeSlider.Value * 100)} pourcent");
+      CrossSpeakManager.Instance.Output($"Volume: {(int)(volumeSlider.Value * 100)} pourcent");
     };
 
     volumeSlider.KeyboardFocusChanged += (s, a) =>
     {
       if (volumeSlider.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Speak($"Slider de volume: {(int)(volumeSlider.Value * 100)} pourcent");
+        CrossSpeakManager.Instance.Output($"Slider de volume: {(int)(volumeSlider.Value * 100)} pourcent");
     };
 
     volumePanel.Widgets.Add(volumeSlider);

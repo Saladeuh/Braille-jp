@@ -32,6 +32,6 @@ public class AccessibleSlider : HorizontalSlider
   {
     int percentage = (int)(Value * 100);
     string announcement = string.Format(AccessibilityResources.Slider_Value, percentage);
-    CrossSpeakManager.Instance.Speak(announcement);
+    CrossSpeakManager.Instance.Output(announcement);
   }
 }

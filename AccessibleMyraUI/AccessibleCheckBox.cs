@@ -35,7 +35,7 @@ public class AccessibleCheckBox : CheckButton
     if (Content is Label label)
     {
       var announcement = string.Format(resourceKey, label.Text);
-      CrossSpeakManager.Instance.Speak(announcement);
+      CrossSpeakManager.Instance.Output(announcement);
     }
     }
 }
