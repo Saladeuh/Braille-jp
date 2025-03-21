@@ -29,11 +29,12 @@ public class Game1 : Game
   private Panel _settingsPanel;
   private KeyboardState _previousKeyboardState;
   private MouseState _previousMouseState;
-
+  private readonly HashSet<Keys> _hookPressedKeys = new HashSet<Keys>();
   private Song _titleScreenSong;
-  private KeyboardState _currentKeyboardState;
+  private readonly HashSet<Keys> _keysToProcess = new HashSet<Keys>(); // Nouvelles touches à traiter
+  private readonly object _keyLock = new object();
 
-  public Game1()
+  private bool _updateProcessed = false; public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
     Content.RootDirectory = "Content";
@@ -49,25 +50,40 @@ public class Game1 : Game
     // create hook to get keyboard and simulated keyboard (e.g. screen readers inputs) 
     var hook = new TaskPoolGlobalHook();
     hook.KeyPressed += OnKeyPressed;
+    hook.KeyReleased += OnKeyReleased;
     Task.Run(() => hook.Run());
     _previousKeyboardState = Keyboard.GetState();
     _previousMouseState = Mouse.GetState();
   }
+
   private void OnKeyPressed(object sender, KeyboardHookEventArgs e)
   {
-    var pressedKeys = _currentKeyboardState.GetPressedKeys().ToList();
-
     Keys monogameKey = Utils.ConvertKeyCodeToMonogameKey(e.Data.KeyCode);
 
     if (monogameKey != Keys.None)
     {
-      pressedKeys.Add(monogameKey);
+      lock (_keyLock)
+      {
+        _hookPressedKeys.Add(monogameKey);
+        _keysToProcess.Add(monogameKey); // Ajouter aux touches à traiter
+        _updateProcessed = false; // Réinitialiser le flag
+      }
     }
-
-    _currentKeyboardState = new KeyboardState(pressedKeys.ToArray());
   }
 
-  // Méthode pour convertir un KeyCode en Keys de Monogame
+  private void OnKeyReleased(object sender, KeyboardHookEventArgs e)
+  {
+    Keys monogameKey = Utils.ConvertKeyCodeToMonogameKey(e.Data.KeyCode);
+
+    if (monogameKey != Keys.None)
+    {
+      lock (_keyLock)
+      {
+        _hookPressedKeys.Remove(monogameKey);
+        // Do not withdraw from _KeStoprocess - These keys must be treated at least once      }
+      }
+    }
+  }
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -335,13 +351,24 @@ public class Game1 : Game
 
   protected override void Update(GameTime gameTime)
   {
-    _currentKeyboardState = Keyboard.GetState();
+    KeyboardState nativeKeyboardState = Keyboard.GetState();
+    List<Keys> allPressedKeys = nativeKeyboardState.GetPressedKeys().ToList();
+    lock (_keyLock)
+    {
+      allPressedKeys.AddRange(_hookPressedKeys);
+      if (!_updateProcessed)
+      {
+        allPressedKeys.AddRange(_keysToProcess);
+        allPressedKeys = allPressedKeys.Distinct().ToList();
+      }
+    }
+    var currentKeyboardState = new KeyboardState(allPressedKeys.ToArray());
     var currentMouseState = Mouse.GetState();
 
     _desktop.UpdateInput();
-    HandleKeyboardNavigation(_currentKeyboardState);
+    HandleKeyboardNavigation(currentKeyboardState);
     // quit on escape key
-    if (IsKeyPressed(Keys.Escape, _currentKeyboardState))
+    if (IsKeyPressed(Keys.Escape, currentKeyboardState))
     {
       if (_gameState.CurrentScreen != GameScreen.MainMenu)
       {
@@ -411,8 +438,6 @@ public class Game1 : Game
         Exit();
       }
     }
-
-    // Ne mettre à jour la logique de jeu que si on est en écran de jeu et non en pause
     if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
     {
       UpdateGameLogic(gameTime);
@@ -420,9 +445,13 @@ public class Game1 : Game
 
     UpdateUIState();
 
-    _previousKeyboardState = _currentKeyboardState;
+    _previousKeyboardState = currentKeyboardState;
     _previousMouseState = currentMouseState;
-
+    lock (_keyLock)
+    {
+      _updateProcessed = true;
+      _keysToProcess.Clear(); // Vider les touches à traiter puisqu'elles ont été traitées
+    }
     base.Update(gameTime);
   }
 
