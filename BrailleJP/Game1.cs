@@ -1,5 +1,4 @@
 ﻿using System;
-
 using SharpHook;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,6 +13,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using SharpHook.Native;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace BrailleJP;
 
@@ -29,12 +29,16 @@ public class Game1 : Game
   private Panel _settingsPanel;
   private KeyboardState _previousKeyboardState;
   private MouseState _previousMouseState;
+  private BrailleTableParser _brailleParser;
   private readonly HashSet<Keys> _hookPressedKeys = new HashSet<Keys>();
   private Song _titleScreenSong;
   private readonly HashSet<Keys> _keysToProcess = new HashSet<Keys>(); // Nouvelles touches à traiter
   private readonly object _keyLock = new object();
 
-  private bool _updateProcessed = false; public Game1()
+  private bool _updateProcessed = false;
+  private Panel _brailleTableViewPanel;
+
+  public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
     Content.RootDirectory = "Content";
@@ -54,6 +58,7 @@ public class Game1 : Game
     Task.Run(() => hook.Run());
     _previousKeyboardState = Keyboard.GetState();
     _previousMouseState = Mouse.GetState();
+    _brailleParser = new BrailleTableParser(@"LibLouis\tables");
   }
 
   private void OnKeyPressed(object sender, KeyboardHookEventArgs e)
@@ -116,8 +121,6 @@ public class Game1 : Game
       HorizontalAlignment = HorizontalAlignment.Center,
       VerticalAlignment = VerticalAlignment.Center
     };
-
-    // Title
     var titleLabel = new Label
     {
       Text = "BRAILLE JP",
@@ -128,19 +131,17 @@ public class Game1 : Game
     // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    // Bouton Jouer
     var playButton = new AccessibleButton("Jouer")
     {
       Id = "playButton"
     };
     playButton.Click += (s, a) =>
     {
-      SwitchToScreen(GameScreen.Game);
+      SwitchToScreen(GameScreen.BrailleTableView);
       CrossSpeakManager.Instance.Output("Jeu démarré");
     };
     mainMenuGrid.Widgets.Add(playButton);
 
-    // Bouton Paramètres
     var settingsButton = new AccessibleButton("Paramètres")
     {
       Id = "settingsButton"
@@ -152,7 +153,6 @@ public class Game1 : Game
     };
     mainMenuGrid.Widgets.Add(settingsButton);
 
-    // Bouton Quitter
     var quitButton = new AccessibleButton("Quitter")
     {
       Id = "quitButton"
@@ -167,6 +167,35 @@ public class Game1 : Game
     _desktop.FocusedKeyboardWidget = playButton;
   }
 
+  private void CreateBrailleTableView(string tableName)
+  {
+    _brailleTableViewPanel = new Panel();
+
+    var tableViewGrid = new VerticalStackPanel
+    {
+      Spacing = 10,
+      HorizontalAlignment = HorizontalAlignment.Center,
+      VerticalAlignment = VerticalAlignment.Center
+    };
+    var titleLabel = new Label
+    {
+      Text = tableName,
+      HorizontalAlignment = HorizontalAlignment.Center
+    };
+    tableViewGrid.Widgets.Add(titleLabel);
+
+    // Space
+    tableViewGrid.Widgets.Add(new Label { Text = "" });
+    var entries = _brailleParser.ParseFile(tableName + ".utb");
+    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, new CultureInfo("ja-JP"), CompareOptions.IgnoreSymbols));
+    foreach (var entry in entries)
+    {
+      var label = new AccessibleLabel(entry.ToString());
+      tableViewGrid.Widgets.Add(label);
+    }
+    _brailleTableViewPanel.Widgets.Add(tableViewGrid);
+    _desktop.FocusedKeyboardWidget = titleLabel;
+  }
   private void CreateGameUI()
   {
     _gamePanel = new Panel();
@@ -333,6 +362,10 @@ public class Game1 : Game
         _desktop.Root = _mainMenuPanel;
         var playButton = _mainMenuPanel.FindChildById("playButton");
         playButton?.SetKeyboardFocus();
+        break;
+      case GameScreen.BrailleTableView:
+        CreateBrailleTableView("ja-jp-comp6");
+        _desktop.Root = _brailleTableViewPanel;
         break;
       case GameScreen.Game:
         _desktop.Root = _gamePanel;

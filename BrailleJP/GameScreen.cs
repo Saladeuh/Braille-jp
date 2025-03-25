@@ -1,9 +1,9 @@
-﻿namespace BrailleJP
+﻿namespace BrailleJP;
+
+public enum GameScreen
 {
-  public enum GameScreen
-  {
-    MainMenu,
-    Game,
-    Settings
-  }
+  MainMenu,
+  Game,
+  BrailleTableView,
+  Settings
 }
