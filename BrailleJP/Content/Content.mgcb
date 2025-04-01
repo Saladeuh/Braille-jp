@@ -19,3 +19,99 @@
 /processorParam:Quality=Best
 /build:GoodbyeGeno.mp3
 
+#begin music/Mario Party 2： Going Somewhere⧸Bobsled Run Orchestral Arrangement.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:music/Mario Party 2： Going Somewhere⧸Bobsled Run Orchestral Arrangement.mp3
+
+#begin music/Mario Party： Bowser's Magma Mountain Arrangement.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:music/Mario Party： Bowser's Magma Mountain Arrangement.mp3
+
+#begin music/MUSICAL Flashback Dream Down.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:music/MUSICAL Flashback Dream Down.wav
+
+#begin music/Rhythm Heaven： Tunnel Arrangement.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:music/Rhythm Heaven： Tunnel Arrangement.mp3
+
+#begin music/Super Mario Land 2： 6 Golden Coins： Star Maze Arrangement.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:music/Super Mario Land 2： 6 Golden Coins： Star Maze Arrangement.mp3
+
+#begin music/Super Mario Sunshine： Pinna Park Arrangement [gnlDnGEPikQ].mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:music/Super Mario Sunshine： Pinna Park Arrangement [gnlDnGEPikQ].mp3
+
+#begin music/Super Paper Mario： Gloam Valley Arrangement.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:music/Super Paper Mario： Gloam Valley Arrangement.mp3
+
+#begin ui/Cartoon Toy Squeaky Toy Squeaks 01.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/Cartoon Toy Squeaky Toy Squeaks 01.wav
+
+#begin ui/confirmation_001.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ui/confirmation_001.wav
+
+#begin ui/confirmation_002.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ui/confirmation_002.wav
+
+#begin ui/confirmation_003.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ui/confirmation_003.wav
+
+#begin ui/confirmation_004.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ui/confirmation_004.wav
+
+#begin ui/OBJCont_Coffee Tin Lid Open 3_RogueWaves_KawaiiUI.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/OBJCont_Coffee Tin Lid Open 3_RogueWaves_KawaiiUI.wav
+
+#begin ui/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav
+
+#begin ui/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav
+
+#begin ui/UIClick_Operating System UI Cursor_RogueWaves_KawaiiUI.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/UIClick_Operating System UI Cursor_RogueWaves_KawaiiUI.wav
+
