@@ -34,6 +34,7 @@ public class Game1 : Game
   private BrailleTableParser _brailleParser;
   private readonly HashSet<Keys> _hookPressedKeys = new HashSet<Keys>();
   private Song _titleScreenSong;
+  private Song _brailleTableViewSong;
   private readonly HashSet<Keys> _keysToProcess = new HashSet<Keys>(); // Nouvelles touches à traiter
   private readonly object _keyLock = new object();
 
@@ -96,7 +97,7 @@ public class Game1 : Game
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
     _titleScreenSong = Content.Load<Song>("GoodbyeGeno");
-    //MediaPlayer.Play(_titleScreenSong);
+    _brailleTableViewSong = Content.Load<Song>("music/PinnaPark");
     MediaPlayer.IsRepeating = true;
     MyraEnvironment.Game = this;
     _desktop = new Desktop
@@ -370,11 +371,13 @@ public class Game1 : Game
         _desktop.Root = _mainMenuPanel;
         var playButton = _mainMenuPanel.FindChildById("playButton");
         playButton?.SetKeyboardFocus();
+        MediaPlayer.Play(_titleScreenSong);
         break;
       case GameScreen.BrailleTableView:
         CreateBrailleTableView("ja-jp-comp6", new CultureInfo("ja-Jp"));
         _desktop.Root = _brailleTableViewPanel;
         UpdateUIState();
+        MediaPlayer.Play(_brailleTableViewSong);
         break;
       case GameScreen.Game:
         _desktop.Root = _gamePanel;

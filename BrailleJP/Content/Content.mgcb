@@ -49,11 +49,11 @@
 /processorParam:Quality=Best
 /build:music/Super Mario Land 2： 6 Golden Coins： Star Maze Arrangement.mp3
 
-#begin music/Super Mario Sunshine： Pinna Park Arrangement [gnlDnGEPikQ].mp3
+#begin music/PinnaPark.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:music/Super Mario Sunshine： Pinna Park Arrangement [gnlDnGEPikQ].mp3
+/build:music/PinnaPark.mp3
 
 #begin music/Super Paper Mario： Gloam Valley Arrangement.mp3
 /importer:Mp3Importer
