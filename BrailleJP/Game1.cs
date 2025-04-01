@@ -14,6 +14,8 @@ using System.Linq;
 using SharpHook.Native;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Speech;
+using System.Speech.Synthesis;
 
 namespace BrailleJP;
 
@@ -23,7 +25,7 @@ public class Game1 : Game
   private SpriteBatch _spriteBatch;
   private Desktop _desktop;
   private GameState _gameState;
-
+  private SpeechSynthesizer _speechSynthesizer;
   private Panel _mainMenuPanel;
   private Panel _gamePanel;
   private Panel _settingsPanel;
@@ -51,6 +53,12 @@ public class Game1 : Game
     base.Initialize();
     this.Exiting += onExit;
     CrossSpeakManager.Instance.Initialize();
+    _speechSynthesizer = new SpeechSynthesizer();
+    foreach(var voice in _speechSynthesizer.GetInstalledVoices())
+    {
+      if(voice.Enabled && voice.VoiceInfo.Culture.TwoLetterISOLanguageName=="ja") 
+        _speechSynthesizer.SelectVoice(voice.VoiceInfo.Name);
+    }
     // create hook to get keyboard and simulated keyboard (e.g. screen readers inputs) 
     var hook = new TaskPoolGlobalHook();
     hook.KeyPressed += OnKeyPressed;
@@ -191,6 +199,7 @@ public class Game1 : Game
     foreach (var entry in entries)
     {
       var label = new AccessibleLabel(entry.ToString());
+      label.KeyboardFocusChanged += (s, a) => { _speechSynthesizer.Speak(entry.Characters); };
       tableViewGrid.Widgets.Add(label);
     }
     _brailleTableViewPanel.Widgets.Add(tableViewGrid);
@@ -366,6 +375,7 @@ public class Game1 : Game
       case GameScreen.BrailleTableView:
         CreateBrailleTableView("ja-jp-comp6");
         _desktop.Root = _brailleTableViewPanel;
+        UpdateUIState();
         break;
       case GameScreen.Game:
         _desktop.Root = _gamePanel;
@@ -378,6 +388,7 @@ public class Game1 : Game
         _desktop.Root = _settingsPanel;
         var volumeSlider = _settingsPanel.FindChildById("volumeSlider");
         volumeSlider?.SetKeyboardFocus();
+        UpdateUIState();
         break;
     }
   }
