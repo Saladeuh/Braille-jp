@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Speech;
 using System.Speech.Synthesis;
+using Microsoft.Xna.Framework.Audio;
 
 namespace BrailleJP;
 
@@ -35,11 +36,16 @@ public class Game1 : Game
   private readonly HashSet<Keys> _hookPressedKeys = new HashSet<Keys>();
   private Song _titleScreenSong;
   private Song _brailleTableViewSong;
+  private SoundEffect _UiConfirmSound;
   private readonly HashSet<Keys> _keysToProcess = new HashSet<Keys>(); // Nouvelles touches à traiter
   private readonly object _keyLock = new object();
 
   private bool _updateProcessed = false;
   private Panel _brailleTableViewPanel;
+
+  // Static instance to access from CustomButton
+  public static Game1 Instance { get; private set; }
+  public SoundEffect UiConfirmSound { get => _UiConfirmSound; private set => _UiConfirmSound = value; }
 
   public Game1()
   {
@@ -47,6 +53,7 @@ public class Game1 : Game
     Content.RootDirectory = "Content";
     IsMouseVisible = true;
     _gameState = new GameState();
+    Instance = this; // Set the static instance
   }
 
   protected override void Initialize()
@@ -98,6 +105,7 @@ public class Game1 : Game
     _spriteBatch = new SpriteBatch(GraphicsDevice);
     _titleScreenSong = Content.Load<Song>("GoodbyeGeno");
     _brailleTableViewSong = Content.Load<Song>("music/PinnaPark");
+    UiConfirmSound = Content.Load<SoundEffect>("ui/confirmation_001");
     MediaPlayer.IsRepeating = true;
     MyraEnvironment.Game = this;
     _desktop = new Desktop
@@ -135,7 +143,7 @@ public class Game1 : Game
     // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    var playButton = new AccessibleButton("Jouer")
+    var playButton = new CustomButton("Jouer")
     {
       Id = "playButton"
     };
@@ -146,7 +154,7 @@ public class Game1 : Game
     };
     mainMenuGrid.Widgets.Add(playButton);
 
-    var settingsButton = new AccessibleButton("Paramètres")
+    var settingsButton = new CustomButton("Paramètres")
     {
       Id = "settingsButton"
     };
@@ -157,7 +165,7 @@ public class Game1 : Game
     };
     mainMenuGrid.Widgets.Add(settingsButton);
 
-    var quitButton = new AccessibleButton("Quitter")
+    var quitButton = new CustomButton("Quitter")
     {
       Id = "quitButton"
     };
@@ -226,7 +234,7 @@ public class Game1 : Game
     gameGrid.Widgets.Add(scoreLabel);
 
     // Bouton de pause
-    var pauseButton = new AccessibleButton("Pause", 100, HorizontalAlignment.Right)
+    var pauseButton = new CustomButton("Pause", 100, HorizontalAlignment.Right)
     {
       Id = "pauseButton",
       VerticalAlignment = VerticalAlignment.Top,
@@ -255,7 +263,7 @@ public class Game1 : Game
         });
 
         // Bouton Reprendre
-        var resumeButton = new AccessibleButton("Reprendre")
+        var resumeButton = new CustomButton("Reprendre")
         {
           Id = "resumeButton"
         };
@@ -268,7 +276,7 @@ public class Game1 : Game
         pauseMenu.Widgets.Add(resumeButton);
 
         // Bouton Menu Principal
-        var returnToMenuButton = new AccessibleButton("Menu Principal")
+        var returnToMenuButton = new CustomButton("Menu Principal")
         {
           Id = "returnButton"
         };
@@ -347,7 +355,7 @@ public class Game1 : Game
     settingsGrid.Widgets.Add(new Label { Text = "" });
 
     // Bouton Retour au menu
-    var backButton = new AccessibleButton("Retour au menu")
+    var backButton = new CustomButton("Retour au menu")
     {
       Id = "backButton"
     };
@@ -443,7 +451,7 @@ public class Game1 : Game
             });
 
             // Bouton Reprendre
-            var resumeButton = new AccessibleButton("Reprendre")
+            var resumeButton = new CustomButton("Reprendre")
             {
               Id = "resumeButton"
             };
@@ -457,7 +465,7 @@ public class Game1 : Game
             pauseMenu.Widgets.Add(resumeButton);
 
             // Bouton Menu Principal
-            var returnToMenuButton = new AccessibleButton("Menu Principal")
+            var returnToMenuButton = new CustomButton("Menu Principal")
             {
               Id = "returnButton"
             };

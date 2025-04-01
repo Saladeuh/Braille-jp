@@ -69,25 +69,25 @@
 
 #begin ui/confirmation_001.wav
 /importer:WavImporter
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/confirmation_001.wav
 
 #begin ui/confirmation_002.wav
 /importer:WavImporter
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/confirmation_002.wav
 
 #begin ui/confirmation_003.wav
 /importer:WavImporter
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/confirmation_003.wav
 
 #begin ui/confirmation_004.wav
 /importer:WavImporter
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/confirmation_004.wav
 
