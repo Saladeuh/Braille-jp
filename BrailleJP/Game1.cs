@@ -54,11 +54,6 @@ public class Game1 : Game
     this.Exiting += onExit;
     CrossSpeakManager.Instance.Initialize();
     _speechSynthesizer = new SpeechSynthesizer();
-    foreach(var voice in _speechSynthesizer.GetInstalledVoices())
-    {
-      if(voice.Enabled && voice.VoiceInfo.Culture.TwoLetterISOLanguageName=="ja") 
-        _speechSynthesizer.SelectVoice(voice.VoiceInfo.Name);
-    }
     // create hook to get keyboard and simulated keyboard (e.g. screen readers inputs) 
     var hook = new TaskPoolGlobalHook();
     hook.KeyPressed += OnKeyPressed;
@@ -175,10 +170,14 @@ public class Game1 : Game
     _desktop.FocusedKeyboardWidget = playButton;
   }
 
-  private void CreateBrailleTableView(string tableName)
+  private void CreateBrailleTableView(string tableName, CultureInfo culture)
   {
     _brailleTableViewPanel = new Panel();
-
+    foreach (var voice in _speechSynthesizer.GetInstalledVoices())
+    {
+      if (voice.Enabled && voice.VoiceInfo.Culture.TwoLetterISOLanguageName == culture.TwoLetterISOLanguageName)
+        _speechSynthesizer.SelectVoice(voice.VoiceInfo.Name);
+    }
     var tableViewGrid = new VerticalStackPanel
     {
       Spacing = 10,
@@ -195,7 +194,7 @@ public class Game1 : Game
     // Space
     tableViewGrid.Widgets.Add(new Label { Text = "" });
     var entries = _brailleParser.ParseFile(tableName + ".utb");
-    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, new CultureInfo("ja-JP"), CompareOptions.IgnoreSymbols));
+    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.IgnoreSymbols));
     foreach (var entry in entries)
     {
       var label = new AccessibleLabel(entry.ToString());
@@ -373,7 +372,7 @@ public class Game1 : Game
         playButton?.SetKeyboardFocus();
         break;
       case GameScreen.BrailleTableView:
-        CreateBrailleTableView("ja-jp-comp6");
+        CreateBrailleTableView("ja-jp-comp6", new CultureInfo("ja-Jp"));
         _desktop.Root = _brailleTableViewPanel;
         UpdateUIState();
         break;
