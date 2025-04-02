@@ -1,2 +1,2 @@
-﻿using var game = new BrailleJP.Game1();
+﻿using BrailleJP.Game1 game = new();
 game.Run();

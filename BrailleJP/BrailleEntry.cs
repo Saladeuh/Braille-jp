@@ -30,7 +30,7 @@ public class BrailleEntry
     if (Opcode == "include")
       return $"Include file: {Characters}";
 
-    var result = $"{Opcode} {Characters} {DotPattern}";
+    string result = $"{Opcode} {Characters} {DotPattern}";
     if (!string.IsNullOrEmpty(Comment))
       result += $" # {Comment}";
     return result;

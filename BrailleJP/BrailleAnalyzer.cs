@@ -19,10 +19,10 @@ public class BrailleAnalyzer
 
   private static int[] PatternToDots(int pattern)
   {
-    var dots = new List<int>();
+    List<int> dots = new();
     for (int i = 0; i < DOT_COUNT; i++)
     {
-      if ((pattern & 1 << i) != 0)
+      if ((pattern & (1 << i)) != 0)
       {
         dots.Add(i + 1);
       }

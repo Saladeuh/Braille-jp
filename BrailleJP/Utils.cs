@@ -1,16 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using SharpHook.Native;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrailleJP;
 
 public static class Utils
 {
-  private static readonly Dictionary<KeyCode, Keys> KEYCODEMAP = new Dictionary<KeyCode, Keys>
+  private static readonly Dictionary<KeyCode, Keys> KEYCODEMAP = new()
   {
     // Lettres
     { KeyCode.VcA, Keys.A },

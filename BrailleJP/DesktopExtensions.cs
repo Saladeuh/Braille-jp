@@ -7,19 +7,19 @@ public static class DesktopExtensions
 {
   public static void FocusNext(this Desktop desktop)
   {
-    var widgets = CollectFocusableWidgets(desktop.Root);
+    List<Widget> widgets = CollectFocusableWidgets(desktop.Root);
     FocusNextWidget(widgets, desktop);
   }
 
   public static void FocusPrevious(this Desktop desktop)
   {
-    var widgets = CollectFocusableWidgets(desktop.Root);
+    List<Widget> widgets = CollectFocusableWidgets(desktop.Root);
     FocusPreviousWidget(widgets, desktop);
   }
 
   private static List<Widget> CollectFocusableWidgets(Widget root)
   {
-    var result = new List<Widget>();
+    List<Widget> result = new();
     CollectFocusableWidgetsRecursive(root, result);
     return result;
   }
@@ -35,7 +35,7 @@ public static class DesktopExtensions
     // Si c'est un conteneur, parcourir ses enfants
     if (widget is Container container)
     {
-      foreach (var child in container.Widgets)
+      foreach (Widget child in container.Widgets)
       {
         CollectFocusableWidgetsRecursive(child, result);
       }
