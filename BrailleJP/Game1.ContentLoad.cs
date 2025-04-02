@@ -16,7 +16,7 @@ public partial class Game1
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
-    _titleScreenSong = Content.Load<Song>("GoodbyeGeno");
+    _titleScreenSong = Content.Load<Song>("music/GoodbyeGeno");
     _brailleTableViewSong = Content.Load<Song>("music/PinnaPark");
     UiConfirmSound = Content.Load<SoundEffect>("ui/confirmation_001");
     MediaPlayer.IsRepeating = true;

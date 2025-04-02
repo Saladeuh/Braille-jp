@@ -13,11 +13,11 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin GoodbyeGeno.mp3
+#begin music/GoodbyeGeno.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:GoodbyeGeno.mp3
+/build:music/GoodbyeGeno.mp3
 
 #begin music/Mario Party 2： Going Somewhere⧸Bobsled Run Orchestral Arrangement.mp3
 /importer:Mp3Importer
