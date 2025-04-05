@@ -16,6 +16,7 @@ public partial class Game1 : Game
   private BrailleTableParser _brailleParser;
   // Singleton
   public static Game1 Instance { get; private set; }
+  public SpeechSynthesizer SpeechSynthesizer { get => _speechSynthesizer; private set => _speechSynthesizer = value; }
 
   public Game1()
   {

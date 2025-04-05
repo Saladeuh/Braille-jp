@@ -6,8 +6,6 @@ namespace BrailleJP;
 
 public class CustomButton : AccessibleButton
 {
-  private SoundEffect _confirmSound;
-
   public CustomButton(string text, int width = 0, HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left)
       : base(text, width, horizontalAlignment)
   {

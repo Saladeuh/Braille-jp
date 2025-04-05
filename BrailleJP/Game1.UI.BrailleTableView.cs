@@ -11,10 +11,10 @@ public partial class Game1
   private void CreateBrailleTableView(string tableName, CultureInfo culture)
   {
     _brailleTableViewPanel = new Panel();
-    foreach (System.Speech.Synthesis.InstalledVoice voice in _speechSynthesizer.GetInstalledVoices())
+    foreach (System.Speech.Synthesis.InstalledVoice voice in SpeechSynthesizer.GetInstalledVoices())
     {
       if (voice.Enabled && voice.VoiceInfo.Culture.TwoLetterISOLanguageName == culture.TwoLetterISOLanguageName)
-        _speechSynthesizer.SelectVoice(voice.VoiceInfo.Name);
+        SpeechSynthesizer.SelectVoice(voice.VoiceInfo.Name);
     }
     VerticalStackPanel tableViewGrid = new()
     {
@@ -35,8 +35,7 @@ public partial class Game1
     entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.IgnoreSymbols));
     foreach (BrailleEntry entry in entries)
     {
-      AccessibleLabel label = new(entry.ToString());
-      label.KeyboardFocusChanged += (s, a) => { _speechSynthesizer.Speak(entry.Characters); };
+      TableViewEntry label = new(entry);
       tableViewGrid.Widgets.Add(label);
     }
     _brailleTableViewPanel.Widgets.Add(tableViewGrid);
