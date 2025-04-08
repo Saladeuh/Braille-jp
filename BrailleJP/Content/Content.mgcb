@@ -121,6 +121,12 @@
 /processorParam:Quality=Best
 /build:ui/confirmation_004.wav
 
+#begin ui/minimize_008.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/minimize_008.wav
+
 #begin ui/OBJCont_Coffee Tin Lid Open 3_RogueWaves_KawaiiUI.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -175,11 +181,29 @@
 /processorParam:Quality=Best
 /build:ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
 
+#begin ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
+
 #begin ui/view/Foley Paper Unroll 01.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/view/Foley Paper Unroll 01.wav
+
+#begin ui/view/Foley Paper Unroll 01.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Foley Paper Unroll 01.wav
+
+#begin ui/view/Foley Paper Unroll Fast 01.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Foley Paper Unroll Fast 01.wav
 
 #begin ui/view/Foley Paper Unroll Fast 01.wav
 /importer:WavImporter
@@ -193,11 +217,29 @@
 /processorParam:Quality=Best
 /build:ui/view/Paper_Newspaper_Light_Movement_01.wav
 
+#begin ui/view/Paper_Newspaper_Light_Movement_01.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Paper_Newspaper_Light_Movement_01.wav
+
 #begin ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
+
+#begin ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
+
+#begin ui/view/Paper,Tear,Check out of Checkbook.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Paper,Tear,Check out of Checkbook.wav
 
 #begin ui/view/Paper,Tear,Check out of Checkbook.wav
 /importer:WavImporter
@@ -211,11 +253,29 @@
 /processorParam:Quality=Best
 /build:ui/view/Parched,paper,movement,linen,shake,crimp,wobble.wav
 
+#begin ui/view/Parched,paper,movement,linen,shake,crimp,wobble.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/Parched,paper,movement,linen,shake,crimp,wobble.wav
+
 #begin ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
+
+#begin ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
+
+#begin ui/view/User Interface Click Button 25.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ui/view/User Interface Click Button 25.wav
 
 #begin ui/view/User Interface Click Button 25.wav
 /importer:WavImporter

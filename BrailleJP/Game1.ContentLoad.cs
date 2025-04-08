@@ -10,7 +10,7 @@ public partial class Game1
 {
   public SoundEffect UiConfirmSound { get => _UiConfirmSound; private set => _UiConfirmSound = value; }
   public SoundEffect UIViewScrollSound { get; private set; }
-
+  public SoundEffect UIBackSound { get; private set; }
   private SoundEffect _UiConfirmSound;
   private Song _titleScreenSong;
   private Song _brailleTableViewSong;
@@ -23,6 +23,7 @@ public partial class Game1
 
     UiConfirmSound = Content.Load<SoundEffect>("ui/confirmation_001");
     UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
+    UIBackSound = Content.Load<SoundEffect>("ui/minimize_008");
     MediaPlayer.IsRepeating = true;
     MediaPlayer.Volume = 0.5f;
     MyraEnvironment.Game = this;

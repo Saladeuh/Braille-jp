@@ -1,4 +1,5 @@
 ﻿using AccessibleMyraUI;
+using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Myra.Graphics2D.UI;
@@ -53,7 +54,7 @@ public partial class Game1
     settingsGrid.Widgets.Add(new Label { Text = "" });
 
     // Bouton Retour au menu
-    CustomButton backButton = new("Retour au menu")
+    BackButton backButton = new("Retour au menu")
     {
       Id = "backButton"
     };

@@ -1,4 +1,5 @@
-﻿using CrossSpeak;
+﻿using BrailleJP.UI;
+using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Myra.Graphics2D.UI;
@@ -77,7 +78,7 @@ public partial class Game1 : Game
             });
 
             // Bouton Reprendre
-            CustomButton resumeButton = new("Reprendre")
+            ConfirmButton resumeButton = new("Reprendre")
             {
               Id = "resumeButton"
             };
@@ -91,7 +92,7 @@ public partial class Game1 : Game
             pauseMenu.Widgets.Add(resumeButton);
 
             // Bouton Menu Principal
-            CustomButton returnToMenuButton = new("Menu Principal")
+            ConfirmButton returnToMenuButton = new("Menu Principal")
             {
               Id = "returnButton"
             };
@@ -110,6 +111,7 @@ public partial class Game1 : Game
         }
         else
         {
+          UIBackSound.Play();
           SwitchToScreen(GameScreen.MainMenu);
         }
       }

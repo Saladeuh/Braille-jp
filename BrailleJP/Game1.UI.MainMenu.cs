@@ -1,4 +1,5 @@
-﻿using CrossSpeak;
+﻿using BrailleJP.UI;
+using CrossSpeak;
 using Myra.Graphics2D.UI;
 
 namespace BrailleJP;
@@ -25,7 +26,7 @@ public partial class Game1
     // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    CustomButton playButton = new("Jouer")
+    ConfirmButton playButton = new("Jouer")
     {
       Id = "playButton"
     };
@@ -36,7 +37,7 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(playButton);
 
-    CustomButton settingsButton = new("Paramètres")
+    ConfirmButton settingsButton = new("Paramètres")
     {
       Id = "settingsButton"
     };
@@ -47,7 +48,7 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(settingsButton);
 
-    CustomButton quitButton = new("Quitter")
+    BackButton quitButton = new("Quitter")
     {
       Id = "quitButton"
     };

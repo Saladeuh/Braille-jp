@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BrailleJP.UI;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using Myra.Graphics2D.UI;
@@ -83,7 +84,7 @@ public partial class Game1
     gameGrid.Widgets.Add(scoreLabel);
 
     // Bouton de pause
-    CustomButton pauseButton = new("Pause", 100, HorizontalAlignment.Right)
+    ConfirmButton pauseButton = new("Pause", 100, HorizontalAlignment.Right)
     {
       Id = "pauseButton",
       VerticalAlignment = VerticalAlignment.Top,
@@ -112,7 +113,7 @@ public partial class Game1
         });
 
         // Bouton Reprendre
-        CustomButton resumeButton = new("Reprendre")
+        ConfirmButton resumeButton = new("Reprendre")
         {
           Id = "resumeButton"
         };
@@ -125,7 +126,7 @@ public partial class Game1
         pauseMenu.Widgets.Add(resumeButton);
 
         // Bouton Menu Principal
-        CustomButton returnToMenuButton = new("Menu Principal")
+        ConfirmButton returnToMenuButton = new("Menu Principal")
         {
           Id = "returnButton"
         };
