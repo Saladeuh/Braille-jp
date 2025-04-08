@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrailleJP;
+namespace BrailleJP.UI;
 
 internal class TableViewEntry : AccessibleLabel
 {
@@ -19,6 +19,8 @@ internal class TableViewEntry : AccessibleLabel
     _entry = brailleEntry;
     KeyboardFocusChanged += OnScroll;
   }
+
+
   private void OnScroll(object sender, EventArgs e)
   {
     if (IsKeyboardFocused)
