@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<data name="Button_Focus" xml:space="preserve">
-    <value>Bouton : {0}</value>
+    <value>{0}</value>
   </data>
 	<data name="Label_Focus" xml:space="preserve">
     <value>{0}</value>
   </data>
 	<data name="TextBox_Focus" xml:space="preserve">
-    <value>Zone de texte : {0}</value>
+    <value>{0} : Zone de texte</value>
   </data>
 	<data name="TextBox_Empty" xml:space="preserve">
     <value>Zone de texte vide</value>
@@ -18,8 +18,8 @@
 	<data name="CheckBox_Unchecked" xml:space="preserve">
     <value>{0}, non coché</value>
   </data>
-	<data name="Slider_Value" xml:space="preserve">
-    <value>Valeur : {0} pourcent</value>
+	<data name="Slider" xml:space="preserve">
+    <value>{0} : {1} pourcent</value>
   </data>
 	<data name="ComboBox_Focus" xml:space="preserve">
     <value>Liste déroulante</value>
@@ -55,6 +55,6 @@
     <value>{0}, désactivé</value>
   </data>
   <data name="SpinButton_Value" xml:space="preserve">
-    <value>{0}</value>
+    <value>{0}: {1}</value>
   </data>
 </root>

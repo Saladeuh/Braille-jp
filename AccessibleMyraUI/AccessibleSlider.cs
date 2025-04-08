@@ -13,25 +13,25 @@ public class AccessibleSlider : HorizontalSlider
     AcceptsKeyboardFocus = true;
 
     KeyboardFocusChanged += OnAccessibleKeyboardFocusChanged;
-    ValueChanged += OnAccessibleValueChanged;
+    ValueChanged += OnValueChanged;
   }
 
   private void OnAccessibleKeyboardFocusChanged(object sender, EventArgs e)
   {
     if (IsKeyboardFocused)
-      AnnounceValue();
+      Announce();
   }
 
-  private void OnAccessibleValueChanged(object sender, EventArgs e)
+  private void OnValueChanged(object sender, EventArgs e)
   {
     if (IsKeyboardFocused)
-      AnnounceValue();
+      Announce();
   }
 
-  private void AnnounceValue()
+  private void Announce()
   {
     int percentage = (int)(Value * 100);
-    string announcement = string.Format(AccessibilityResources.Slider_Value, percentage);
+    string announcement = string.Format(AccessibilityResources.Slider, Id, percentage);
     CrossSpeakManager.Instance.Output(announcement);
   }
 }

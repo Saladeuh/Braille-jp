@@ -61,7 +61,7 @@ namespace AccessibleMyraUI {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Button: {0}.
+        ///   Recherche une chaîne localisée semblable à {0}.
         /// </summary>
         internal static string Button_Focus {
             get {
@@ -160,20 +160,20 @@ namespace AccessibleMyraUI {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Value: {0} percent.
+        ///   Recherche une chaîne localisée semblable à {0}: {1} percent.
         /// </summary>
-        internal static string Slider_Value {
+        internal static string Slider {
             get {
-                return ResourceManager.GetString("Slider_Value", resourceCulture);
+                return ResourceManager.GetString("Slider", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Numeric value: {0}.
+        ///   Recherche une chaîne localisée semblable à {0}: {1}.
         /// </summary>
-        internal static string SpinButton_Value {
+        internal static string SpinButton {
             get {
-                return ResourceManager.GetString("SpinButton_Value", resourceCulture);
+                return ResourceManager.GetString("SpinButton", resourceCulture);
             }
         }
         
@@ -196,7 +196,7 @@ namespace AccessibleMyraUI {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Empty text box.
+        ///   Recherche une chaîne localisée semblable à Empty text field.
         /// </summary>
         internal static string TextBox_Empty {
             get {
@@ -205,7 +205,7 @@ namespace AccessibleMyraUI {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Text box: {0}.
+        ///   Recherche une chaîne localisée semblable à {0}, text field.
         /// </summary>
         internal static string TextBox_Focus {
             get {

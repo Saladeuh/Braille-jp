@@ -14,16 +14,16 @@
 	</resheader>
 
 	<data name="Button_Focus" xml:space="preserve">
-    <value>Button: {0}</value>
+    <value>{0}</value>
   </data>
 	<data name="Label_Focus" xml:space="preserve">
     <value>{0}</value>
   </data>
 	<data name="TextBox_Focus" xml:space="preserve">
-    <value>Text box: {0}</value>
+    <value>{0}, text field</value>
   </data>
 	<data name="TextBox_Empty" xml:space="preserve">
-    <value>Empty text box</value>
+    <value>Empty text field</value>
   </data>
 	<data name="CheckBox_Checked" xml:space="preserve">
     <value>{0}, checked</value>
@@ -31,8 +31,8 @@
 	<data name="CheckBox_Unchecked" xml:space="preserve">
     <value>{0}, unchecked</value>
   </data>
-	<data name="Slider_Value" xml:space="preserve">
-    <value>Value: {0} percent</value>
+	<data name="Slider" xml:space="preserve">
+    <value>{0}: {1} percent</value>
   </data>
 	<data name="ComboBox_Focus" xml:space="preserve">
     <value>Dropdown list</value>
@@ -67,7 +67,7 @@
   <data name="ToggleButton_Off" xml:space="preserve">
     <value>{0}, off</value>
   </data>
-  <data name="SpinButton_Value" xml:space="preserve">
-    <value>Numeric value: {0}</value>
+  <data name="SpinButton" xml:space="preserve">
+    <value>{0}: {1}</value>
   </data>
 </root>

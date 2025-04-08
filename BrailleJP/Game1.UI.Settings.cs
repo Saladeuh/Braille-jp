@@ -27,24 +27,16 @@ public partial class Game1
     });
 
     HorizontalStackPanel volumePanel = new() { Spacing = 5 };
-    volumePanel.Widgets.Add(new Label { Text = "Volume:" });
+    volumePanel.Widgets.Add(new AccessibleLabel ("Volume:"));
 
     AccessibleSlider volumeSlider = new(0.8f)
     {
       Id = "volumeSlider",
-      AcceptsKeyboardFocus = true
     };
-
     // Annonce vocale du niveau de volume
     volumeSlider.ValueChanged += (s, a) =>
     {
       CrossSpeakManager.Instance.Output($"Volume: {(int)(volumeSlider.Value * 100)} pourcent");
-    };
-
-    volumeSlider.KeyboardFocusChanged += (s, a) =>
-    {
-      if (volumeSlider.IsKeyboardFocused)
-        CrossSpeakManager.Instance.Output($"Slider de volume: {(int)(volumeSlider.Value * 100)} pourcent");
     };
 
     volumePanel.Widgets.Add(volumeSlider);
