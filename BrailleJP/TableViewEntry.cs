@@ -21,7 +21,11 @@ internal class TableViewEntry : AccessibleLabel
   }
   private void OnScroll(object sender, EventArgs e)
   {
-    //Game1.Instance.SpeechSynthesizer.Speak(_entry.Characters); 
-    Game1.Instance.UIViewScrollSound.Play();
+    if (IsKeyboardFocused)
+    {
+      //if (Game1.Instance.SpeechSynthesizer.State != System.Speech.Synthesis.SynthesizerState.Speaking)
+        Game1.Instance.SpeechSynthesizer.SpeakAsync(_entry.Characters);
+      Game1.Instance.UIViewScrollSound.Play();
+    }
   }
 }

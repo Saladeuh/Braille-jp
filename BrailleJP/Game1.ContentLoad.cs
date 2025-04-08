@@ -24,6 +24,7 @@ public partial class Game1
     UiConfirmSound = Content.Load<SoundEffect>("ui/confirmation_001");
     UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
     MediaPlayer.IsRepeating = true;
+    MediaPlayer.Volume = 0.5f;
     MyraEnvironment.Game = this;
     _desktop = new Desktop
     {

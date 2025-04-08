@@ -33,7 +33,10 @@ public partial class Game1
     // Space
     tableViewGrid.Widgets.Add(new Label { Text = "" });
     List<BrailleEntry> entries = _brailleParser.ParseFile(tableName + ".utb");
-    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.IgnoreCase));
+    
+    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
+    if(culture.IetfLanguageTag=="ja-JP")
+      entries.SortByGojuon(e => e.Characters);
     foreach (BrailleEntry entry in entries)
     {
       if (entry.Opcode == "letter")
