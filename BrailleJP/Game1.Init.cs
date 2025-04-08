@@ -13,7 +13,6 @@ public partial class Game1
     base.Initialize();
     this.Exiting += onExit;
     CrossSpeakManager.Instance.Initialize();
-    SpeechSynthesizer = new SpeechSynthesizer();
     // create hook to get keyboard and simulated keyboard (e.g. screen readers inputs) 
     TaskPoolGlobalHook hook = new();
     hook.KeyPressed += OnKeyPressed;

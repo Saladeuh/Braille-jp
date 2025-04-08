@@ -34,7 +34,11 @@ public partial class Game1
     {
       _desktop.OnChar(a.Character);
     };
-
+    _brailleTableViewPanels = new();
+    foreach (var culture in SUPPORTEDBRAILLETABLES.Keys)
+    {
+      _brailleTableViewPanels.Add(culture, null);
+    }
     CreateMainMenu();
     CreateGameUI();
     CreateSettingsUI();

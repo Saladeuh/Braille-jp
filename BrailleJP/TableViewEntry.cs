@@ -24,7 +24,7 @@ internal class TableViewEntry : AccessibleLabel
     if (IsKeyboardFocused)
     {
       //if (Game1.Instance.SpeechSynthesizer.State != System.Speech.Synthesis.SynthesizerState.Speaking)
-        Game1.Instance.SpeechSynthesizer.SpeakAsync(_entry.Characters);
+      Game1.Instance.SpeechSynthesizer.SpeakAsync(_entry.Characters);
       Game1.Instance.UIViewScrollSound.Play();
     }
   }

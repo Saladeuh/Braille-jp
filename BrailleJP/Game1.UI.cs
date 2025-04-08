@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using Myra.Graphics2D.UI;
 using System.Globalization;
+using System.Linq;
 
 namespace BrailleJP;
 
@@ -14,9 +15,9 @@ public partial class Game1
   private Panel _mainMenuPanel;
   private Panel _gamePanel;
   private Panel _settingsPanel;
-  private Panel _brailleTableViewPanel;
   private void SwitchToScreen(GameScreen screen)
   {
+    speechSynthesizer.SpeakAsyncCancelAll();
     _gameState.CurrentScreen = screen;
 
     switch (screen)
@@ -28,8 +29,9 @@ public partial class Game1
         MediaPlayer.Play(_titleScreenSong);
         break;
       case GameScreen.BrailleTableView:
-        CreateBrailleTableView("ja-jp-comp6", new CultureInfo("ja-Jp"));
-        _desktop.Root = _brailleTableViewPanel;
+        CultureInfo culture = SUPPORTEDBRAILLETABLES.Keys.First();
+        CreateBrailleTableView(culture);
+        _desktop.Root = _brailleTableViewPanels[culture];
         UpdateUIState();
         MediaPlayer.Play(_brailleTableViewSong);
         break;

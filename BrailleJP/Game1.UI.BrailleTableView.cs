@@ -9,9 +9,11 @@ namespace BrailleJP;
 
 public partial class Game1
 {
-  private void CreateBrailleTableView(string tableName, CultureInfo culture)
+  private Dictionary<CultureInfo, Panel?> _brailleTableViewPanels;
+  private void CreateBrailleTableView(CultureInfo culture)
   {
-    _brailleTableViewPanel = new Panel();
+    if (_brailleTableViewPanels[culture] != null) return;
+    _brailleTableViewPanels[culture] = new Panel();
     foreach (System.Speech.Synthesis.InstalledVoice voice in SpeechSynthesizer.GetInstalledVoices())
     {
       if (voice.Enabled && voice.VoiceInfo.Culture.TwoLetterISOLanguageName == culture.TwoLetterISOLanguageName)
@@ -25,14 +27,14 @@ public partial class Game1
     };
     Label titleLabel = new()
     {
-      Text = tableName,
+      Text = culture.Name,
       HorizontalAlignment = HorizontalAlignment.Center
     };
     tableViewGrid.Widgets.Add(titleLabel);
 
     // Space
     tableViewGrid.Widgets.Add(new Label { Text = "" });
-    List<BrailleEntry> entries = _brailleParser.ParseFile(tableName + ".utb");
+    List<BrailleEntry> entries = _brailleParser.ParseFile(SUPPORTEDBRAILLETABLES[culture] + ".utb");
     
     entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
     if(culture.IetfLanguageTag=="ja-JP")
@@ -45,7 +47,7 @@ public partial class Game1
         tableViewGrid.Widgets.Add(label);
       }
     }
-    _brailleTableViewPanel.Widgets.Add(tableViewGrid);
+    _brailleTableViewPanels[culture].Widgets.Add(tableViewGrid);
     _desktop.FocusedKeyboardWidget = titleLabel;
   }
 }
