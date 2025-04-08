@@ -27,6 +27,7 @@ public partial class Game1
         _desktop.Root = _mainMenuPanel;
         Widget playButton = _mainMenuPanel.FindChildById("playButton");
         playButton?.SetKeyboardFocus();
+        if(MediaPlayer.Queue.ActiveSong!=_titleScreenSong)
         MediaPlayer.Play(_titleScreenSong);
         break;
       case GameScreen.BrailleTableView:
