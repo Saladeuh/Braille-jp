@@ -43,6 +43,7 @@ public partial class Game1
 
   private void OnKeyPressed(object sender, KeyboardHookEventArgs e)
   {
+    if (!IsActive) return;
     Keys monogameKey = Utils.ConvertKeyCodeToMonogameKey(e.Data.KeyCode);
 
     if (monogameKey != Keys.None)
@@ -58,6 +59,7 @@ public partial class Game1
 
   private void OnKeyReleased(object sender, KeyboardHookEventArgs e)
   {
+    if (!IsActive) return;
     Keys monogameKey = Utils.ConvertKeyCodeToMonogameKey(e.Data.KeyCode);
 
     if (monogameKey != Keys.None)
