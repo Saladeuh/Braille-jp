@@ -14,6 +14,7 @@ public partial class Game1 : Game
   private GameState _gameState;
   private SpeechSynthesizer _speechSynthesizer;
   private BrailleTableParser _brailleParser;
+  public static LibLouisLoggingClient LibLouisLoggingClient { get; set; } = new LibLouisLoggingClient();
   // Singleton
   public static Game1 Instance { get; private set; }
   public SpeechSynthesizer SpeechSynthesizer { get => _speechSynthesizer; private set => _speechSynthesizer = value; }

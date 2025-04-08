@@ -12,9 +12,20 @@ public class BrailleAnalyzer
     return brailleChar - BRAILLE_UNICODE_OFFSET;
   }
 
-  private static char PatternToChar(int pattern)
+  public static char PatternToChar(int pattern)
   {
     return (char)(pattern + BRAILLE_UNICODE_OFFSET);
+  }
+
+  public static string PatternToChar(string pattern)
+  {
+    string result="";
+    var patterns= pattern.Split('-');
+    foreach (var patternChar in patterns)
+    {
+      result+=(pattern + BRAILLE_UNICODE_OFFSET);
+    }
+    return result;
   }
 
   private static int[] PatternToDots(int pattern)

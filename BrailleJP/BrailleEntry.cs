@@ -1,4 +1,6 @@
-﻿namespace BrailleJP;
+﻿using System.IO;
+
+namespace BrailleJP;
 
 public class BrailleEntry
 {
@@ -29,8 +31,9 @@ public class BrailleEntry
   {
     if (Opcode == "include")
       return $"Include file: {Characters}";
-
-    string result = $"{Opcode} {Characters} {DotPattern}";
+    var brailleTranslator = SharpLouis.Wrapper.Create(Path.GetFileName(this.SourceFile), Game1.LibLouisLoggingClient);
+    brailleTranslator.TranslateString(this.Characters, out var brailleDotChar);
+    string result = $"{brailleDotChar} {Characters} {DotPattern}";
     if (!string.IsNullOrEmpty(Comment))
       result += $" # {Comment}";
     return result;

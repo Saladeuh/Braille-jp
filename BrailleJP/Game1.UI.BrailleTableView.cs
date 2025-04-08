@@ -3,6 +3,7 @@ using Myra.Graphics2D.UI;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace BrailleJP;
 
@@ -32,11 +33,14 @@ public partial class Game1
     // Space
     tableViewGrid.Widgets.Add(new Label { Text = "" });
     List<BrailleEntry> entries = _brailleParser.ParseFile(tableName + ".utb");
-    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.IgnoreSymbols));
+    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.IgnoreCase));
     foreach (BrailleEntry entry in entries)
     {
-      TableViewEntry label = new(entry);
-      tableViewGrid.Widgets.Add(label);
+      if (entry.Opcode == "letter")
+      {
+        TableViewEntry label = new(entry);
+        tableViewGrid.Widgets.Add(label);
+      }
     }
     _brailleTableViewPanel.Widgets.Add(tableViewGrid);
     _desktop.FocusedKeyboardWidget = titleLabel;
