@@ -3,7 +3,7 @@
 public enum GameScreen
 {
   MainMenu,
-  Game,
+  BasicPraticce,
   BrailleTableView,
   Settings
 }

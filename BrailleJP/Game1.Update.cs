@@ -32,7 +32,7 @@ public partial class Game1
     {
       if (_gameState.CurrentScreen != GameScreen.MainMenu)
       {
-        if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
+        if (_gameState.CurrentScreen == GameScreen.BasicPraticce && !_gameState.IsPaused)
         {
           // paused in game
           _gameState.IsPaused = true;
@@ -99,9 +99,9 @@ public partial class Game1
         Exit();
       }
     }
-    if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
+    if (_gameState.CurrentScreen == GameScreen.BasicPraticce && !_gameState.IsPaused)
     {
-      UpdateGameLogic(gameTime);
+      UpdateBasicPraticeLogic(gameTime, currentKeyboardState);
     }
 
     UpdateUIState();
@@ -114,5 +114,14 @@ public partial class Game1
       _keysToProcess.Clear(); // Vider les touches à traiter puisqu'elles ont été traitées
     }
     base.Update(gameTime);
+  }
+
+  private void UpdateBasicPraticeLogic(GameTime gameTime, KeyboardState currentKeyboardState)
+  {
+
+    if (gameTime.TotalGameTime.Milliseconds % 1000 == 0)
+    {
+      _gameState.AddPoints(1);
+    }
   }
 }

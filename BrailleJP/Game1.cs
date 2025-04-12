@@ -14,27 +14,18 @@ public partial class Game1 : Game
 {
   private GameState _gameState;
   private BrailleTableParser _brailleParser;
-  private SpeechSynthesizer speechSynthesizer = new();
-
+  private Random _random;
   public static LibLouisLoggingClient LibLouisLoggingClient { get; set; } = new LibLouisLoggingClient();
   // Singleton
   public static Game1 Instance { get; private set; }
-  public SpeechSynthesizer SpeechSynthesizer { get => speechSynthesizer; private set => speechSynthesizer = value; }
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
     Content.RootDirectory = "Content";
+    _random = new Random();
     IsMouseVisible = true;
     _gameState = new GameState();
     Instance = this; // Set the static instance
-  }
-
-  private void UpdateGameLogic(GameTime gameTime)
-  {
-    if (gameTime.TotalGameTime.Milliseconds % 1000 == 0)
-    {
-      _gameState.AddPoints(1);
-    }
   }
 
   private void onExit(object sender, EventArgs e)

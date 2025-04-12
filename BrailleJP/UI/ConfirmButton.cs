@@ -13,6 +13,6 @@ public class ConfirmButton : AccessibleButton
 
     private void OnButtonClick(object sender, System.EventArgs e)
     {
-        Game1.Instance.UiConfirmSound.Play();
+        Game1.Instance.UIConfirmSound.Play();
     }
 }

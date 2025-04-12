@@ -20,7 +20,7 @@ public partial class Game1
   {
     speechSynthesizer.SpeakAsyncCancelAll();
     _gameState.CurrentScreen = screen;
-
+    CultureInfo culture = SUPPORTEDBRAILLETABLES.Keys.First();
     switch (screen)
     {
       case GameScreen.MainMenu:
@@ -31,14 +31,17 @@ public partial class Game1
           MediaPlayer.Play(_titleScreenSong);
         break;
       case GameScreen.BrailleTableView:
-        CultureInfo culture = SUPPORTEDBRAILLETABLES.Keys.First();
         CreateBrailleTableView(culture);
         _desktop.Root = _brailleTableViewPanels[culture];
         UpdateUIState();
         MediaPlayer.Play(_brailleTableViewSong);
         break;
-      case GameScreen.Game:
-        _desktop.Root = _gamePanel;
+      case GameScreen.BasicPraticce:
+        CreateBasicPractice(culture);
+        _desktop.Root = _basicPracticePanels[culture];
+        UpdateUIState();
+        //MediaPlayer.Play(_brailleTableViewSong);
+        _desktop.Root = _basicPracticePanels[culture];
         // Réinitialiser l'état du jeu ici si nécessaire
         _gameState.IsPaused = false;
         _gameState.Score = 0;
@@ -55,7 +58,7 @@ public partial class Game1
 
   private void UpdateUIState()
   {
-    if (_gameState.CurrentScreen == GameScreen.Game)
+    if (_gameState.CurrentScreen == GameScreen.BasicPraticce)
     {
       Label scoreLabel = _gamePanel.FindChildById("scoreLabel") as Label;
       if (scoreLabel != null)
@@ -164,7 +167,7 @@ public partial class Game1
   {
     GraphicsDevice.Clear(Color.Black);
 
-    if (_gameState.CurrentScreen == GameScreen.Game && !_gameState.IsPaused)
+    if (_gameState.CurrentScreen == GameScreen.BasicPraticce && !_gameState.IsPaused)
     {
       _spriteBatch.Begin();
       _spriteBatch.End();

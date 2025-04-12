@@ -13,13 +13,9 @@ public partial class Game1
   private Dictionary<CultureInfo, Panel?> _brailleTableViewPanels;
   private void CreateBrailleTableView(CultureInfo culture)
   {
+    SetVoiceLanguage(culture);
     if (_brailleTableViewPanels[culture] != null) return;
     _brailleTableViewPanels[culture] = new Panel();
-    foreach (System.Speech.Synthesis.InstalledVoice voice in SpeechSynthesizer.GetInstalledVoices())
-    {
-      if (voice.Enabled && voice.VoiceInfo.Culture.TwoLetterISOLanguageName == culture.TwoLetterISOLanguageName)
-        SpeechSynthesizer.SelectVoice(voice.VoiceInfo.Name);
-    }
     VerticalStackPanel tableViewGrid = new()
     {
       Spacing = 10,
@@ -35,10 +31,11 @@ public partial class Game1
 
     // Space
     tableViewGrid.Widgets.Add(new Label { Text = "" });
+
+
     List<BrailleEntry> entries = _brailleParser.ParseFile(SUPPORTEDBRAILLETABLES[culture] + ".utb");
-    
     entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
-    if(culture.IetfLanguageTag=="ja-JP")
+    if (culture.IetfLanguageTag == "ja-JP")
       entries.SortByGojuon(e => e.Characters);
     foreach (BrailleEntry entry in entries)
     {

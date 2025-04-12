@@ -36,6 +36,15 @@ public partial class Game1
       CrossSpeakManager.Instance.Output("Jeu démarré");
     };
     mainMenuGrid.Widgets.Add(playButton);
+    ConfirmButton basicPracticeButton = new("Entraînement")
+    {
+      Id = "basicPracticeButton"
+    };
+    basicPracticeButton.Click += (s, a) =>
+    {
+      SwitchToScreen(GameScreen.BasicPraticce);
+    };
+    mainMenuGrid.Widgets.Add(basicPracticeButton);
 
     ConfirmButton settingsButton = new("Paramètres")
     {

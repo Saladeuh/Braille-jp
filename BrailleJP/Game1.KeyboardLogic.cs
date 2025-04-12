@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using AccessibleMyraUI;
+using Microsoft.Xna.Framework.Input;
 using Myra.Graphics2D.UI;
 using SharpHook;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ public partial class Game1
     // navigation keys (arrows, tab, entrance)
     if (IsKeyPressed(Keys.Down, currentKeyboardState) || IsKeyPressed(Keys.Right, currentKeyboardState))
     {
+
       _desktop.FocusNext();
     }
 
