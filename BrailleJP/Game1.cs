@@ -1,4 +1,5 @@
-﻿using BrailleJP.UI;
+﻿using BrailleJP.MiniGames;
+using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -13,16 +14,18 @@ namespace BrailleJP;
 public partial class Game1 : Game
 {
   private GameState _gameState;
-  private BrailleTableParser _brailleParser;
-  private Random _random;
+
   public static LibLouisLoggingClient LibLouisLoggingClient { get; set; } = new LibLouisLoggingClient();
   // Singleton
   public static Game1 Instance { get; private set; }
+  public Random Random { get; set; }
+  public BrailleTableParser BrailleParser { get; set; }
+  public IMiniGame CurrentPlayingMiniGame { get; set; } = null;
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
     Content.RootDirectory = "Content";
-    _random = new Random();
+    Random = new Random();
     IsMouseVisible = true;
     _gameState = new GameState();
     Instance = this; // Set the static instance

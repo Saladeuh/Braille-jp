@@ -20,7 +20,7 @@ public partial class Game1
     Task.Run(() => hook.Run());
     _previousKeyboardState = Keyboard.GetState();
     _previousMouseState = Mouse.GetState();
-    _brailleParser = new BrailleTableParser(@"LibLouis\tables");
+    BrailleParser = new BrailleTableParser(@"LibLouis\tables");
   }
 
 }

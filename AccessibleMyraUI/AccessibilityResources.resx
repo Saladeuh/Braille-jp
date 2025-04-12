@@ -20,7 +20,7 @@
     <value>{0}</value>
   </data>
 	<data name="TextBox_Focus" xml:space="preserve">
-    <value>{0}, text field</value>
+    <value>{0}</value>
   </data>
 	<data name="TextBox_Empty" xml:space="preserve">
     <value>Empty text field</value>

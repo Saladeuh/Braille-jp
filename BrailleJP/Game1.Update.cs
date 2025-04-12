@@ -84,7 +84,6 @@ public partial class Game1
             Grid grid = _gamePanel.Widgets[0] as Grid;
             grid?.Widgets.Add(pauseMenu);
 
-            // Donner le focus au premier bouton
             resumeButton.SetKeyboardFocus();
           }
         }

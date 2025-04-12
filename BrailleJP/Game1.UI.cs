@@ -1,4 +1,5 @@
-﻿using BrailleJP.UI;
+﻿using BrailleJP.MiniGames;
+using BrailleJP.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -38,6 +39,7 @@ public partial class Game1
         break;
       case GameScreen.BasicPraticce:
         CreateBasicPractice(culture);
+        CurrentPlayingMiniGame = new BasicPractice(culture);
         _desktop.Root = _basicPracticePanels[culture];
         UpdateUIState();
         //MediaPlayer.Play(_brailleTableViewSong);

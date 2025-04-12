@@ -7,7 +7,7 @@
     <value>{0}</value>
   </data>
 	<data name="TextBox_Focus" xml:space="preserve">
-    <value>{0} : Zone de texte</value>
+    <value>{0}</value>
   </data>
 	<data name="TextBox_Empty" xml:space="preserve">
     <value>Zone de texte vide</value>

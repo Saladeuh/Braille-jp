@@ -205,7 +205,7 @@ namespace AccessibleMyraUI {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à {0}, text field.
+        ///   Recherche une chaîne localisée semblable à {0}.
         /// </summary>
         internal static string TextBox_Focus {
             get {

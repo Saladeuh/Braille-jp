@@ -20,7 +20,6 @@ public partial class Game1
     // navigation keys (arrows, tab, entrance)
     if (IsKeyPressed(Keys.Down, currentKeyboardState) || IsKeyPressed(Keys.Right, currentKeyboardState))
     {
-
       _desktop.FocusNext();
     }
 
@@ -38,7 +37,7 @@ public partial class Game1
     }
   }
 
-  private bool IsKeyPressed(Keys key, KeyboardState currentKeyboardState)
+  public bool IsKeyPressed(Keys key, KeyboardState currentKeyboardState)
   {
     return currentKeyboardState.IsKeyDown(key) && !_previousKeyboardState.IsKeyDown(key);
   }
