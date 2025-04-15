@@ -38,6 +38,7 @@ public partial class Game1
         MediaPlayer.Play(_brailleTableViewSong);
         break;
       case GameScreen.BasicPraticce:
+        MediaPlayer.Play(_basicPracticeSong);
         CreateBasicPractice(culture);
         CurrentPlayingMiniGame = new BasicPractice(culture);
         _desktop.Root = _basicPracticePanels[culture];
