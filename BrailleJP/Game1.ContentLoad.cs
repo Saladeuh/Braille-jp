@@ -9,6 +9,8 @@ namespace BrailleJP;
 public partial class Game1
 {
   public SoundEffect UIConfirmSound { get => _UiConfirmSound; private set => _UiConfirmSound = value; }
+  public SoundEffect UILittleVictorySound { get; private set; }
+  public SoundEffect UIFailSound { get; private set; }
   public SoundEffect UIViewScrollSound { get; private set; }
   public SoundEffect UIBackSound { get; private set; }
   private SoundEffect _UiConfirmSound;
@@ -24,8 +26,10 @@ public partial class Game1
     _brailleTableViewSong = Content.Load<Song>("music/PinnaPark");
     _basicPracticeSong = Content.Load<Song>("music/Super Paper Mario： Gloam Valley Arrangement");
     UIConfirmSound = Content.Load<SoundEffect>("ui/confirmation_001");
-    UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
     UIBackSound = Content.Load<SoundEffect>("ui/minimize_008");
+    UILittleVictorySound = Content.Load<SoundEffect>("ui/confirmation_004");
+    UIFailSound = Content.Load<SoundEffect>("ui/Cartoon Toy Squeaky Toy Squeaks 01");
+    UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
     MediaPlayer.IsRepeating = true;
     MediaPlayer.Volume = 0.5f;
     MyraEnvironment.Game = this;

@@ -39,7 +39,7 @@ public partial class Game1
         break;
       case GameScreen.BasicPraticce:
         MediaPlayer.Play(_basicPracticeSong);
-        CreateBasicPractice(culture);
+        CreateBasicPracticeUI(culture);
         CurrentPlayingMiniGame = new BasicPractice(culture);
         _desktop.Root = _basicPracticePanels[culture];
         UpdateUIState();

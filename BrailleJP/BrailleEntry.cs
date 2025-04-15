@@ -31,14 +31,14 @@ public class BrailleEntry
   {
     if (Opcode == "include")
       return $"Include file: {Characters}";
-    string brailleDotChar = BrailleChar;
+    string brailleDotChar = BrailleString;
     string result = $"{brailleDotChar} {Characters} {DotPattern}";
     if (!string.IsNullOrEmpty(Comment))
       result += $" # {Comment}";
     return result;
   }
 
-  public string BrailleChar
+  public string BrailleString
   {
     get
     {

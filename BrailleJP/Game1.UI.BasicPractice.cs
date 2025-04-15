@@ -13,7 +13,7 @@ public partial class Game1
 
   public BrailleInputTextField PracticeBrailleInput { get; set; }
 
-  private void CreateBasicPractice(CultureInfo culture)
+  private void CreateBasicPracticeUI(CultureInfo culture)
   {
     SetVoiceLanguage(culture);
     if (_brailleTableViewPanels[culture] != null) return;

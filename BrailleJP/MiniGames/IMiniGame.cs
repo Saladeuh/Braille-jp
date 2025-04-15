@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,5 @@ namespace BrailleJP.MiniGames;
 
 public interface IMiniGame
 {
-  public void HandleKeyboard(KeyboardState currentKeyboardState);
-
+  void Update(GameTime gameTime, KeyboardState currentKeyboardState);
 }
