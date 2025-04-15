@@ -14,7 +14,7 @@ public class LibLouisLoggingClient : SharpLouis.IClient
   public void OnWrapperLog(string message)
   {
 #if DEBUG
-    CrossSpeakManager.Instance.Output(message);
+    //CrossSpeakManager.Instance.Output(message);
 #endif
   }
 }

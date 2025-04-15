@@ -4,6 +4,7 @@ using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Myra.Graphics2D.UI;
+using SharpLouis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ public partial class Game1 : Game
   // Singleton
   public static Game1 Instance { get; private set; }
   public Random Random { get; set; }
+  public Wrapper InputBrailleTranslator { get; set; }
   public BrailleTableParser BrailleParser { get; set; }
   public IMiniGame CurrentPlayingMiniGame { get; set; } = null;
   public Game1()
@@ -26,6 +28,7 @@ public partial class Game1 : Game
     _graphics = new GraphicsDeviceManager(this);
     Content.RootDirectory = "Content";
     Random = new Random();
+    InputBrailleTranslator = SharpLouis.Wrapper.Create("fr-bfu-comp8.utb", Game1.LibLouisLoggingClient);
     IsMouseVisible = true;
     _gameState = new GameState();
     Instance = this; // Set the static instance
