@@ -235,10 +235,3 @@ public partial class BrailleTableParser
   [GeneratedRegex(@"\\x([0-9A-Fa-f]{4})")]
   private static partial Regex HexSeqRegex();
 }
-public enum FileEncoding
-{
-  ASCII,
-  UTF8,
-  UTF16BE,
-  UTF16LE
-}

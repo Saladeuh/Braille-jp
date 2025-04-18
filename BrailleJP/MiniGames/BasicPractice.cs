@@ -63,7 +63,7 @@ public class BasicPractice : IMiniGame
       Game1.Instance.PracticeBrailleInput.Text = e.OldValue as string;
       return;
     }
-    string wantedBrailleChars = CurrentEntry.BrailleString;
+    var wantedBrailleChars = CurrentEntry.BrailleString;
     if (Game1.Instance.InputBrailleTranslator.TranslateString(e.NewValue.ToLower(), out var inputBraille))
     {
       if (wantedBrailleChars == inputBraille)
