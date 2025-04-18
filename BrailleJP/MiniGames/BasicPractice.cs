@@ -35,7 +35,7 @@ public class BasicPractice : IMiniGame
     _victorySound = Game1.Instance.UILittleVictorySound.CreateInstance();
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
     Entries = Game1.Instance.BrailleParser.ParseFile(tablePath);
-    LetterEntries = Entries.Where(entry => entry.Opcode == "letter").ToList();
+    LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
     PeakRandomLetter();
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
   }

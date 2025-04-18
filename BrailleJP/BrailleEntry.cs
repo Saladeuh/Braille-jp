@@ -47,4 +47,5 @@ public class BrailleEntry
       return brailleDotChar;
     }
   }
+  public bool IsLowercaseLetter() => Opcode == "lowercase" || Opcode == "letter";
 }

@@ -33,13 +33,13 @@ public partial class Game1
     tableViewGrid.Widgets.Add(new Label { Text = "" });
 
 
-    List<BrailleEntry> entries = BrailleParser.ParseFile(SUPPORTEDBRAILLETABLES[culture] + ".utb");
+    var entries = BrailleParser.ParseFile(SUPPORTEDBRAILLETABLES[culture] + ".utb");
     entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
     if (culture.IetfLanguageTag == "ja-JP")
       entries.SortByGojuon(e => e.Characters);
     foreach (BrailleEntry entry in entries)
     {
-      if (entry.Opcode == "letter")
+      if (entry.IsLowercaseLetter())
       {
         TableViewEntry label = new(entry);
         tableViewGrid.Widgets.Add(label);
