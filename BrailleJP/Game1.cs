@@ -1,14 +1,8 @@
 ﻿using BrailleJP.MiniGames;
-using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using Myra.Graphics2D.UI;
 using SharpLouis;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Speech.Synthesis;
 
 namespace BrailleJP;
 
@@ -31,6 +25,7 @@ public partial class Game1 : Game
     InputBrailleTranslator = SharpLouis.Wrapper.Create("fr-bfu-comp8.utb", Game1.LibLouisLoggingClient);
     IsMouseVisible = true;
     _gameState = new GameState();
+    BrailleParser = new BrailleTableParser(@"LibLouis\tables");
     Instance = this; // Set the static instance
   }
 

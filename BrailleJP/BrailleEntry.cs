@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using Microsoft.Xna.Framework.Audio;
+using System;
+using System.IO;
 
 namespace BrailleJP;
 
@@ -47,5 +49,25 @@ public class BrailleEntry
       return brailleDotChar;
     }
   }
+  public SoundEffect Voice { get; set; }
+  public BrailleEntry(string opcode, string characters, string sourceFile, int lineNumber, string dotPattern = "", string comment="")
+  {
+    Opcode = opcode;
+    Characters = characters;
+    DotPattern = dotPattern;
+    Comment = comment;
+    SourceFile = sourceFile;
+    LineNumber = lineNumber;
+    var fileNameWithoutExt = Path.GetFileNameWithoutExtension(this.SourceFile);
+    var soundPath = $"speech/{fileNameWithoutExt}/{DotPattern}";
+    try
+    {
+      Voice = Game1.Instance.Content.Load<SoundEffect>(soundPath);
+    } catch(Exception _)
+    {
+      Voice=null;
+    }
+  }
+
   public bool IsLowercaseLetter() => Opcode == "lowercase" || Opcode == "letter";
 }

@@ -13,7 +13,6 @@ public partial class Game1
   private Dictionary<CultureInfo, Panel?> _brailleTableViewPanels;
   private void CreateBrailleTableView(CultureInfo culture)
   {
-    SetVoiceLanguage(culture);
     if (_brailleTableViewPanels[culture] != null) return;
     _brailleTableViewPanels[culture] = new Panel();
     VerticalStackPanel tableViewGrid = new()

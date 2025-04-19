@@ -19,7 +19,6 @@ public partial class Game1
   private Panel _settingsPanel;
   private void SwitchToScreen(GameScreen screen)
   {
-    speechSynthesizer.SpeakAsyncCancelAll();
     _gameState.CurrentScreen = screen;
     CultureInfo culture = SUPPORTEDBRAILLETABLES.Keys.First();
     switch (screen)

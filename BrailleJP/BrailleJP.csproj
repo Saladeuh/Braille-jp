@@ -38,7 +38,6 @@
 		<PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.1105" />
 		<PackageReference Include="Myra" Version="1.5.9" />
 		<PackageReference Include="SharpHook" Version="5.3.8" />
-		<PackageReference Include="System.Speech" Version="9.0.3" />
 		<PackageReference Include="TOWK.Utility.CrossSpeak" Version="1.0.0" />
 	</ItemGroup>
 	<ItemGroup>

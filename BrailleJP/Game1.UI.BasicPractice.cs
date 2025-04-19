@@ -15,7 +15,6 @@ public partial class Game1
 
   private void CreateBasicPracticeUI(CultureInfo culture)
   {
-    SetVoiceLanguage(culture);
     if (_brailleTableViewPanels[culture] != null) return;
     _basicPracticePanels[culture] = new Panel();
 

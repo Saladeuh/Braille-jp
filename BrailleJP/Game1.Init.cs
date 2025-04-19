@@ -1,7 +1,6 @@
 ﻿using CrossSpeak;
 using Microsoft.Xna.Framework.Input;
 using SharpHook;
-using System.Speech.Synthesis;
 using System.Threading.Tasks;
 
 namespace BrailleJP;
@@ -20,7 +19,6 @@ public partial class Game1
     Task.Run(() => hook.Run());
     _previousKeyboardState = Keyboard.GetState();
     _previousMouseState = Mouse.GetState();
-    BrailleParser = new BrailleTableParser(@"LibLouis\tables");
   }
 
 }

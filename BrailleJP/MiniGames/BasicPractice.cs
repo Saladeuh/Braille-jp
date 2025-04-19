@@ -43,7 +43,7 @@ public class BasicPractice : IMiniGame
   private void PeakRandomLetter()
   {
     CurrentEntry = LetterEntries[Game1.Instance.Random.Next(LetterEntries.Count)];
-    Game1.Instance.SpeechSynthesizer.Speak(CurrentEntry.Characters);
+    CurrentEntry.Voice.Play();
     CrossSpeakManager.Instance.Braille(CurrentEntry.BrailleString);
   }
 

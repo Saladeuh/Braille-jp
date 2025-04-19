@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -103,13 +104,11 @@ public partial class BrailleTableParser
     // Handle include statements
     if (line.TrimStart().StartsWith("include "))
     {
-      return new BrailleEntry
-      {
-        Opcode = "include",
-        Characters = line[(line.IndexOf("include ") + 8)..].Trim(),
-        SourceFile = sourceFile,
-        LineNumber = lineNumber
-      };
+      return new BrailleEntry("include",
+        line[(line.IndexOf("include ") + 8)..].Trim(),
+        sourceFile,
+        lineNumber
+      );
     }
 
     string[] parts = SplitLine(line);
@@ -133,15 +132,13 @@ public partial class BrailleTableParser
       parts = parts.Take(commentIndex).ToArray();
     }
 
-    BrailleEntry entry = new()
-    {
-      Opcode = parts[0].ToLower(),
-      Characters = ProcessEscapeSequences(parts[1]),
-      DotPattern = parts.Length > 2 ? parts[2] : "",
-      Comment = comment,
-      SourceFile = sourceFile,
-      LineNumber = lineNumber
-    };
+    BrailleEntry entry = new(parts[0].ToLower(),
+      ProcessEscapeSequences(parts[1]),
+           sourceFile,
+      lineNumber,
+ parts.Length > 2 ? parts[2] : "",
+      comment
+    );
 
     return IsValidOpcode(entry.Opcode) ? entry : null;
   }

@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using Myra;
 using Myra.Graphics2D.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BrailleJP;
 
@@ -17,7 +19,6 @@ public partial class Game1
   private Song _titleScreenSong;
   private Song _brailleTableViewSong;
   private Song _basicPracticeSong;
-
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -30,6 +31,8 @@ public partial class Game1
     UILittleVictorySound = Content.Load<SoundEffect>("ui/confirmation_004");
     UIFailSound = Content.Load<SoundEffect>("ui/Cartoon Toy Squeaky Toy Squeaks 01");
     UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
+    //string tablePath = Game1.SUPPORTEDBRAILLETABLES.First().Value + ".utb";
+    //var entries = BrailleParser.ParseFile(tablePath);
     MediaPlayer.IsRepeating = true;
     MediaPlayer.Volume = 0.5f;
     MyraEnvironment.Game = this;
