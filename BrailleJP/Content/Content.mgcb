@@ -61,11 +61,1727 @@
 /processorParam:Quality=Best
 /build:music/Super Paper Mario： Gloam Valley Arrangement.mp3
 
-#begin ui/Cartoon Toy Squeaky Toy Squeaks 01.wav
+#begin speech/fr-bfu-comp8/1.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:ui/Cartoon Toy Squeaky Toy Squeaks 01.wav
+/build:speech/fr-bfu-comp8/1.wav
+
+#begin speech/fr-bfu-comp8/12.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12.wav
+
+#begin speech/fr-bfu-comp8/123.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/123.wav
+
+#begin speech/fr-bfu-comp8/1234.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1234.wav
+
+#begin speech/fr-bfu-comp8/12345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12345.wav
+
+#begin speech/fr-bfu-comp8/123456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/123456.wav
+
+#begin speech/fr-bfu-comp8/1234567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1234567.wav
+
+#begin speech/fr-bfu-comp8/123457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/123457.wav
+
+#begin speech/fr-bfu-comp8/12346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12346.wav
+
+#begin speech/fr-bfu-comp8/123467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/123467.wav
+
+#begin speech/fr-bfu-comp8/12347.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12347.wav
+
+#begin speech/fr-bfu-comp8/12348.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12348.wav
+
+#begin speech/fr-bfu-comp8/1235.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1235.wav
+
+#begin speech/fr-bfu-comp8/12356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12356.wav
+
+#begin speech/fr-bfu-comp8/123567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/123567.wav
+
+#begin speech/fr-bfu-comp8/1235678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1235678.wav
+
+#begin speech/fr-bfu-comp8/123568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/123568.wav
+
+#begin speech/fr-bfu-comp8/12357.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12357.wav
+
+#begin speech/fr-bfu-comp8/12358.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12358.wav
+
+#begin speech/fr-bfu-comp8/1236.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1236.wav
+
+#begin speech/fr-bfu-comp8/12367.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12367.wav
+
+#begin speech/fr-bfu-comp8/1237.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1237.wav
+
+#begin speech/fr-bfu-comp8/124.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/124.wav
+
+#begin speech/fr-bfu-comp8/1245.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1245.wav
+
+#begin speech/fr-bfu-comp8/12456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12456.wav
+
+#begin speech/fr-bfu-comp8/124567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/124567.wav
+
+#begin speech/fr-bfu-comp8/1245678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1245678.wav
+
+#begin speech/fr-bfu-comp8/124568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/124568.wav
+
+#begin speech/fr-bfu-comp8/12457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12457.wav
+
+#begin speech/fr-bfu-comp8/124578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/124578.wav
+
+#begin speech/fr-bfu-comp8/1246.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1246.wav
+
+#begin speech/fr-bfu-comp8/12467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12467.wav
+
+#begin speech/fr-bfu-comp8/12468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12468.wav
+
+#begin speech/fr-bfu-comp8/1247.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1247.wav
+
+#begin speech/fr-bfu-comp8/125.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/125.wav
+
+#begin speech/fr-bfu-comp8/1256.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1256.wav
+
+#begin speech/fr-bfu-comp8/12567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12567.wav
+
+#begin speech/fr-bfu-comp8/12568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/12568.wav
+
+#begin speech/fr-bfu-comp8/1257.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1257.wav
+
+#begin speech/fr-bfu-comp8/126.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/126.wav
+
+#begin speech/fr-bfu-comp8/1267.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1267.wav
+
+#begin speech/fr-bfu-comp8/1268.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1268.wav
+
+#begin speech/fr-bfu-comp8/127.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/127.wav
+
+#begin speech/fr-bfu-comp8/1278.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1278.wav
+
+#begin speech/fr-bfu-comp8/128.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/128.wav
+
+#begin speech/fr-bfu-comp8/13.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13.wav
+
+#begin speech/fr-bfu-comp8/134.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/134.wav
+
+#begin speech/fr-bfu-comp8/1345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1345.wav
+
+#begin speech/fr-bfu-comp8/13456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13456.wav
+
+#begin speech/fr-bfu-comp8/134567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/134567.wav
+
+#begin speech/fr-bfu-comp8/1345678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1345678.wav
+
+#begin speech/fr-bfu-comp8/134568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/134568.wav
+
+#begin speech/fr-bfu-comp8/13457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13457.wav
+
+#begin speech/fr-bfu-comp8/134578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/134578.wav
+
+#begin speech/fr-bfu-comp8/1346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1346.wav
+
+#begin speech/fr-bfu-comp8/13467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13467.wav
+
+#begin speech/fr-bfu-comp8/13468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13468.wav
+
+#begin speech/fr-bfu-comp8/1347.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1347.wav
+
+#begin speech/fr-bfu-comp8/1348.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1348.wav
+
+#begin speech/fr-bfu-comp8/135.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/135.wav
+
+#begin speech/fr-bfu-comp8/1356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1356.wav
+
+#begin speech/fr-bfu-comp8/13567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13567.wav
+
+#begin speech/fr-bfu-comp8/1357.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1357.wav
+
+#begin speech/fr-bfu-comp8/13578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/13578.wav
+
+#begin speech/fr-bfu-comp8/1358.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1358.wav
+
+#begin speech/fr-bfu-comp8/136.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/136.wav
+
+#begin speech/fr-bfu-comp8/1367.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1367.wav
+
+#begin speech/fr-bfu-comp8/1368.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1368.wav
+
+#begin speech/fr-bfu-comp8/137.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/137.wav
+
+#begin speech/fr-bfu-comp8/1378.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1378.wav
+
+#begin speech/fr-bfu-comp8/14.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/14.wav
+
+#begin speech/fr-bfu-comp8/145.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/145.wav
+
+#begin speech/fr-bfu-comp8/1456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1456.wav
+
+#begin speech/fr-bfu-comp8/14567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/14567.wav
+
+#begin speech/fr-bfu-comp8/145678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/145678.wav
+
+#begin speech/fr-bfu-comp8/14568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/14568.wav
+
+#begin speech/fr-bfu-comp8/1457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1457.wav
+
+#begin speech/fr-bfu-comp8/146.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/146.wav
+
+#begin speech/fr-bfu-comp8/1467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1467.wav
+
+#begin speech/fr-bfu-comp8/1468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1468.wav
+
+#begin speech/fr-bfu-comp8/147.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/147.wav
+
+#begin speech/fr-bfu-comp8/1478.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1478.wav
+
+#begin speech/fr-bfu-comp8/148.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/148.wav
+
+#begin speech/fr-bfu-comp8/15.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/15.wav
+
+#begin speech/fr-bfu-comp8/156.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/156.wav
+
+#begin speech/fr-bfu-comp8/1567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1567.wav
+
+#begin speech/fr-bfu-comp8/1568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1568.wav
+
+#begin speech/fr-bfu-comp8/157.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/157.wav
+
+#begin speech/fr-bfu-comp8/1578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1578.wav
+
+#begin speech/fr-bfu-comp8/16.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/16.wav
+
+#begin speech/fr-bfu-comp8/167.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/167.wav
+
+#begin speech/fr-bfu-comp8/1678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/1678.wav
+
+#begin speech/fr-bfu-comp8/168.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/168.wav
+
+#begin speech/fr-bfu-comp8/17.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/17.wav
+
+#begin speech/fr-bfu-comp8/178.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/178.wav
+
+#begin speech/fr-bfu-comp8/18.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/18.wav
+
+#begin speech/fr-bfu-comp8/2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2.wav
+
+#begin speech/fr-bfu-comp8/23.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23.wav
+
+#begin speech/fr-bfu-comp8/234.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/234.wav
+
+#begin speech/fr-bfu-comp8/2345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2345.wav
+
+#begin speech/fr-bfu-comp8/23456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23456.wav
+
+#begin speech/fr-bfu-comp8/234567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/234567.wav
+
+#begin speech/fr-bfu-comp8/2345678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2345678.wav
+
+#begin speech/fr-bfu-comp8/234568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/234568.wav
+
+#begin speech/fr-bfu-comp8/23457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23457.wav
+
+#begin speech/fr-bfu-comp8/23458.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23458.wav
+
+#begin speech/fr-bfu-comp8/2346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2346.wav
+
+#begin speech/fr-bfu-comp8/23467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23467.wav
+
+#begin speech/fr-bfu-comp8/234678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/234678.wav
+
+#begin speech/fr-bfu-comp8/23468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23468.wav
+
+#begin speech/fr-bfu-comp8/2347.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2347.wav
+
+#begin speech/fr-bfu-comp8/2348.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2348.wav
+
+#begin speech/fr-bfu-comp8/235.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/235.wav
+
+#begin speech/fr-bfu-comp8/2356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2356.wav
+
+#begin speech/fr-bfu-comp8/23567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23567.wav
+
+#begin speech/fr-bfu-comp8/235678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/235678.wav
+
+#begin speech/fr-bfu-comp8/23568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23568.wav
+
+#begin speech/fr-bfu-comp8/23578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23578.wav
+
+#begin speech/fr-bfu-comp8/2358.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2358.wav
+
+#begin speech/fr-bfu-comp8/236.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/236.wav
+
+#begin speech/fr-bfu-comp8/23678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/23678.wav
+
+#begin speech/fr-bfu-comp8/237.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/237.wav
+
+#begin speech/fr-bfu-comp8/2378.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2378.wav
+
+#begin speech/fr-bfu-comp8/24.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/24.wav
+
+#begin speech/fr-bfu-comp8/245.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/245.wav
+
+#begin speech/fr-bfu-comp8/2456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2456.wav
+
+#begin speech/fr-bfu-comp8/24567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/24567.wav
+
+#begin speech/fr-bfu-comp8/2457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2457.wav
+
+#begin speech/fr-bfu-comp8/24578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/24578.wav
+
+#begin speech/fr-bfu-comp8/2458.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2458.wav
+
+#begin speech/fr-bfu-comp8/246.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/246.wav
+
+#begin speech/fr-bfu-comp8/2467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2467.wav
+
+#begin speech/fr-bfu-comp8/24678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/24678.wav
+
+#begin speech/fr-bfu-comp8/2468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2468.wav
+
+#begin speech/fr-bfu-comp8/247.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/247.wav
+
+#begin speech/fr-bfu-comp8/2478.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2478.wav
+
+#begin speech/fr-bfu-comp8/248.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/248.wav
+
+#begin speech/fr-bfu-comp8/25.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/25.wav
+
+#begin speech/fr-bfu-comp8/256.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/256.wav
+
+#begin speech/fr-bfu-comp8/2567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2567.wav
+
+#begin speech/fr-bfu-comp8/25678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/25678.wav
+
+#begin speech/fr-bfu-comp8/2568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2568.wav
+
+#begin speech/fr-bfu-comp8/257.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/257.wav
+
+#begin speech/fr-bfu-comp8/2578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2578.wav
+
+#begin speech/fr-bfu-comp8/26.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/26.wav
+
+#begin speech/fr-bfu-comp8/267.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/267.wav
+
+#begin speech/fr-bfu-comp8/2678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/2678.wav
+
+#begin speech/fr-bfu-comp8/268.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/268.wav
+
+#begin speech/fr-bfu-comp8/27.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/27.wav
+
+#begin speech/fr-bfu-comp8/28.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/28.wav
+
+#begin speech/fr-bfu-comp8/3.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3.wav
+
+#begin speech/fr-bfu-comp8/34.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/34.wav
+
+#begin speech/fr-bfu-comp8/345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/345.wav
+
+#begin speech/fr-bfu-comp8/3456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3456.wav
+
+#begin speech/fr-bfu-comp8/34567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/34567.wav
+
+#begin speech/fr-bfu-comp8/345678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/345678.wav
+
+#begin speech/fr-bfu-comp8/34568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/34568.wav
+
+#begin speech/fr-bfu-comp8/3457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3457.wav
+
+#begin speech/fr-bfu-comp8/34578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/34578.wav
+
+#begin speech/fr-bfu-comp8/3458.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3458.wav
+
+#begin speech/fr-bfu-comp8/346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/346.wav
+
+#begin speech/fr-bfu-comp8/3467.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3467.wav
+
+#begin speech/fr-bfu-comp8/34678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/34678.wav
+
+#begin speech/fr-bfu-comp8/3468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3468.wav
+
+#begin speech/fr-bfu-comp8/347.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/347.wav
+
+#begin speech/fr-bfu-comp8/3478.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3478.wav
+
+#begin speech/fr-bfu-comp8/348.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/348.wav
+
+#begin speech/fr-bfu-comp8/35.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/35.wav
+
+#begin speech/fr-bfu-comp8/356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/356.wav
+
+#begin speech/fr-bfu-comp8/35678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/35678.wav
+
+#begin speech/fr-bfu-comp8/357.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/357.wav
+
+#begin speech/fr-bfu-comp8/3578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3578.wav
+
+#begin speech/fr-bfu-comp8/358.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/358.wav
+
+#begin speech/fr-bfu-comp8/36.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/36.wav
+
+#begin speech/fr-bfu-comp8/3678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/3678.wav
+
+#begin speech/fr-bfu-comp8/368.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/368.wav
+
+#begin speech/fr-bfu-comp8/37.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/37.wav
+
+#begin speech/fr-bfu-comp8/378.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/378.wav
+
+#begin speech/fr-bfu-comp8/38.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/38.wav
+
+#begin speech/fr-bfu-comp8/4.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/4.wav
+
+#begin speech/fr-bfu-comp8/45.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/45.wav
+
+#begin speech/fr-bfu-comp8/456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/456.wav
+
+#begin speech/fr-bfu-comp8/4567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/4567.wav
+
+#begin speech/fr-bfu-comp8/45678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/45678.wav
+
+#begin speech/fr-bfu-comp8/4568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/4568.wav
+
+#begin speech/fr-bfu-comp8/457.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/457.wav
+
+#begin speech/fr-bfu-comp8/4578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/4578.wav
+
+#begin speech/fr-bfu-comp8/458.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/458.wav
+
+#begin speech/fr-bfu-comp8/46.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/46.wav
+
+#begin speech/fr-bfu-comp8/4678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/4678.wav
+
+#begin speech/fr-bfu-comp8/468.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/468.wav
+
+#begin speech/fr-bfu-comp8/47.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/47.wav
+
+#begin speech/fr-bfu-comp8/478.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/478.wav
+
+#begin speech/fr-bfu-comp8/5.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/5.wav
+
+#begin speech/fr-bfu-comp8/567.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/567.wav
+
+#begin speech/fr-bfu-comp8/5678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/5678.wav
+
+#begin speech/fr-bfu-comp8/568.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/568.wav
+
+#begin speech/fr-bfu-comp8/57.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/57.wav
+
+#begin speech/fr-bfu-comp8/578.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/578.wav
+
+#begin speech/fr-bfu-comp8/58.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/58.wav
+
+#begin speech/fr-bfu-comp8/6.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/6.wav
+
+#begin speech/fr-bfu-comp8/678.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/678.wav
+
+#begin speech/fr-bfu-comp8/68.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/68.wav
+
+#begin speech/fr-bfu-comp8/8.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/fr-bfu-comp8/8.wav
+
+#begin speech/ja-jp-comp6/1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1.wav
+
+#begin speech/ja-jp-comp6/12.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/12.wav
+
+#begin speech/ja-jp-comp6/123.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/123.wav
+
+#begin speech/ja-jp-comp6/1234.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1234.wav
+
+#begin speech/ja-jp-comp6/12345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/12345.wav
+
+#begin speech/ja-jp-comp6/123456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/123456.wav
+
+#begin speech/ja-jp-comp6/12346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/12346.wav
+
+#begin speech/ja-jp-comp6/1235.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1235.wav
+
+#begin speech/ja-jp-comp6/12356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/12356.wav
+
+#begin speech/ja-jp-comp6/1236.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1236.wav
+
+#begin speech/ja-jp-comp6/124.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/124.wav
+
+#begin speech/ja-jp-comp6/1245.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1245.wav
+
+#begin speech/ja-jp-comp6/12456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/12456.wav
+
+#begin speech/ja-jp-comp6/1246.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1246.wav
+
+#begin speech/ja-jp-comp6/125.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/125.wav
+
+#begin speech/ja-jp-comp6/1256.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1256.wav
+
+#begin speech/ja-jp-comp6/126.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/126.wav
+
+#begin speech/ja-jp-comp6/13.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/13.wav
+
+#begin speech/ja-jp-comp6/134.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/134.wav
+
+#begin speech/ja-jp-comp6/1345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1345.wav
+
+#begin speech/ja-jp-comp6/13456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/13456.wav
+
+#begin speech/ja-jp-comp6/1346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1346.wav
+
+#begin speech/ja-jp-comp6/135.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/135.wav
+
+#begin speech/ja-jp-comp6/1356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1356.wav
+
+#begin speech/ja-jp-comp6/136.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/136.wav
+
+#begin speech/ja-jp-comp6/14.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/14.wav
+
+#begin speech/ja-jp-comp6/145.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/145.wav
+
+#begin speech/ja-jp-comp6/1456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/1456.wav
+
+#begin speech/ja-jp-comp6/146.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/146.wav
+
+#begin speech/ja-jp-comp6/15.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/15.wav
+
+#begin speech/ja-jp-comp6/156.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/156.wav
+
+#begin speech/ja-jp-comp6/16.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/16.wav
+
+#begin speech/ja-jp-comp6/2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/2.wav
+
+#begin speech/ja-jp-comp6/234.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/234.wav
+
+#begin speech/ja-jp-comp6/2345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/2345.wav
+
+#begin speech/ja-jp-comp6/23456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/23456.wav
+
+#begin speech/ja-jp-comp6/2346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/2346.wav
+
+#begin speech/ja-jp-comp6/24.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/24.wav
+
+#begin speech/ja-jp-comp6/245.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/245.wav
+
+#begin speech/ja-jp-comp6/2456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/2456.wav
+
+#begin speech/ja-jp-comp6/246.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/246.wav
+
+#begin speech/ja-jp-comp6/256.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/256.wav
+
+#begin speech/ja-jp-comp6/3.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/3.wav
+
+#begin speech/ja-jp-comp6/34.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/34.wav
+
+#begin speech/ja-jp-comp6/345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/345.wav
+
+#begin speech/ja-jp-comp6/346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/346.wav
+
+#begin speech/ja-jp-comp6/35.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/35.wav
+
+#begin speech/ja-jp-comp6/356.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/356.wav
+
+#begin speech/ja-jp-comp6/4.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/4.wav
+
+#begin speech/ja-jp-comp6/45-1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/45-1.wav
+
+#begin speech/ja-jp-comp6/45-12.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/45-12.wav
+
+#begin speech/ja-jp-comp6/45-124.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/45-124.wav
+
+#begin speech/ja-jp-comp6/45-14.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/45-14.wav
+
+#begin speech/ja-jp-comp6/45-24.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/45-24.wav
+
+#begin speech/ja-jp-comp6/45.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/45.wav
+
+#begin speech/ja-jp-comp6/46.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/46.wav
+
+#begin speech/ja-jp-comp6/5-12345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-12345.wav
+
+#begin speech/ja-jp-comp6/5-12346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-12346.wav
+
+#begin speech/ja-jp-comp6/5-1235.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1235.wav
+
+#begin speech/ja-jp-comp6/5-1236.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1236.wav
+
+#begin speech/ja-jp-comp6/5-12456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-12456.wav
+
+#begin speech/ja-jp-comp6/5-1246.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1246.wav
+
+#begin speech/ja-jp-comp6/5-1256.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1256.wav
+
+#begin speech/ja-jp-comp6/5-126.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-126.wav
+
+#begin speech/ja-jp-comp6/5-1345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1345.wav
+
+#begin speech/ja-jp-comp6/5-1346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1346.wav
+
+#begin speech/ja-jp-comp6/5-135.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-135.wav
+
+#begin speech/ja-jp-comp6/5-136.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-136.wav
+
+#begin speech/ja-jp-comp6/5-1456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-1456.wav
+
+#begin speech/ja-jp-comp6/5-146.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-146.wav
+
+#begin speech/ja-jp-comp6/5-156.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-156.wav
+
+#begin speech/ja-jp-comp6/5-16.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-16.wav
+
+#begin speech/ja-jp-comp6/5-2345.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-2345.wav
+
+#begin speech/ja-jp-comp6/5-2346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-2346.wav
+
+#begin speech/ja-jp-comp6/5-2456.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-2456.wav
+
+#begin speech/ja-jp-comp6/5-246.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5-246.wav
+
+#begin speech/ja-jp-comp6/5.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/5.wav
+
+#begin speech/ja-jp-comp6/56.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/56.wav
+
+#begin speech/ja-jp-comp6/6-12346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/6-12346.wav
+
+#begin speech/ja-jp-comp6/6-1236.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/6-1236.wav
+
+#begin speech/ja-jp-comp6/6-1346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/6-1346.wav
+
+#begin speech/ja-jp-comp6/6-136.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/6-136.wav
+
+#begin speech/ja-jp-comp6/6-2346.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:speech/ja-jp-comp6/6-2346.wav
 
 #begin ui/Cartoon Toy Squeaky Toy Squeaks 01.wav
 /importer:WavImporter
@@ -79,18 +1795,6 @@
 /processorParam:Quality=Best
 /build:ui/confirmation_001.wav
 
-#begin ui/confirmation_001.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/confirmation_001.wav
-
-#begin ui/confirmation_002.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/confirmation_002.wav
-
 #begin ui/confirmation_002.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -102,18 +1806,6 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/confirmation_003.wav
-
-#begin ui/confirmation_003.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/confirmation_003.wav
-
-#begin ui/confirmation_004.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/confirmation_004.wav
 
 #begin ui/confirmation_004.wav
 /importer:WavImporter
@@ -133,29 +1825,11 @@
 /processorParam:Quality=Best
 /build:ui/OBJCont_Coffee Tin Lid Open 3_RogueWaves_KawaiiUI.wav
 
-#begin ui/OBJCont_Coffee Tin Lid Open 3_RogueWaves_KawaiiUI.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/OBJCont_Coffee Tin Lid Open 3_RogueWaves_KawaiiUI.wav
-
 #begin ui/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav
-
-#begin ui/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav
-
-#begin ui/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav
 
 #begin ui/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav
 /importer:WavImporter
@@ -169,29 +1843,11 @@
 /processorParam:Quality=Best
 /build:ui/UIClick_Operating System UI Cursor_RogueWaves_KawaiiUI.wav
 
-#begin ui/UIClick_Operating System UI Cursor_RogueWaves_KawaiiUI.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/UIClick_Operating System UI Cursor_RogueWaves_KawaiiUI.wav
-
 #begin ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
-
-#begin ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Animal Frog Pinewood Tree Frog Warning Call 02.wav
-
-#begin ui/view/Foley Paper Unroll 01.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Foley Paper Unroll 01.wav
 
 #begin ui/view/Foley Paper Unroll 01.wav
 /importer:WavImporter
@@ -205,29 +1861,11 @@
 /processorParam:Quality=Best
 /build:ui/view/Foley Paper Unroll Fast 01.wav
 
-#begin ui/view/Foley Paper Unroll Fast 01.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Foley Paper Unroll Fast 01.wav
-
 #begin ui/view/Paper_Newspaper_Light_Movement_01.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/view/Paper_Newspaper_Light_Movement_01.wav
-
-#begin ui/view/Paper_Newspaper_Light_Movement_01.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Paper_Newspaper_Light_Movement_01.wav
-
-#begin ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
 
 #begin ui/view/Paper_Pergament_Pages_Turn_Flip_20.wav
 /importer:WavImporter
@@ -241,18 +1879,6 @@
 /processorParam:Quality=Best
 /build:ui/view/Paper,Tear,Check out of Checkbook.wav
 
-#begin ui/view/Paper,Tear,Check out of Checkbook.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Paper,Tear,Check out of Checkbook.wav
-
-#begin ui/view/Parched,paper,movement,linen,shake,crimp,wobble.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/Parched,paper,movement,linen,shake,crimp,wobble.wav
-
 #begin ui/view/Parched,paper,movement,linen,shake,crimp,wobble.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -264,18 +1890,6 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
-
-#begin ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56.wav
-
-#begin ui/view/User Interface Click Button 25.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ui/view/User Interface Click Button 25.wav
 
 #begin ui/view/User Interface Click Button 25.wav
 /importer:WavImporter
