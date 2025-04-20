@@ -19,11 +19,11 @@ public class BrailleAnalyzer
 
   public static string PatternToChar(string pattern)
   {
-    string result="";
-    var patterns= pattern.Split('-');
+    string result = "";
+    var patterns = pattern.Split('-');
     foreach (var patternChar in patterns)
     {
-      result+=(pattern + BRAILLE_UNICODE_OFFSET);
+      result += pattern + BRAILLE_UNICODE_OFFSET;
     }
     return result;
   }

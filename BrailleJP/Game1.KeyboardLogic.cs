@@ -1,5 +1,4 @@
-﻿using AccessibleMyraUI;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
 using Myra.Graphics2D.UI;
 using SharpHook;
 using System.Collections.Generic;

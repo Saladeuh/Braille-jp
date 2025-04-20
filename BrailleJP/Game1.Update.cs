@@ -1,7 +1,5 @@
-﻿using BrailleJP.UI;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Myra.Graphics2D.UI;
 using System.Collections.Generic;
 using System.Linq;
 

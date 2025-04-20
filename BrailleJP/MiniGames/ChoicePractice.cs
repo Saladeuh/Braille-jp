@@ -2,22 +2,17 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
-using Myra.Events;
 using SharpLouis;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace BrailleJP.MiniGames;
 
 public class ChoicePractice : IMiniGame
 {
-  private CultureInfo Culture;
+  private readonly CultureInfo Culture;
   public List<BrailleEntry> Entries { get; private set; }
   public List<BrailleEntry> LetterEntries { get; private set; }
 
@@ -28,8 +23,8 @@ public class ChoicePractice : IMiniGame
   private BrailleEntry _guess;
 
   public Wrapper BrailleTranslator { get; private set; }
-  private SoundEffectInstance _victorySound;
-  private SoundEffectInstance _failSound;
+  private readonly SoundEffectInstance _victorySound;
+  private readonly SoundEffectInstance _failSound;
   private bool _isPlayingVictorySound = false;
 
   public ChoicePractice(CultureInfo culture)
@@ -83,15 +78,12 @@ public class ChoicePractice : IMiniGame
     {
       userGuess = _choice2;
     }
-    else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D3, Keys.NumPad3))
+    else
     {
-      userGuess = _choice3;
+      userGuess = Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D3, Keys.NumPad3)
+        ? _choice3
+        : Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D4, Keys.NumPad4) ? _choice4 : null;
     }
-    else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D4, Keys.NumPad4))
-    {
-      userGuess = _choice4;
-    }
-    else { userGuess = null; }
 
     if (userGuess != null && userGuess == _guess)
     {

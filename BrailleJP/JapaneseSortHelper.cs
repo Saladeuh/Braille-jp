@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public static class JapaneseSortHelper
 {
   // Correspondence table for the Gojūon order (traditional Japanese order)
-  private static readonly Dictionary<char, int> GojuonOrder = new Dictionary<char, int>
-    {
+  private static readonly Dictionary<char, int> GojuonOrder = new()
+  {
         // Ordre des kanas: a, i, u, e, o, puis ka, ki, ku, ke, ko, etc.
         
         // Hiragana
@@ -75,7 +74,7 @@ public static class JapaneseSortHelper
     }
 
     // For characters that are not in the table, use their unicode value
-    return (int)c;
+    return c;
   }
 
   // Extension method to sort a list of Brailleentry according to the gojūon order

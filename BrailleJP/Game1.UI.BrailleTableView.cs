@@ -1,10 +1,8 @@
-﻿using AccessibleMyraUI;
-using BrailleJP.UI;
+﻿using BrailleJP.UI;
 using Myra.Graphics2D.UI;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 
 namespace BrailleJP;
 

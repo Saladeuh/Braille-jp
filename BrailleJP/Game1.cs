@@ -8,7 +8,7 @@ namespace BrailleJP;
 
 public partial class Game1 : Game
 {
-  private GameState _gameState;
+  private readonly GameState _gameState;
 
   public static LibLouisLoggingClient LibLouisLoggingClient { get; set; } = new LibLouisLoggingClient();
   // Singleton
@@ -23,7 +23,7 @@ public partial class Game1 : Game
     Content.RootDirectory = "Content";
     Random = new Random();
     _basicPracticePanels = new();
-    _choicePracticePanels=new();
+    _choicePracticePanels = new();
     foreach (var culture in SUPPORTEDBRAILLETABLES.Keys)
     {
       _basicPracticePanels[culture] = null;

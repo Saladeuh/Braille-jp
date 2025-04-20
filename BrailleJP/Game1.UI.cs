@@ -11,7 +11,7 @@ namespace BrailleJP;
 
 public partial class Game1
 {
-  private GraphicsDeviceManager _graphics;
+  private readonly GraphicsDeviceManager _graphics;
   private SpriteBatch _spriteBatch;
   private Desktop _desktop;
   private Panel _mainMenuPanel;

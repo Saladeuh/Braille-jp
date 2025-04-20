@@ -1,5 +1,4 @@
 ﻿using AccessibleMyraUI;
-using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Myra.Graphics2D.UI;
@@ -27,7 +26,7 @@ public partial class Game1
     });
 
     HorizontalStackPanel volumePanel = new() { Spacing = 5 };
-    volumePanel.Widgets.Add(new AccessibleLabel ("Volume:"));
+    volumePanel.Widgets.Add(new AccessibleLabel("Volume:"));
 
     AccessibleSlider volumeSlider = new(0.8f)
     {

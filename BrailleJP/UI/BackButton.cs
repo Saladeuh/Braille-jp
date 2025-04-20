@@ -1,5 +1,4 @@
 ﻿using AccessibleMyraUI;
-using Microsoft.Xna.Framework.Audio;
 using Myra.Graphics2D.UI;
 
 namespace BrailleJP;

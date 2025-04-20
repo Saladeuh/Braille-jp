@@ -1,6 +1,4 @@
 ﻿using AccessibleMyraUI;
-using BrailleJP.UI;
-using CrossSpeak;
 using Myra.Graphics2D.UI;
 using System.Collections.Generic;
 using System.Globalization;

@@ -1,7 +1,4 @@
-﻿using AccessibleMyraUI;
-using BrailleJP.UI;
-using CrossSpeak;
-using Myra.Graphics2D.UI;
+﻿using Myra.Graphics2D.UI;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -9,7 +6,7 @@ namespace BrailleJP;
 
 public partial class Game1
 {
-  private Dictionary<CultureInfo, Panel?> _choicePracticePanels;
+  private readonly Dictionary<CultureInfo, Panel?> _choicePracticePanels;
   private void CreateChoicePracticeUI(CultureInfo culture)
   {
     if (_choicePracticePanels[culture] != null) return;

@@ -7,24 +7,20 @@ using SharpLouis;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace BrailleJP.MiniGames;
 
 public class BasicPractice : IMiniGame
 {
-  private CultureInfo Culture;
+  private readonly CultureInfo Culture;
 
   public List<BrailleEntry> Entries { get; private set; }
   public List<BrailleEntry> LetterEntries { get; private set; }
   public BrailleEntry CurrentEntry { get; private set; }
   public Wrapper BrailleTranslator { get; private set; }
-  private SoundEffectInstance _victorySound;
-  private SoundEffectInstance _failSound;
+  private readonly SoundEffectInstance _victorySound;
+  private readonly SoundEffectInstance _failSound;
   private bool _isPlayingVictorySound = false;
 
   public BasicPractice(CultureInfo culture)
@@ -60,7 +56,7 @@ public class BasicPractice : IMiniGame
     if (e.NewValue == string.Empty) return;
     if (_victorySound.State == SoundState.Playing)
     {
-      Game1.Instance.PracticeBrailleInput.Text = e.OldValue as string;
+      Game1.Instance.PracticeBrailleInput.Text = e.OldValue;
       return;
     }
     var wantedBrailleChars = CurrentEntry.BrailleString;

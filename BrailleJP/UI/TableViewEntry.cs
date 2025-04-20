@@ -2,17 +2,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrailleJP.UI;
 
 internal class TableViewEntry : AccessibleLabel
 {
-  private SoundEffect _scrollSound;
-  private BrailleEntry _entry;
+  private readonly SoundEffect _scrollSound;
+  private readonly BrailleEntry _entry;
 
   public TableViewEntry(BrailleEntry brailleEntry, Color? textColor = null) : base(brailleEntry.ToString(), textColor)
   {
