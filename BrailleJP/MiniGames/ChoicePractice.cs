@@ -71,6 +71,8 @@ public class ChoicePractice : IMiniGame
     if (_isPlayingVictorySound && _victorySound.State == SoundState.Stopped)
     {
       _isPlayingVictorySound = false;
+      PeakRandomChoices();
+      ShowChoices();
     }
     BrailleEntry userGuess;
     if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D1, Keys.NumPad1))
@@ -80,18 +82,24 @@ public class ChoicePractice : IMiniGame
     else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D2, Keys.NumPad2))
     {
       userGuess = _choice2;
-    } else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D3, Keys.NumPad3))
+    }
+    else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D3, Keys.NumPad3))
     {
       userGuess = _choice3;
-    } else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D4, Keys.NumPad4))
+    }
+    else if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D4, Keys.NumPad4))
     {
       userGuess = _choice4;
-    } else { userGuess = null; }
+    }
+    else { userGuess = null; }
 
-    if (userGuess != null && userGuess == _guess) {
+    if (userGuess != null && userGuess == _guess)
+    {
       _victorySound.Play();
       _isPlayingVictorySound = true;
-      PeakRandomChoices();
+    }
+    else if (userGuess != null)
+    {
       ShowChoices();
     }
   }
