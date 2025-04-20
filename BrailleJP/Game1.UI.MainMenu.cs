@@ -46,6 +46,16 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(basicPracticeButton);
 
+    ConfirmButton choicePracticeButton = new("Choix")
+    {
+      Id = "choicePracticeButton"
+    };
+    choicePracticeButton.Click += (s, a) =>
+    {
+      SwitchToScreen(GameScreen.ChoicePraticce);
+    };
+    mainMenuGrid.Widgets.Add(choicePracticeButton);
+
     ConfirmButton settingsButton = new("Paramètres")
     {
       Id = "settingsButton"

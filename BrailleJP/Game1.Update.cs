@@ -28,7 +28,7 @@ public partial class Game1
     _desktop.UpdateInput();
     HandleKeyboardNavigation(currentKeyboardState);
     // quit on escape key
-    if (IsKeyPressed(Keys.Escape, currentKeyboardState))
+    if (IsKeyPressed(currentKeyboardState, Keys.Escape))
     {
       if (_gameState.CurrentScreen != GameScreen.MainMenu)
       {
@@ -39,7 +39,7 @@ public partial class Game1
         Exit();
       }
     }
-    if (_gameState.CurrentScreen == GameScreen.BasicPraticce && !_gameState.IsPaused)
+    if ((_gameState.CurrentScreen == GameScreen.BasicPraticce || _gameState.CurrentScreen == GameScreen.ChoicePraticce) && !_gameState.IsPaused)
     {
       CurrentPlayingMiniGame.Update(gameTime, currentKeyboardState);
     }

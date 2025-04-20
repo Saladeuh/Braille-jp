@@ -18,16 +18,16 @@ public partial class Game1
   private void HandleKeyboardNavigation(KeyboardState currentKeyboardState)
   {
     // navigation keys (arrows, tab, entrance)
-    if (IsKeyPressed(Keys.Down, currentKeyboardState) || IsKeyPressed(Keys.Right, currentKeyboardState))
+    if (IsKeyPressed(currentKeyboardState, Keys.Down) || IsKeyPressed(currentKeyboardState, Keys.Right))
     {
       _desktop.FocusNext();
     }
 
-    if (IsKeyPressed(Keys.Up, currentKeyboardState) || IsKeyPressed(Keys.Left, currentKeyboardState))
+    if (IsKeyPressed(currentKeyboardState, Keys.Up) || IsKeyPressed(currentKeyboardState, Keys.Left))
     {
       _desktop.FocusPrevious();
     }
-    if (IsKeyPressed(Keys.Enter, currentKeyboardState))
+    if (IsKeyPressed(currentKeyboardState, Keys.Enter))
     {
       Widget focused = _desktop.FocusedKeyboardWidget;
       if (focused is Button button)
@@ -37,9 +37,16 @@ public partial class Game1
     }
   }
 
-  public bool IsKeyPressed(Keys key, KeyboardState currentKeyboardState)
+  public bool IsKeyPressed(KeyboardState currentKeyboardState, params Keys[] keys)
   {
-    return currentKeyboardState.IsKeyDown(key) && !_previousKeyboardState.IsKeyDown(key);
+    foreach (Keys key in keys)
+    {
+      if (currentKeyboardState.IsKeyDown(key) && !_previousKeyboardState.IsKeyDown(key))
+      {
+        return true;
+      }
+    }
+    return false;
   }
 
   private void OnKeyPressed(object sender, KeyboardHookEventArgs e)

@@ -22,6 +22,13 @@ public partial class Game1 : Game
     _graphics = new GraphicsDeviceManager(this);
     Content.RootDirectory = "Content";
     Random = new Random();
+    _basicPracticePanels = new();
+    _choicePracticePanels=new();
+    foreach (var culture in SUPPORTEDBRAILLETABLES.Keys)
+    {
+      _basicPracticePanels[culture] = null;
+      _choicePracticePanels[culture] = null;
+    }
     InputBrailleTranslator = SharpLouis.Wrapper.Create("fr-bfu-comp8.utb", Game1.LibLouisLoggingClient);
     IsMouseVisible = true;
     _gameState = new GameState();

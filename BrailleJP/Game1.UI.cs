@@ -41,12 +41,14 @@ public partial class Game1
         CreateBasicPracticeUI(culture);
         CurrentPlayingMiniGame = new BasicPractice(culture);
         _desktop.Root = _basicPracticePanels[culture];
-        UpdateUIState();
-        //MediaPlayer.Play(_brailleTableViewSong);
         _desktop.Root = _basicPracticePanels[culture];
-        // Réinitialiser l'état du jeu ici si nécessaire
-        _gameState.IsPaused = false;
-        _gameState.Score = 0;
+        UpdateUIState();
+        break;
+      case GameScreen.ChoicePraticce:
+        MediaPlayer.Play(_basicPracticeSong);
+        CreateChoicePracticeUI(culture);
+        CurrentPlayingMiniGame = new ChoicePractice(culture);
+        _desktop.Root = _choicePracticePanels[culture];
         UpdateUIState();
         break;
       case GameScreen.Settings:

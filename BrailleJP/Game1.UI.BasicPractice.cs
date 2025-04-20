@@ -15,7 +15,7 @@ public partial class Game1
 
   private void CreateBasicPracticeUI(CultureInfo culture)
   {
-    if (_brailleTableViewPanels[culture] != null) return;
+    if (_basicPracticePanels[culture] != null) return;
     _basicPracticePanels[culture] = new Panel();
 
     VerticalStackPanel basicPracticeGrid = new()

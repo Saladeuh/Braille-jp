@@ -5,5 +5,6 @@ public enum GameScreen
   MainMenu,
   BasicPraticce,
   BrailleTableView,
-  Settings
+  Settings,
+  ChoicePraticce
 }
