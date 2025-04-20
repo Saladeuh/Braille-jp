@@ -1,6 +1,6 @@
-﻿using System;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Myra.Graphics2D.UI;
+using System;
 
 namespace AccessibleMyraUI;
 
@@ -30,12 +30,7 @@ public class AccessibleTextBox : TextBox
 
   private void AnnounceText()
   {
-    string announcement;
-    if (string.IsNullOrEmpty(Text))
-      announcement = AccessibilityResources.TextBox_Empty;
-    else
-      announcement = string.Format(AccessibilityResources.TextBox_Focus, Text);
-
+    string announcement = string.IsNullOrEmpty(Text) ? AccessibilityResources.TextBox_Empty : string.Format(AccessibilityResources.TextBox_Focus, Text);
     CrossSpeakManager.Instance.Output(announcement);
   }
 }

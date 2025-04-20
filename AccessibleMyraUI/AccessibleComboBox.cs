@@ -1,6 +1,6 @@
-﻿using System;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Myra.Graphics2D.UI;
+using System;
 
 namespace AccessibleMyraUI;
 
@@ -28,12 +28,9 @@ public class AccessibleComboBox : ComboView
 
   private void AnnounceSelection()
   {
-    string announcement;
-    if (SelectedItem != null)
-      announcement = string.Format(AccessibilityResources.ComboBox_Selected, SelectedItem);
-    else
-      announcement = AccessibilityResources.ComboBox_Focus;
-
+    string announcement = SelectedItem != null
+      ? string.Format(AccessibilityResources.ComboBox_Selected, SelectedItem)
+      : AccessibilityResources.ComboBox_Focus;
     CrossSpeakManager.Instance.Output(announcement);
   }
 }

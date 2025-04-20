@@ -1,6 +1,6 @@
-﻿using System;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Myra.Graphics2D.UI;
+using System;
 
 namespace AccessibleMyraUI;
 
@@ -37,5 +37,5 @@ public class AccessibleCheckBox : CheckButton
       var announcement = string.Format(resourceKey, label.Text);
       CrossSpeakManager.Instance.Output(announcement);
     }
-    }
+  }
 }

@@ -1,12 +1,12 @@
-﻿using System;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Myra.Graphics2D.UI;
+using System;
 
 namespace AccessibleMyraUI;
 
 public class AccessibleToggleButton : Button
 {
-  private bool _isToggled;
+  private readonly bool _isToggled;
   public event EventHandler ToggledChanged;
 
   public AccessibleToggleButton(string text, bool isToggled = false, int width = 200)
@@ -23,7 +23,7 @@ public class AccessibleToggleButton : Button
 
   private void OnAccessibleTouchDown(object sender, EventArgs e)
   {
-    Enabled=!Enabled;
+    Enabled = !Enabled;
     AnnounceState();
   }
 

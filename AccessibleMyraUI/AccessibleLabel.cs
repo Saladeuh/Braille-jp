@@ -1,7 +1,7 @@
-﻿using System;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Myra.Graphics2D.UI;
+using System;
 
 namespace AccessibleMyraUI;
 

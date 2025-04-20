@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Myra.Graphics2D.UI;
-using static System.Net.Mime.MediaTypeNames;
+using System;
 
 namespace AccessibleMyraUI;
 public class AccessibleListBox : ListView
@@ -33,12 +28,9 @@ public class AccessibleListBox : ListView
 
   private void AnnounceSelection()
   {
-    string announcement;
-    if (SelectedItem != null)
-      announcement = string.Format(AccessibilityResources.ListBox_Selected, SelectedItem);
-    else
-      announcement = AccessibilityResources.ListBox_NoSelection;
-
+    string announcement = SelectedItem != null
+      ? string.Format(AccessibilityResources.ListBox_Selected, SelectedItem)
+      : AccessibilityResources.ListBox_NoSelection;
     CrossSpeakManager.Instance.Output(announcement);
   }
 }
