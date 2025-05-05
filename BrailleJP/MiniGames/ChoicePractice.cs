@@ -23,12 +23,16 @@ public class ChoicePractice : IMiniGame
   private BrailleEntry _guess;
 
   public Wrapper BrailleTranslator { get; private set; }
+  public bool IsRunning { get; set; }
+
   private readonly SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;
   private bool _isPlayingVictorySound = false;
+  private int _googGuesses;
 
   public ChoicePractice(CultureInfo culture)
   {
+    IsRunning = true;
     this.Culture = culture;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture] + ".utb";
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
@@ -89,15 +93,32 @@ public class ChoicePractice : IMiniGame
     {
       _victorySound.Play();
       _isPlayingVictorySound = true;
+      _googGuesses++;
     }
     else if (userGuess != null)
     {
       ShowChoices();
+    }
+    if (_googGuesses > 5)
+    {
+      Win();
     }
   }
   private void ShowChoices()
   {
     _guess.Voice.Play();
     CrossSpeakManager.Instance.Braille($"{_choice1.BrailleString} {_choice2.BrailleString} {_choice3.BrailleString} {_choice4.BrailleString}");
+  }
+  public void Win()
+  {
+    CrossSpeakManager.Instance.Output("Gagné !");
+    Stop();
+  }
+  public void Stop()
+  {
+    IsRunning = false;
+    BrailleTranslator.Free();
+    _victorySound.Dispose();
+    _failSound.Dispose();
   }
 }

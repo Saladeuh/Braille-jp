@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BrailleJP.MiniGames;
 
@@ -19,12 +20,17 @@ public class BasicPractice : IMiniGame
   public List<BrailleEntry> LetterEntries { get; private set; }
   public BrailleEntry CurrentEntry { get; private set; }
   public Wrapper BrailleTranslator { get; private set; }
+  public bool IsRunning { get; set; }
+
   private readonly SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;
   private bool _isPlayingVictorySound = false;
+  private int _goodAnswers;
+  private int _fails;
 
   public BasicPractice(CultureInfo culture)
   {
+    IsRunning = true;
     this.Culture = culture;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture] + ".utb";
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
@@ -45,10 +51,15 @@ public class BasicPractice : IMiniGame
 
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
+    if(!IsRunning) return;
     if (_isPlayingVictorySound && _victorySound.State == SoundState.Stopped)
     {
       _isPlayingVictorySound = false;
       PeakRandomLetter();
+    }
+    if (_goodAnswers > 5)
+    {
+      Win();
     }
   }
   private void onBrailleInput(object sender, ValueChangedEventArgs<string> e)
@@ -66,12 +77,14 @@ public class BasicPractice : IMiniGame
       {
         _victorySound.Play();
         _isPlayingVictorySound = true;
+        _goodAnswers++;
       }
       else
       {
         if (e.NewValue.Length >= wantedBrailleChars.Length)
         {
           _failSound.Play();
+          _fails++;
         }
       }
     }
@@ -79,5 +92,19 @@ public class BasicPractice : IMiniGame
     {
       Game1.Instance.PracticeBrailleInput.Text = String.Empty;
     }
+  }
+
+  public void Win()
+  {
+    CrossSpeakManager.Instance.Output("Gagné !");
+    Stop();
+  }
+  public void Stop()
+  {
+    IsRunning = false;
+    BrailleTranslator.Free();
+    _victorySound.Dispose();
+    _failSound.Dispose();
+    Game1.Instance.PracticeBrailleInput.TextChanged -= onBrailleInput;
   }
 }

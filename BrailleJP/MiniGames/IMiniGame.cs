@@ -5,5 +5,7 @@ namespace BrailleJP.MiniGames;
 
 public interface IMiniGame
 {
+  public bool IsRunning { get; set; }
   void Update(GameTime gameTime, KeyboardState currentKeyboardState);
+  void Win();
 }

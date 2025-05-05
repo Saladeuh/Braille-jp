@@ -37,11 +37,19 @@ public partial class Game1
         Exit();
       }
     }
-    if ((_gameState.CurrentScreen == GameScreen.BasicPraticce || _gameState.CurrentScreen == GameScreen.ChoicePraticce) && !_gameState.IsPaused)
+    if ((_gameState.CurrentScreen == GameScreen.BasicPraticce || _gameState.CurrentScreen == GameScreen.ChoicePraticce)
+      && !_gameState.IsPaused)
     {
-      CurrentPlayingMiniGame.Update(gameTime, currentKeyboardState);
+      if (CurrentPlayingMiniGame.IsRunning)
+      {
+        CurrentPlayingMiniGame.Update(gameTime, currentKeyboardState);
+      }
+      else
+      {
+        CurrentPlayingMiniGame = null;
+        SwitchToScreen(GameScreen.MainMenu);
+      }
     }
-
     UpdateUIState();
 
     _previousKeyboardState = currentKeyboardState;

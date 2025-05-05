@@ -52,25 +52,27 @@ public partial class Game1
       {
         dots.Add(1);
       }
-      if (IsKeyPressed(currentKeyboardState, Keys.J)){
+      if (IsKeyPressed(currentKeyboardState, Keys.J))
+      {
         dots.Add(4);
       }
       if (IsKeyPressed(currentKeyboardState, Keys.K))
       {
         dots.Add(5);
       }
-      if(IsKeyPressed(currentKeyboardState, Keys.M))
+      if (IsKeyPressed(currentKeyboardState, Keys.M))
       {
         dots.Add(6);
       }
-      if (dots.Count > 0) {
-        var brailleChar=BrailleAnalyzer.PatternToChar(BrailleAnalyzer.DotsToPattern(dots.ToArray()));
+      if (dots.Count > 0)
+      {
+        var brailleChar = BrailleAnalyzer.PatternToChar(BrailleAnalyzer.DotsToPattern(dots.ToArray()));
       }
     }
 
     if (IsKeyPressed(currentKeyboardState, Keys.F5))
-      
-      
+
+
       KeyboardSDFJKL = !KeyboardSDFJKL;
   }
 
