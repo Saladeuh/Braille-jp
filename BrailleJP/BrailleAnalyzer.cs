@@ -40,7 +40,15 @@ public class BrailleAnalyzer
     }
     return [.. dots];
   }
-
+  public static int DotsToPattern(int[] dots)
+  {
+    int pattern = 0;
+    foreach (int dot in dots)
+    {
+      pattern |= (1 << (dot - 1));
+    }
+    return pattern;
+  }
   public static int[] GetRaisedDots(char brailleChar)
   {
     return PatternToDots(GetPattern(brailleChar));

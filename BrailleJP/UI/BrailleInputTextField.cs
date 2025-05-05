@@ -1,8 +1,10 @@
-﻿using CrossSpeak;
+﻿using BrailleJP;
+using CrossSpeak;
+using Myra.Events;
 using Myra.Graphics2D.UI;
 using System;
 
-namespace AccessibleMyraUI;
+namespace BrailleJP.UI;
 
 public class BrailleInputTextField : TextBox
 {
@@ -22,9 +24,15 @@ public class BrailleInputTextField : TextBox
       AnnounceText();
   }
 
-  private void OnAccessibleTextChanged(object sender, EventArgs e)
+  private void OnAccessibleTextChanged(object sender, ValueChangedEventArgs<string> e)
   {
-    if (IsKeyboardFocused)
+    if (e.NewValue == string.Empty) return;
+    if (Game1.Instance.KeyboardSDFJKL)
+    {
+      Text = e.OldValue;
+      return;
+    }
+    if (IsKeyboardFocused && !Game1.Instance.KeyboardSDFJKL)
       AnnounceText();
   }
 

@@ -1,7 +1,7 @@
 ﻿using AccessibleMyraUI;
 using Myra.Graphics2D.UI;
 
-namespace BrailleJP;
+namespace BrailleJP.UI;
 
 public class BackButton : AccessibleButton
 {

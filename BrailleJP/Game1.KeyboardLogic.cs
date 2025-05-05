@@ -2,6 +2,7 @@
 using Myra.Graphics2D.UI;
 using SharpHook;
 using System.Collections.Generic;
+using BrailleJP.UI;
 
 namespace BrailleJP;
 
@@ -13,9 +14,12 @@ public partial class Game1
   private readonly HashSet<Keys> _hookPressedKeys = new();
   private readonly HashSet<Keys> _keysToProcess = new(); // Nouvelles touches à traiter
   private bool _updateProcessed = false;
+  public bool KeyboardSDFJKL = false;
 
   private void HandleKeyboardNavigation(KeyboardState currentKeyboardState)
   {
+    Widget focused = _desktop.FocusedKeyboardWidget;
+
     // navigation keys (arrows, tab, entrance)
     if (IsKeyPressed(currentKeyboardState, Keys.Down) || IsKeyPressed(currentKeyboardState, Keys.Right))
     {
@@ -28,12 +32,46 @@ public partial class Game1
     }
     if (IsKeyPressed(currentKeyboardState, Keys.Enter))
     {
-      Widget focused = _desktop.FocusedKeyboardWidget;
       if (focused is Button button)
       {
         button.DoClick();
       }
     }
+    if (KeyboardSDFJKL && focused is BrailleInputTextField brailleInputTextField)
+    {
+      var dots = new List<int>();
+      if (IsKeyPressed(currentKeyboardState, Keys.S))
+      {
+        dots.Add(3);
+      }
+      if (IsKeyPressed(currentKeyboardState, Keys.D))
+      {
+        dots.Add(2);
+      }
+      if (IsKeyPressed(currentKeyboardState, Keys.F))
+      {
+        dots.Add(1);
+      }
+      if (IsKeyPressed(currentKeyboardState, Keys.J)){
+        dots.Add(4);
+      }
+      if (IsKeyPressed(currentKeyboardState, Keys.K))
+      {
+        dots.Add(5);
+      }
+      if(IsKeyPressed(currentKeyboardState, Keys.M))
+      {
+        dots.Add(6);
+      }
+      if (dots.Count > 0) {
+        var brailleChar=BrailleAnalyzer.PatternToChar(BrailleAnalyzer.DotsToPattern(dots.ToArray()));
+      }
+    }
+
+    if (IsKeyPressed(currentKeyboardState, Keys.F5))
+      
+      
+      KeyboardSDFJKL = !KeyboardSDFJKL;
   }
 
   public bool IsKeyPressed(KeyboardState currentKeyboardState, params Keys[] keys)
