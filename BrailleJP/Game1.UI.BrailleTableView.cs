@@ -30,7 +30,7 @@ public partial class Game1
     tableViewGrid.Widgets.Add(new Label { Text = "" });
 
 
-    var entries = BrailleParser.ParseFile(SUPPORTEDBRAILLETABLES[culture] + ".utb");
+    var entries = BrailleTables[SUPPORTEDBRAILLETABLES[culture]];
     entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
     if (culture.IetfLanguageTag == "ja-JP")
       entries.SortByGojuon(e => e.Characters);

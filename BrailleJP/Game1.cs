@@ -3,9 +3,9 @@ using CrossSpeak;
 using Microsoft.Xna.Framework;
 using SharpLouis;
 using System;
+using System.Collections.Generic;
 
 namespace BrailleJP;
-
 public partial class Game1 : Game
 {
   private readonly GameState _gameState;
@@ -16,6 +16,7 @@ public partial class Game1 : Game
   public Random Random { get; set; }
   public Wrapper InputBrailleTranslator { get; set; }
   public BrailleTableParser BrailleParser { get; set; }
+  public Dictionary<string, List<BrailleEntry>> BrailleTables { get; set; }
   public IMiniGame CurrentPlayingMiniGame { get; set; } = null;
   public Game1()
   {
@@ -33,6 +34,7 @@ public partial class Game1 : Game
     IsMouseVisible = true;
     _gameState = new GameState();
     BrailleParser = new BrailleTableParser(@"LibLouis\tables");
+    BrailleTables = new();
     Instance = this; // Set the static instance
   }
 

@@ -29,7 +29,7 @@ public partial class Game1
     UILittleVictorySound = Content.Load<SoundEffect>("ui/confirmation_004");
     UIFailSound = Content.Load<SoundEffect>("ui/Cartoon Toy Squeaky Toy Squeaks 01");
     UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
-    //string tablePath = Game1.SUPPORTEDBRAILLETABLES.First().Value + ".utb";
+    //string tablePath = Game1.SUPPORTEDBRAILLETABLES.First().Value;
     //var entries = BrailleParser.ParseFile(tablePath);
     MediaPlayer.IsRepeating = true;
     MediaPlayer.Volume = 0.5f;
@@ -48,6 +48,10 @@ public partial class Game1
     {
       _brailleTableViewPanels.Add(culture, null);
       _basicPracticePanels.Add(culture, null);
+    }
+    foreach (var table in SUPPORTEDBRAILLETABLES.Values)
+    {
+      BrailleTables[table] = BrailleParser.ParseFile(table);
     }
     CreateMainMenu();
     CreateGameUI();

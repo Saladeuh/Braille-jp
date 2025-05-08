@@ -34,11 +34,11 @@ public class ChoicePractice : IMiniGame
   {
     IsRunning = true;
     this.Culture = culture;
-    string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture] + ".utb";
+    string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
     _victorySound = Game1.Instance.UILittleVictorySound.CreateInstance();
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
-    Entries = Game1.Instance.BrailleParser.ParseFile(tablePath);
+    Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
     PeakRandomChoices();
     ShowChoices();
