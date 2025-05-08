@@ -26,27 +26,17 @@ public partial class Game1
     // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    ConfirmButton playButton = new("Jouer")
+    ConfirmButton tableViewButton = new("Découvrir la table Braille")
     {
       Id = "playButton"
     };
-    playButton.Click += (s, a) =>
+    tableViewButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.BrailleTableView);
-      CrossSpeakManager.Instance.Output("Jeu démarré");
     };
-    mainMenuGrid.Widgets.Add(playButton);
-    ConfirmButton basicPracticeButton = new("Entraînement")
-    {
-      Id = "basicPracticeButton"
-    };
-    basicPracticeButton.Click += (s, a) =>
-    {
-      SwitchToScreen(GameScreen.BasicPraticce);
-    };
-    mainMenuGrid.Widgets.Add(basicPracticeButton);
+    mainMenuGrid.Widgets.Add(tableViewButton);
 
-    ConfirmButton choicePracticeButton = new("Choix")
+    ConfirmButton choicePracticeButton = new("Entraînement : choix multiple")
     {
       Id = "choicePracticeButton"
     };
@@ -55,6 +45,16 @@ public partial class Game1
       SwitchToScreen(GameScreen.ChoicePraticce);
     };
     mainMenuGrid.Widgets.Add(choicePracticeButton);
+
+    ConfirmButton basicPracticeButton = new("Entraînement : Frapp-tappe")
+    {
+      Id = "basicPracticeButton"
+    };
+    basicPracticeButton.Click += (s, a) =>
+    {
+      SwitchToScreen(GameScreen.BasicPraticce);
+    };
+    mainMenuGrid.Widgets.Add(basicPracticeButton);
 
     ConfirmButton settingsButton = new("Paramètres")
     {
@@ -78,6 +78,6 @@ public partial class Game1
     mainMenuGrid.Widgets.Add(quitButton);
 
     _mainMenuPanel.Widgets.Add(mainMenuGrid);
-    _desktop.FocusedKeyboardWidget = playButton;
+    _desktop.FocusedKeyboardWidget = tableViewButton;
   }
 }
