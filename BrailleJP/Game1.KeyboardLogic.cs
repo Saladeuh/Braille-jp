@@ -3,6 +3,8 @@ using Myra.Graphics2D.UI;
 using SharpHook;
 using System.Collections.Generic;
 using BrailleJP.UI;
+using CrossSpeak;
+using Microsoft.Xna.Framework.Media;
 
 namespace BrailleJP;
 
@@ -71,9 +73,25 @@ public partial class Game1
     }
 
     if (IsKeyPressed(currentKeyboardState, Keys.F5))
-
-
+    {
       KeyboardSDFJKL = !KeyboardSDFJKL;
+      if (KeyboardSDFJKL)
+      {
+        CrossSpeakManager.Instance.Output("Passage en mode saisie SDJJKL.");
+      }
+      else
+      {
+        CrossSpeakManager.Instance.Output("Passage en mode saisie plage Braille.");
+      }
+    }
+    if (IsKeyPressed(currentKeyboardState, Keys.F2))
+    {
+      MediaPlayer.Volume -= 0.1f;
+    }
+    if (IsKeyPressed(currentKeyboardState, Keys.F3))
+    {
+      MediaPlayer.Volume += 0.1f;
+    }
   }
 
   public bool IsKeyPressed(KeyboardState currentKeyboardState, params Keys[] keys)
