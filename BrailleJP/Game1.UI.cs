@@ -23,6 +23,11 @@ public partial class Game1
     CultureInfo culture = SUPPORTEDBRAILLETABLES.Keys.First();
     switch (screen)
     {
+      case GameScreen.First:
+        _desktop.Root=_firstScreenPanel;
+        Widget tipsLabel = _firstScreenPanel.FindChildById("tipsLabel");
+        tipsLabel?.SetKeyboardFocus();
+        break;
       case GameScreen.MainMenu:
         _desktop.Root = _mainMenuPanel;
         Widget playButton = _mainMenuPanel.FindChildById("playButton");

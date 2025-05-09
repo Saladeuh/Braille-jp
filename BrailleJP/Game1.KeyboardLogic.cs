@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework.Media;
+using BrailleJP.Save;
 
 namespace BrailleJP;
 
@@ -12,6 +13,9 @@ public partial class Game1
 {
   private KeyboardState _previousKeyboardState;
   private MouseState _previousMouseState;
+
+  public SaveParameters Save { get; private set; }
+
   private readonly object _keyLock = new();
   private readonly HashSet<Keys> _hookPressedKeys = new();
   private readonly HashSet<Keys> _keysToProcess = new(); // Nouvelles touches à traiter
@@ -83,6 +87,10 @@ public partial class Game1
       {
         CrossSpeakManager.Instance.Output("Passage en mode saisie plage Braille.");
       }
+    }
+    if (IsKeyPressed(currentKeyboardState, Keys.F1))
+    {
+      CrossSpeakManager.Instance.Output(TIPS);
     }
     if (IsKeyPressed(currentKeyboardState, Keys.F2))
     {

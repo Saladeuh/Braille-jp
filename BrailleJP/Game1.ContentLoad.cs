@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework.Audio;
+﻿using BrailleJP.Save;
+using CrossSpeak;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using Myra;
@@ -20,7 +22,7 @@ public partial class Game1
   protected override void LoadContent()
   {
     _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+    Save = SaveManager.LoadSave();
     _titleScreenSong = Content.Load<Song>("music/GoodbyeGeno");
     _brailleTableViewSong = Content.Load<Song>("music/PinnaPark");
     _basicPracticeSong = Content.Load<Song>("music/Super Paper Mario： Gloam Valley Arrangement");
@@ -57,6 +59,14 @@ public partial class Game1
     CreateMainMenu();
     CreateGameUI();
     CreateSettingsUI();
-    SwitchToScreen(GameScreen.MainMenu);
+    if (Save.Flags.EmptySave)
+    {
+      CreateFirstScreen();
+      SwitchToScreen(GameScreen.First);
+    }
+    else
+    {
+      SwitchToScreen(GameScreen.MainMenu);
+    }
   }
 }

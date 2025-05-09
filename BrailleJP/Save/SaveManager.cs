@@ -16,7 +16,7 @@ internal class SaveManager
     TypeNameHandling = TypeNameHandling.All
   };
 
-  internal static SaveParameters LoadSave()
+  public static SaveParameters LoadSave()
   {
     SaveParameters parameters = LoadJson() ?? new SaveParameters();
     return parameters;
@@ -46,7 +46,7 @@ internal class SaveManager
   }
 
 
-  public static void WriteJson(SaveParameters parameters)
+  public static void WriteSave(SaveParameters parameters)
   {
     string json = JsonConvert.SerializeObject(parameters, Settings);
 #if !DEBUG

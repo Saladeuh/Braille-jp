@@ -1,4 +1,5 @@
 ﻿using BrailleJP.MiniGames;
+using BrailleJP.Save;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
 using SharpLouis;
@@ -40,6 +41,7 @@ public partial class Game1 : Game
 
   private void onExit(object sender, EventArgs e)
   {
+    SaveManager.WriteSave(this.Save);
     CrossSpeakManager.Instance.Close();
   }
 }

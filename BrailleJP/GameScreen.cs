@@ -6,5 +6,6 @@ public enum GameScreen
   BasicPraticce,
   BrailleTableView,
   Settings,
-  ChoicePraticce
+  ChoicePraticce,
+  First
 }

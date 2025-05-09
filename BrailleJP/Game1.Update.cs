@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BrailleJP.Save;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,7 @@ public partial class Game1
       else
       {
         CurrentPlayingMiniGame = null;
+        SaveManager.WriteSave(Save);
         SwitchToScreen(GameScreen.MainMenu);
       }
     }
