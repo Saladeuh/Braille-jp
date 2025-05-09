@@ -32,7 +32,8 @@ public partial class Game1
     //string tablePath = Game1.SUPPORTEDBRAILLETABLES.First().Value;
     //var entries = BrailleParser.ParseFile(tablePath);
     MediaPlayer.IsRepeating = true;
-    MediaPlayer.Volume = 0.5f;
+    MediaPlayer.Volume = 0.3f;
+    SoundEffect.MasterVolume = 1f;
     MyraEnvironment.Game = this;
     _desktop = new Desktop
     {

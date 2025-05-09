@@ -49,7 +49,7 @@ public class BrailleEntry
       return brailleDotChar;
     }
   }
-  public SoundEffect Voice { get; set; }
+  public SoundEffectInstance Voice { get; set; }
   public BrailleEntry(string opcode, string characters, string sourceFile, int lineNumber, string dotPattern = "", string comment = "")
   {
     Opcode = opcode;
@@ -62,7 +62,8 @@ public class BrailleEntry
     var soundPath = $"speech/{fileNameWithoutExt}/{DotPattern}";
     try
     {
-      Voice = Game1.Instance.Content.Load<SoundEffect>(soundPath);
+      Voice = Game1.Instance.Content.Load<SoundEffect>(soundPath).CreateInstance();
+      Voice.Volume = 1;
     }
     catch (Exception _)
     {
