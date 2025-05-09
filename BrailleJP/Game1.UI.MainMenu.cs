@@ -55,7 +55,7 @@ public partial class Game1
       SwitchToScreen(GameScreen.BasicPraticce);
     };
     mainMenuGrid.Widgets.Add(basicPracticeButton);
-
+#if DEBUG
     ConfirmButton settingsButton = new("Paramètres")
     {
       Id = "settingsButton"
@@ -66,6 +66,7 @@ public partial class Game1
       CrossSpeakManager.Instance.Output("Menu des paramètres");
     };
     mainMenuGrid.Widgets.Add(settingsButton);
+#endif
 
     BackButton quitButton = new("Quitter")
     {
