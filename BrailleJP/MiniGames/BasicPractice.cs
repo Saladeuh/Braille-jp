@@ -41,10 +41,12 @@ Attention ! Vous n’avez qu’un seul essai !";
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
     _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
+    _goodSound.Volume = 0.5f;
     _victorySound = Game1.Instance.UIVictorySound.CreateInstance();
+    _victorySound.Volume = 0.5f;
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
-
-    Entries = Game1.Instance.BrailleTables[tablePath];
+    _failSound.Volume = 0.5f;
+   Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
     if (firstPlay)
