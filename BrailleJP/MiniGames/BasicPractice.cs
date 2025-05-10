@@ -15,6 +15,8 @@ namespace BrailleJP.MiniGames;
 public class BasicPractice : IMiniGame
 {
   public int Score { get => _goodAnswers; }
+  public string Tips { get; } = @"Vous allez entendre un caractère, puis vous devrez taper le symbole correspondant sur votre plage Braille.
+Attention ! Vous n’avez qu’un seul essai !";
   private readonly CultureInfo Culture;
 
   public List<BrailleEntry> Entries { get; private set; }
@@ -23,16 +25,16 @@ public class BasicPractice : IMiniGame
   public Wrapper BrailleTranslator { get; private set; }
   public bool IsRunning { get; set; }
 
-  string IMiniGame.Tips => "";
-
   private readonly SoundEffectInstance _goodSound;
   private readonly SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;
   private bool _isPlayingGoodSound = false;
   private int _goodAnswers;
   private int _fails;
+  private bool _isReadingTips;
+  private bool _firstFrameEnterHandled;
 
-  public BasicPractice(CultureInfo culture)
+  public BasicPractice(CultureInfo culture, bool firstPlay)
   {
     IsRunning = true;
     this.Culture = culture;
@@ -44,20 +46,39 @@ public class BasicPractice : IMiniGame
 
     Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
-    PeakRandomLetter();
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
+    if (firstPlay)
+    {
+      CrossSpeakManager.Instance.Output(Tips);
+      _isReadingTips = true;
+    }
+    else
+    {
+      PeakRandomLetter();
+    }
   }
 
   private void PeakRandomLetter()
   {
     CurrentEntry = LetterEntries[Game1.Instance.Random.Next(LetterEntries.Count)];
     CurrentEntry.Voice.Play();
+#if DEBUG
     CrossSpeakManager.Instance.Braille(CurrentEntry.BrailleString);
+#endif
   }
 
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
     if(!IsRunning) return;
+    if (!_firstFrameEnterHandled && _isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter))
+    {
+      _firstFrameEnterHandled = true;
+    }
+    else if (_isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter, Keys.Space))
+    {
+      _isReadingTips = false;
+      PeakRandomLetter();
+    }
     if (_goodAnswers+_fails >= 10 && _goodSound.State != SoundState.Playing)
     {
       Win();

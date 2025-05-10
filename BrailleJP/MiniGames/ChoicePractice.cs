@@ -12,7 +12,7 @@ namespace BrailleJP.MiniGames;
 
 public class ChoicePractice : IMiniGame
 {
-  public string Tips { get; } = @"Cet entraînement est le plus simple.
+  public string Tips { get; } = @"Cet entraînement est le plus facile.
 Vous allez entendre un caractère, puis 4 signes Braille seront affichés.
 Vous devrez choisir lequel correspond en appuyant sur les chiffres de 1-4.
 Pour réécouter le signe, appuyez sur 0.";

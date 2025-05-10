@@ -44,7 +44,7 @@ public partial class Game1
       case GameScreen.BasicPraticce:
         MediaPlayer.Play(_basicPracticeSong);
         CreateBasicPracticeUI(culture);
-        CurrentPlayingMiniGame = new BasicPractice(culture);
+        CurrentPlayingMiniGame = new BasicPractice(culture, Save.Flags.FirstPlayBasicPractice);
         _desktop.Root = _basicPracticePanels[culture];
         _desktop.Root = _basicPracticePanels[culture];
         UpdateUIState();

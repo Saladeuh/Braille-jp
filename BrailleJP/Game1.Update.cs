@@ -51,10 +51,9 @@ public partial class Game1
       {
         SwitchToScreen(GameScreen.MainMenu);
         CrossSpeakManager.Instance.Output($"Score : {CurrentPlayingMiniGame.Score}");
-        if (Save.Flags.FirstPlayChoicePractice)
-        {
-          Save.Flags.FirstPlayChoicePractice = CurrentPlayingMiniGame is not ChoicePractice;
-        }        CurrentPlayingMiniGame = null;
+        Save.Flags.FirstPlayChoicePractice &= CurrentPlayingMiniGame is not ChoicePractice;
+        Save.Flags.FirstPlayBasicPractice &= CurrentPlayingMiniGame is not BasicPractice;
+        CurrentPlayingMiniGame = null;
         SaveManager.WriteSave(Save);
       }
     }
