@@ -42,7 +42,7 @@ public class BrailleInputTextField : TextBox
     if (!string.IsNullOrEmpty(Text))
     {
       announcement = Text;
-      CrossSpeakManager.Instance.Output(announcement);
+      CrossSpeakManager.Instance.Braille(announcement);
     }
   }
 }
