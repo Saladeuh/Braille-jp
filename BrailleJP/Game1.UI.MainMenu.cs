@@ -43,7 +43,7 @@ public partial class Game1
     };
     choicePracticeButton.Click += (s, a) =>
     {
-      SwitchToScreen(GameScreen.ChoicePraticce);
+      SwitchToScreen(GameScreen.ChoicePractice);
     };
     mainMenuGrid.Widgets.Add(choicePracticeButton);
 

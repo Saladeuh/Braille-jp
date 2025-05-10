@@ -49,7 +49,7 @@ public partial class Game1
         _desktop.Root = _basicPracticePanels[culture];
         UpdateUIState();
         break;
-      case GameScreen.ChoicePraticce:
+      case GameScreen.ChoicePractice:
         MediaPlayer.Play(_basicPracticeSong);
         CreateChoicePracticeUI(culture);
         CurrentPlayingMiniGame = new ChoicePractice(culture, Save.Flags.FirstPlayChoicePractice);

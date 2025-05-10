@@ -40,7 +40,7 @@ public partial class Game1
         Exit();
       }
     }
-    if ((_gameState.CurrentScreen == GameScreen.BasicPraticce || _gameState.CurrentScreen == GameScreen.ChoicePraticce)
+    if ((_gameState.CurrentScreen == GameScreen.BasicPraticce || _gameState.CurrentScreen == GameScreen.ChoicePractice)
       && !_gameState.IsPaused)
     {
       if (CurrentPlayingMiniGame.IsRunning)

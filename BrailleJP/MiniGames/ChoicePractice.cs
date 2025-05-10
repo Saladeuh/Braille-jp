@@ -39,6 +39,7 @@ Pour réécouter le signe, appuyez sur 0.";
   private int _failsOnThisEntry;
   private bool _isPlayingFailSound;
   private bool _isReadingTips;
+  private bool _firstFrameEnterHandled;
 
   public ChoicePractice(CultureInfo culture, bool firstPlay)
   {
@@ -86,11 +87,14 @@ Pour réécouter le signe, appuyez sur 0.";
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
     if (_goodSound.State == SoundState.Playing) return;
-    if (_isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter))
+    if (!_firstFrameEnterHandled && _isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter)) {
+      _firstFrameEnterHandled = true;
+    } else if (_isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter, Keys.Space))
     {
       _isReadingTips = false;
       ShowChoices();
-    } else if (_isReadingTips) return;
+    }
+    else if (_isReadingTips) return;
     if ((_isPlayingGoodSound && _goodSound.State == SoundState.Stopped)
       || (_failsOnThisEntry >= 3 && (_isPlayingFailSound && _failSound.State == SoundState.Stopped)))
     {
@@ -118,7 +122,8 @@ Pour réécouter le signe, appuyez sur 0.";
         ? _choice3
         : Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D4, Keys.NumPad4) ? _choice4 : null;
     }
-    if(Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D0, Keys.NumPad0)){
+    if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D0, Keys.NumPad0))
+    {
       ShowChoices();
     }
     if (userGuess != null && userGuess == _guess)
