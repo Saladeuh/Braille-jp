@@ -12,6 +12,7 @@ namespace BrailleJP.MiniGames;
 
 public class ChoicePractice : IMiniGame
 {
+  public int Score { get => _goodGuesses; }
   private readonly CultureInfo Culture;
   public List<BrailleEntry> Entries { get; private set; }
   public List<BrailleEntry> LetterEntries { get; private set; }

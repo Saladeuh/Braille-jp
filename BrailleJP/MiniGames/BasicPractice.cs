@@ -14,6 +14,7 @@ namespace BrailleJP.MiniGames;
 
 public class BasicPractice : IMiniGame
 {
+  public int Score { get => _goodAnswers; }
   private readonly CultureInfo Culture;
 
   public List<BrailleEntry> Entries { get; private set; }

@@ -1,4 +1,5 @@
 ﻿using BrailleJP.Save;
+using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
@@ -47,9 +48,10 @@ public partial class Game1
       }
       else
       {
+        SwitchToScreen(GameScreen.MainMenu);
+        CrossSpeakManager.Instance.Output($"Score : {CurrentPlayingMiniGame.Score}");
         CurrentPlayingMiniGame = null;
         SaveManager.WriteSave(Save);
-        SwitchToScreen(GameScreen.MainMenu);
       }
     }
     UpdateUIState();
