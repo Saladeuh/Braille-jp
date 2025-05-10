@@ -23,6 +23,8 @@ public class BasicPractice : IMiniGame
   public Wrapper BrailleTranslator { get; private set; }
   public bool IsRunning { get; set; }
 
+  string IMiniGame.Tips => "";
+
   private readonly SoundEffectInstance _goodSound;
   private readonly SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;

@@ -12,6 +12,10 @@ namespace BrailleJP.MiniGames;
 
 public class ChoicePractice : IMiniGame
 {
+  public string Tips { get; } = @"Cet entraînement est le plus simple.
+Vous allez entendre un caractère, puis 4 signes Braille seront affichés.
+Vous devrez choisir lequel correspond en appuyant sur les chiffres de 1-4.
+Pour réécouter le signe, appuyez sur 0.";
   public int Score { get => _goodGuesses; }
   private readonly CultureInfo Culture;
   public List<BrailleEntry> Entries { get; private set; }
@@ -34,8 +38,9 @@ public class ChoicePractice : IMiniGame
   private int _fails;
   private int _failsOnThisEntry;
   private bool _isPlayingFailSound;
+  private bool _isReadingTips;
 
-  public ChoicePractice(CultureInfo culture)
+  public ChoicePractice(CultureInfo culture, bool firstPlay)
   {
     IsRunning = true;
     this.Culture = culture;
@@ -47,7 +52,15 @@ public class ChoicePractice : IMiniGame
     Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
     PeakRandomChoices();
-    ShowChoices();
+    if (firstPlay)
+    {
+      CrossSpeakManager.Instance.Output(Tips);
+      _isReadingTips = true;
+    }
+    else
+    {
+      ShowChoices();
+    }
   }
 
   private void PeakRandomChoices()
@@ -73,6 +86,11 @@ public class ChoicePractice : IMiniGame
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
     if (_goodSound.State == SoundState.Playing) return;
+    if (_isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter))
+    {
+      _isReadingTips = false;
+      ShowChoices();
+    } else if (_isReadingTips) return;
     if ((_isPlayingGoodSound && _goodSound.State == SoundState.Stopped)
       || (_failsOnThisEntry >= 3 && (_isPlayingFailSound && _failSound.State == SoundState.Stopped)))
     {
@@ -100,7 +118,9 @@ public class ChoicePractice : IMiniGame
         ? _choice3
         : Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D4, Keys.NumPad4) ? _choice4 : null;
     }
-
+    if(Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D0, Keys.NumPad0)){
+      ShowChoices();
+    }
     if (userGuess != null && userGuess == _guess)
     {
       _goodSound.Play();

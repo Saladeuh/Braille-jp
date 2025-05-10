@@ -1,4 +1,5 @@
-﻿using BrailleJP.Save;
+﻿using BrailleJP.MiniGames;
+using BrailleJP.Save;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -50,6 +51,7 @@ public partial class Game1
       {
         SwitchToScreen(GameScreen.MainMenu);
         CrossSpeakManager.Instance.Output($"Score : {CurrentPlayingMiniGame.Score}");
+        Save.Flags.FirstPlayChoicePractice = CurrentPlayingMiniGame is ChoicePractice;
         CurrentPlayingMiniGame = null;
         SaveManager.WriteSave(Save);
       }

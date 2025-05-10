@@ -75,7 +75,6 @@ public partial class Game1
     tipsButton.Click += (s, a) =>
     {
       SwitchToScreen(GameScreen.First);
-      //CrossSpeakManager.Instance.Output(TIPS);
     };
 
     mainMenuGrid.Widgets.Add(tipsButton);
