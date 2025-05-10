@@ -25,10 +25,14 @@ public class ChoicePractice : IMiniGame
   public Wrapper BrailleTranslator { get; private set; }
   public bool IsRunning { get; set; }
 
-  private readonly SoundEffectInstance _victorySound;
+  private readonly SoundEffectInstance _goodSound;
+  private SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;
-  private bool _isPlayingVictorySound = false;
-  private int _googGuesses;
+  private bool _isPlayingGoodSound = false;
+  private int _goodGuesses;
+  private int _fails;
+  private int _failsOnThisEntry;
+  private bool _isPlayingFailSound;
 
   public ChoicePractice(CultureInfo culture)
   {
@@ -36,7 +40,8 @@ public class ChoicePractice : IMiniGame
     this.Culture = culture;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
-    _victorySound = Game1.Instance.UILittleVictorySound.CreateInstance();
+    _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
+    _victorySound = Game1.Instance.UIVictorySound.CreateInstance();
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
     Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
@@ -66,12 +71,18 @@ public class ChoicePractice : IMiniGame
   }
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
-    if (_victorySound.State == SoundState.Playing) return;
-    if (_isPlayingVictorySound && _victorySound.State == SoundState.Stopped)
+    if (_goodSound.State == SoundState.Playing) return;
+    if ((_isPlayingGoodSound && _goodSound.State == SoundState.Stopped)
+      || (_failsOnThisEntry >= 3 && (_isPlayingFailSound && _failSound.State == SoundState.Stopped)))
     {
-      _isPlayingVictorySound = false;
+      _isPlayingGoodSound = false;
       PeakRandomChoices();
       ShowChoices();
+      _failsOnThisEntry = 0;
+    }
+    if (_goodGuesses + _fails > 10 && _goodSound.State != SoundState.Playing)
+    {
+      Win();
     }
     BrailleEntry userGuess;
     if (Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.D1, Keys.NumPad1))
@@ -91,17 +102,20 @@ public class ChoicePractice : IMiniGame
 
     if (userGuess != null && userGuess == _guess)
     {
-      _victorySound.Play();
-      _isPlayingVictorySound = true;
-      _googGuesses++;
+      _goodSound.Play();
+      _isPlayingGoodSound = true;
+      _goodGuesses++;
+    }
+    else if (userGuess != null && userGuess != _guess)
+    {
+      _fails++;
+      _failsOnThisEntry++;
+      _failSound.Play();
+      _isPlayingFailSound = true;
     }
     else if (userGuess != null)
     {
       ShowChoices();
-    }
-    if (_googGuesses > 5)
-    {
-      Win();
     }
   }
   private void ShowChoices()
@@ -111,6 +125,7 @@ public class ChoicePractice : IMiniGame
   }
   public void Win()
   {
+    _victorySound.Play();
     CrossSpeakManager.Instance.Output("Gagné !");
     Stop();
   }
@@ -118,7 +133,7 @@ public class ChoicePractice : IMiniGame
   {
     IsRunning = false;
     BrailleTranslator.Free();
-    _victorySound.Dispose();
+    _goodSound.Dispose();
     _failSound.Dispose();
   }
 }

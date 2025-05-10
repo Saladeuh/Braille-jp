@@ -43,6 +43,7 @@ Vous pouvez relire ces informations à n’importe quel moment en appuyant sur F
     };
     startButton.Click += (s, a) =>
     {
+      Save.Flags.EmptySave = false;
       SwitchToScreen(GameScreen.MainMenu);
     };
     firstScreenGrid.Widgets.Add(startButton);

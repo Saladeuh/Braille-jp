@@ -11,7 +11,8 @@ namespace BrailleJP;
 public partial class Game1
 {
   public SoundEffect UIConfirmSound { get => _UiConfirmSound; private set => _UiConfirmSound = value; }
-  public SoundEffect UILittleVictorySound { get; private set; }
+  public SoundEffect UIGoodSound { get; private set; }
+  public SoundEffect UIVictorySound { get; private set; }
   public SoundEffect UIFailSound { get; private set; }
   public SoundEffect UIViewScrollSound { get; private set; }
   public SoundEffect UIBackSound { get; private set; }
@@ -28,7 +29,8 @@ public partial class Game1
     _basicPracticeSong = Content.Load<Song>("music/Super Paper Mario： Gloam Valley Arrangement");
     UIConfirmSound = Content.Load<SoundEffect>("ui/confirmation_001");
     UIBackSound = Content.Load<SoundEffect>("ui/minimize_008");
-    UILittleVictorySound = Content.Load<SoundEffect>("ui/confirmation_004");
+    UIGoodSound = Content.Load<SoundEffect>("ui/confirmation_002");
+    UIVictorySound = Content.Load<SoundEffect>("ui/confirmation_004");
     UIFailSound = Content.Load<SoundEffect>("ui/Cartoon Toy Squeaky Toy Squeaks 01");
     UIViewScrollSound = Content.Load<SoundEffect>("ui/view/PM_FSSF2_USER_INTERFACE_SIMPLE_56");
     //string tablePath = Game1.SUPPORTEDBRAILLETABLES.First().Value;

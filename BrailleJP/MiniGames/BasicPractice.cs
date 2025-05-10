@@ -22,9 +22,10 @@ public class BasicPractice : IMiniGame
   public Wrapper BrailleTranslator { get; private set; }
   public bool IsRunning { get; set; }
 
+  private readonly SoundEffectInstance _goodSound;
   private readonly SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;
-  private bool _isPlayingVictorySound = false;
+  private bool _isPlayingGoodSound = false;
   private int _goodAnswers;
   private int _fails;
 
@@ -34,8 +35,10 @@ public class BasicPractice : IMiniGame
     this.Culture = culture;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
-    _victorySound = Game1.Instance.UILittleVictorySound.CreateInstance();
+    _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
+    _victorySound = Game1.Instance.UIVictorySound.CreateInstance();
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
+
     Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
     PeakRandomLetter();
@@ -52,20 +55,20 @@ public class BasicPractice : IMiniGame
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
     if(!IsRunning) return;
-    if (_isPlayingVictorySound && _victorySound.State == SoundState.Stopped)
-    {
-      _isPlayingVictorySound = false;
-      PeakRandomLetter();
-    }
-    if (_goodAnswers > 5)
+    if (_goodAnswers+_fails >= 10 && _goodSound.State != SoundState.Playing)
     {
       Win();
+    }
+    if (_isPlayingGoodSound && _goodSound.State == SoundState.Stopped)
+    {
+      _isPlayingGoodSound = false;
+      PeakRandomLetter();
     }
   }
   private void onBrailleInput(object sender, ValueChangedEventArgs<string> e)
   {
     if (e.NewValue == string.Empty) return;
-    if (_victorySound.State == SoundState.Playing)
+    if (_goodSound.State == SoundState.Playing)
     {
       Game1.Instance.PracticeBrailleInput.Text = e.OldValue;
       return;
@@ -75,8 +78,8 @@ public class BasicPractice : IMiniGame
     {
       if (wantedBrailleChars == inputBraille)
       {
-        _victorySound.Play();
-        _isPlayingVictorySound = true;
+        _goodSound.Play();
+        _isPlayingGoodSound = true;
         _goodAnswers++;
       }
       else
@@ -96,6 +99,7 @@ public class BasicPractice : IMiniGame
 
   public void Win()
   {
+    _victorySound.Play();
     CrossSpeakManager.Instance.Output("Gagné !");
     Stop();
   }
@@ -103,7 +107,7 @@ public class BasicPractice : IMiniGame
   {
     IsRunning = false;
     BrailleTranslator.Free();
-    _victorySound.Dispose();
+    _goodSound.Dispose();
     _failSound.Dispose();
     Game1.Instance.PracticeBrailleInput.TextChanged -= onBrailleInput;
   }
