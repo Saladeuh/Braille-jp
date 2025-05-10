@@ -74,7 +74,8 @@ public partial class Game1
     };
     tipsButton.Click += (s, a) =>
     {
-      CrossSpeakManager.Instance.Output(TIPS);
+      SwitchToScreen(GameScreen.First);
+      //CrossSpeakManager.Instance.Output(TIPS);
     };
 
     mainMenuGrid.Widgets.Add(tipsButton);
@@ -91,7 +92,7 @@ public partial class Game1
         UseShellExecute = true
       });
     };
-mainMenuGrid.Widgets.Add(wikiButton);
+    mainMenuGrid.Widgets.Add(wikiButton);
 
     BackButton quitButton = new("Quitter")
     {

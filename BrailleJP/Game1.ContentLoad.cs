@@ -61,9 +61,9 @@ public partial class Game1
     CreateMainMenu();
     CreateGameUI();
     CreateSettingsUI();
+    CreateFirstScreen();
     if (Save.Flags.EmptySave)
     {
-      CreateFirstScreen();
       SwitchToScreen(GameScreen.First);
     }
     else
