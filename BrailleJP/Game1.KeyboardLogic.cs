@@ -90,7 +90,14 @@ public partial class Game1
     }
     if (IsKeyPressed(currentKeyboardState, Keys.F1))
     {
-      CrossSpeakManager.Instance.Output(TIPS);
+      if (CurrentPlayingMiniGame != null)
+      {
+        CrossSpeakManager.Instance.Output(CurrentPlayingMiniGame.Tips);
+      }
+      else
+      {
+        CrossSpeakManager.Instance.Output(TIPS);
+      }
     }
     if (IsKeyPressed(currentKeyboardState, Keys.F2))
     {
