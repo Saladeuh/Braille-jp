@@ -1,6 +1,7 @@
 ﻿using BrailleJP.UI;
 using CrossSpeak;
 using Myra.Graphics2D.UI;
+using System.Diagnostics;
 
 namespace BrailleJP;
 
@@ -77,6 +78,20 @@ public partial class Game1
     };
 
     mainMenuGrid.Widgets.Add(tipsButton);
+
+    ConfirmButton wikiButton = new("En savoir plus sur le Braille Japonais")
+    {
+      Id = "wikiButton"
+    };
+    wikiButton.Click += (s, a) =>
+    {
+      System.Diagnostics.Process.Start(new ProcessStartInfo
+      {
+        FileName = "https://fr.wikipedia.org/wiki/Braille_japonais",
+        UseShellExecute = true
+      });
+    };
+mainMenuGrid.Widgets.Add(wikiButton);
 
     BackButton quitButton = new("Quitter")
     {
