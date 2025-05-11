@@ -364,3 +364,6 @@ FodyWeavers.xsd
 
 ## rider
 .idea
+
+#mgcb generated config
+BrailleJP/Content/Content.mgcb

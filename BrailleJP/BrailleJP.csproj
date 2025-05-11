@@ -38,6 +38,7 @@
 		<PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.1105" />
 		<PackageReference Include="Myra" Version="1.5.9" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Nopipeline.Task" Version="2.3.0" />
 		<PackageReference Include="SharpHook" Version="5.3.8" />
 		<PackageReference Include="TOWK.Utility.CrossSpeak" Version="1.0.0" />
 	</ItemGroup>
@@ -48,9 +49,6 @@
 		<Message Text="Restoring dotnet tools" Importance="High" />
 		<Exec Command="dotnet tool restore" />
 	</Target>
-	<ItemGroup>
-		<MonoGameContentReference Include="Content\Content.mgcb" />
-	</ItemGroup>
 
 		<!-- Add MonoGameContentReference to item type selection in Visual Studio -->
 		<ItemGroup>
