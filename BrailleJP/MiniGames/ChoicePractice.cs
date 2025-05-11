@@ -141,6 +141,7 @@ Pour réécouter le signe, appuyez sur 0.";
       _failsOnThisEntry++;
       _failSound.Play();
       _isPlayingFailSound = true;
+      ShowChoices();
     }
     else if (userGuess != null)
     {
