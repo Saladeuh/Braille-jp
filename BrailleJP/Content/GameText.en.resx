@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+	</resheader>
+	<data name="SDFJKL_Enabled" xml:space="preserve">
+    <value>Switching to SDFJKL input mode.</value>
+  </data>
+	<data name="SDFJKL_Disabled" xml:space="preserve">
+    <value>Switching to Braille display input mode.</value>
+  </data>
+	<data name="Basic_practice_title" xml:space="preserve">
+    <value>Type-Tap {0}</value>
+  </data>
+	<data name="Braille_tableview_title" xml:space="preserve">
+    <value>Braille table {0}</value>
+  </data>
+	<data name="Choice_practice_title" xml:space="preserve">
+    <value>Multiple choice {0}</value>
+  </data>
+	<data name="Tips" xml:space="preserve">
+    <value>Welcome to this beta version!
+This game aims to help you discover and practice Japanese Braille.
+For this, you will need to use a Braille display, as well as a screen reader that supports it, configured to use the unified French 8-point Braille table.
+Here's an overview of the commands that will be useful to you:
+The arrow keys are used to navigate through menus, Enter to select, Escape to quit.
+F2 and F3 are used to adjust the music volume.
+You can read this information again at any time by pressing F1 or in the main menu.</value>
+  </data>
+	<data name="First_screen_title" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+	<data name="First_screen_start" xml:space="preserve">
+    <value>Start!</value>
+  </data>
+	<data name="Main_menu_title" xml:space="preserve">
+    <value>Main menu</value>
+  </data>
+	<data name="Main_menu_table" xml:space="preserve">
+    <value>Discover the Braille table</value>
+  </data>
+	<data name="Main_menu_choice" xml:space="preserve">
+    <value>Training: multiple choice</value>
+  </data>
+	<data name="Main_menu_basicpractice" xml:space="preserve">
+    <value>Training: Type-Tap</value>
+  </data>
+	<data name="Main_menu_settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+	<data name="Main_menu_tips" xml:space="preserve">
+    <value>Reread the instructions</value>
+  </data>
+	<data name="Main_menu_wiki" xml:space="preserve">
+    <value>Learn more about Japanese Braille</value>
+  </data>
+	<data name="Quit" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+	<data name="Score" xml:space="preserve">
+    <value>Score: {0}</value>
+  </data>
+	<data name="Basic_practice_tips" xml:space="preserve">
+    <value>You will hear a character, then you must type the corresponding symbol on your Braille display.
+Careful! You only have one attempt!</value>
+  </data>
+	<data name="Choice_practice_tips" xml:space="preserve">
+    <value>This training is the easiest.
+You will hear a character, then 4 Braille signs will be displayed.
+You must choose which one corresponds by pressing the numbers 1-4.
+To hear the sign again, press 0.</value>
+  </data>
+</root>
