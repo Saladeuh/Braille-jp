@@ -1,4 +1,5 @@
-﻿using BrailleJP.UI;
+﻿using BrailleJP.Content;
+using BrailleJP.UI;
 using CrossSpeak;
 using Myra.Graphics2D.UI;
 using System.Diagnostics;
@@ -19,7 +20,7 @@ public partial class Game1
     };
     Label titleLabel = new()
     {
-      Text = "BRAILLE JP",
+      Text = GameText.Main_menu_title,
       HorizontalAlignment = HorizontalAlignment.Center
     };
     mainMenuGrid.Widgets.Add(titleLabel);
@@ -27,7 +28,7 @@ public partial class Game1
     // Space
     mainMenuGrid.Widgets.Add(new Label { Text = "" });
 
-    ConfirmButton tableViewButton = new("Découvrir la table Braille")
+    ConfirmButton tableViewButton = new(GameText.Main_menu_table)
     {
       Id = "playButton"
     };
@@ -37,7 +38,7 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(tableViewButton);
 
-    ConfirmButton choicePracticeButton = new("Entraînement : choix multiple")
+    ConfirmButton choicePracticeButton = new(GameText.Main_menu_choice)
     {
       Id = "choicePracticeButton"
     };
@@ -47,17 +48,17 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(choicePracticeButton);
 
-    ConfirmButton basicPracticeButton = new("Entraînement : Frapp-tappe")
+    ConfirmButton basicPracticeButton = new(GameText.Main_menu_basicpractice)
     {
       Id = "basicPracticeButton"
     };
     basicPracticeButton.Click += (s, a) =>
     {
-      SwitchToScreen(GameScreen.BasicPraticce);
+      SwitchToScreen(GameScreen.BasicPractice);
     };
     mainMenuGrid.Widgets.Add(basicPracticeButton);
 #if DEBUG
-    ConfirmButton settingsButton = new("Paramètres")
+    ConfirmButton settingsButton = new(GameText.Main_menu_settings)
     {
       Id = "settingsButton"
     };
@@ -68,7 +69,7 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(settingsButton);
 #endif
-    ConfirmButton tipsButton = new("Relire les explications")
+    ConfirmButton tipsButton = new(GameText.Main_menu_tips)
     {
       Id = "tipsButton"
     };
@@ -79,7 +80,7 @@ public partial class Game1
 
     mainMenuGrid.Widgets.Add(tipsButton);
 
-    ConfirmButton wikiButton = new("En savoir plus sur le Braille Japonais")
+    ConfirmButton wikiButton = new(GameText.Main_menu_wiki)
     {
       Id = "wikiButton"
     };
@@ -93,7 +94,7 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(wikiButton);
 
-    BackButton quitButton = new("Quitter")
+    BackButton quitButton = new(GameText.Quit)
     {
       Id = "quitButton"
     };

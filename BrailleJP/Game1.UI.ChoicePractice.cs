@@ -1,4 +1,5 @@
-﻿using Myra.Graphics2D.UI;
+﻿using BrailleJP.Content;
+using Myra.Graphics2D.UI;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -20,7 +21,7 @@ public partial class Game1
     };
     Label titleLabel = new()
     {
-      Text = $"Choice pratice {culture.DisplayName}",
+      Text = string.Format(GameText.Choice_practice_title, culture.DisplayName),
       HorizontalAlignment = HorizontalAlignment.Center
     };
     choicePracticeGrid.Widgets.Add(titleLabel);

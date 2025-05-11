@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+	</resheader>
+	<data name="SDFJKL_Enabled" xml:space="preserve">
+    <value>Passage en mode saisie SDFJKL.</value>
+  </data>
+	<data name="SDFJKL_Disabled" xml:space="preserve">
+    <value>Passage en mode saisie plage Braille.</value>
+  </data>
+	<data name="Basic_practice_title" xml:space="preserve">
+    <value>Frappe-tappe {0}</value>
+  </data>
+	<data name="Braille_tableview_title" xml:space="preserve">
+    <value>Table braille {0}</value>
+  </data>
+	<data name="Choice_practice_title" xml:space="preserve">
+    <value>Choix multiple {0}</value>
+  </data>
+	<data name="Tips" xml:space="preserve">
+    <value>Bienvenue dans cette version beta!
+Ce jeu à pour but de vous faire découvrir et pratiquer le Braille japonais. 
+Pour cela, vous aurez besoin d’utiliser une plage Braille, ainsi qu’un lecteur d’écran la supportant configuré pour utilisé la table braille française unifiée à 8 points. 
+Voici un aperçu des commandes qui vous seront utiles :
+Les flèches vous serve à naviguer dans les menus, entrée à sélectionner, échappe à quitter.
+F2 et F3 servent à ajuster le volume de la musique.
+Vous pouvez relire ces informations à n’importe quel moment en appuyant sur F1 ou dans le menu principal.</value>
+  </data>
+	<data name="First_screen_title" xml:space="preserve">
+    <value>Bienvenue</value>
+  </data>
+	<data name="First_screen_start" xml:space="preserve">
+    <value>Commencer !</value>
+  </data>
+	<data name="Main_menu_title" xml:space="preserve">
+    <value>Menu principal</value>
+  </data>
+	<data name="Main_menu_table" xml:space="preserve">
+    <value>Découvrir la table Braille</value>
+  </data>
+	<data name="Main_menu_choice" xml:space="preserve">
+    <value>Entraînement : choix multiple</value>
+  </data>
+	<data name="Main_menu_basicpractice" xml:space="preserve">
+    <value>Entraînement : Frapp-tappe</value>
+  </data>
+	<data name="Main_menu_settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+	<data name="Main_menu_tips" xml:space="preserve">
+    <value>Relire les explications</value>
+  </data>
+	<data name="Main_menu_wiki" xml:space="preserve">
+    <value>En savoir plus sur le Braille Japonais</value>
+  </data>
+	<data name="Quit" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+	<data name="Score" xml:space="preserve">
+    <value>Score : {0}</value>
+  </data>
+	<data name="Basic_practice_tips" xml:space="preserve">
+    <value>Vous allez entendre un caractère, puis vous devrez taper le symbole correspondant sur votre plage Braille.
+Attention ! Vous n’avez qu’un seul essai !</value>
+  </data>
+	<data name="Choice_practice_tips" xml:space="preserve">
+    <value>Cet entraînement est le plus facile.
+Vous allez entendre un caractère, puis 4 signes Braille seront affichés.
+Vous devrez choisir lequel correspond en appuyant sur les chiffres de 1-4.
+Pour réécouter le signe, appuyez sur 0.</value>
+  </data>
+</root>

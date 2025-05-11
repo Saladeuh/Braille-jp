@@ -1,4 +1,5 @@
-﻿using CrossSpeak;
+﻿using BrailleJP.Content;
+using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
@@ -14,9 +15,8 @@ namespace BrailleJP.MiniGames;
 
 public class BasicPractice : IMiniGame
 {
+  public string Tips { get; }=GameText.Basic_practice_tips;
   public int Score { get => _goodAnswers; }
-  public string Tips { get; } = @"Vous allez entendre un caractère, puis vous devrez taper le symbole correspondant sur votre plage Braille.
-Attention ! Vous n’avez qu’un seul essai !";
   private readonly CultureInfo Culture;
 
   public List<BrailleEntry> Entries { get; private set; }
@@ -51,7 +51,7 @@ Attention ! Vous n’avez qu’un seul essai !";
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
     if (firstPlay)
     {
-      CrossSpeakManager.Instance.Output(Tips);
+      CrossSpeakManager.Instance.Output(GameText.Basic_practice_tips);
       _isReadingTips = true;
     }
     else
@@ -126,7 +126,6 @@ Attention ! Vous n’avez qu’un seul essai !";
   public void Win()
   {
     _victorySound.Play();
-    CrossSpeakManager.Instance.Output("Gagné !");
     Stop();
   }
   public void Stop()

@@ -59,7 +59,6 @@ public partial class Game1
       BrailleTables[table] = BrailleParser.ParseFile(table);
     }
     CreateMainMenu();
-    CreateGameUI();
     CreateSettingsUI();
     CreateFirstScreen();
     if (Save.Flags.EmptySave)

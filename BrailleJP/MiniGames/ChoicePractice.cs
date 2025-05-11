@@ -1,4 +1,5 @@
-﻿using CrossSpeak;
+﻿using BrailleJP.Content;
+using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
@@ -12,10 +13,7 @@ namespace BrailleJP.MiniGames;
 
 public class ChoicePractice : IMiniGame
 {
-  public string Tips { get; } = @"Cet entraînement est le plus facile.
-Vous allez entendre un caractère, puis 4 signes Braille seront affichés.
-Vous devrez choisir lequel correspond en appuyant sur les chiffres de 1-4.
-Pour réécouter le signe, appuyez sur 0.";
+  public string Tips { get; }=GameText.Choice_practice_tips;
   public int Score { get => _goodGuesses; }
   private readonly CultureInfo Culture;
   public List<BrailleEntry> Entries { get; private set; }
@@ -58,7 +56,7 @@ Pour réécouter le signe, appuyez sur 0.";
     PeakRandomChoices();
     if (firstPlay)
     {
-      CrossSpeakManager.Instance.Output(Tips);
+      CrossSpeakManager.Instance.Output(GameText.Choice_practice_tips);
       _isReadingTips = true;
     }
     else
@@ -156,7 +154,6 @@ Pour réécouter le signe, appuyez sur 0.";
   public void Win()
   {
     _victorySound.Play();
-    CrossSpeakManager.Instance.Output("Gagné !");
     Stop();
   }
   public void Stop()

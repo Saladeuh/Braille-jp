@@ -6,6 +6,8 @@ using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework.Media;
 using BrailleJP.Save;
+using System;
+using BrailleJP.Content;
 
 namespace BrailleJP;
 
@@ -81,11 +83,11 @@ public partial class Game1
       KeyboardSDFJKL = !KeyboardSDFJKL;
       if (KeyboardSDFJKL)
       {
-        CrossSpeakManager.Instance.Output("Passage en mode saisie SDJJKL.");
+        CrossSpeakManager.Instance.Output(GameText.SDFJKL_Enabled);
       }
       else
       {
-        CrossSpeakManager.Instance.Output("Passage en mode saisie plage Braille.");
+        CrossSpeakManager.Instance.Output(GameText.SDFJKL_Disabled);
       }
     }
     if (IsKeyPressed(currentKeyboardState, Keys.F1))
@@ -96,7 +98,7 @@ public partial class Game1
       }
       else
       {
-        CrossSpeakManager.Instance.Output(TIPS);
+        CrossSpeakManager.Instance.Output(GameText.Tips);
       }
     }
     if (IsKeyPressed(currentKeyboardState, Keys.F2))

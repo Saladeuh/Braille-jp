@@ -1,4 +1,5 @@
-﻿using BrailleJP.MiniGames;
+﻿using BrailleJP.Content;
+using BrailleJP.MiniGames;
 using BrailleJP.Save;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
@@ -31,7 +32,7 @@ public partial class Game1
     if (!_firstScreenTipsSayed && gameTime.TotalGameTime.Seconds >= 2 && Save.Flags.EmptySave)
     {
       _firstScreenTipsSayed = true;
-      CrossSpeakManager.Instance.Output(TIPS);
+      CrossSpeakManager.Instance.Output(GameText.Tips);
     }
     _desktop.UpdateInput();
     HandleKeyboardNavigation(currentKeyboardState);
@@ -47,7 +48,7 @@ public partial class Game1
         Exit();
       }
     }
-    if ((_gameState.CurrentScreen == GameScreen.BasicPraticce || _gameState.CurrentScreen == GameScreen.ChoicePractice)
+    if ((_gameState.CurrentScreen == GameScreen.BasicPractice || _gameState.CurrentScreen == GameScreen.ChoicePractice)
       && !_gameState.IsPaused)
     {
       if (CurrentPlayingMiniGame.IsRunning)
@@ -57,7 +58,7 @@ public partial class Game1
       else
       {
         SwitchToScreen(GameScreen.MainMenu);
-        CrossSpeakManager.Instance.Output($"Score : {CurrentPlayingMiniGame.Score}");
+        CrossSpeakManager.Instance.Output(string.Format(GameText.Score, CurrentPlayingMiniGame.Score));
         Save.Flags.FirstPlayChoicePractice &= CurrentPlayingMiniGame is not ChoicePractice;
         Save.Flags.FirstPlayBasicPractice &= CurrentPlayingMiniGame is not BasicPractice;
         CurrentPlayingMiniGame = null;

@@ -54,6 +54,19 @@
 		<ItemGroup>
 			<AvailableItemName Include="MonoGameContentReference" />
 		</ItemGroup>
+		<ItemGroup>
+		  <Compile Update="Content\GameText.Designer.cs">
+		    <DesignTime>True</DesignTime>
+		    <AutoGen>True</AutoGen>
+		    <DependentUpon>GameText.resx</DependentUpon>
+		  </Compile>
+		</ItemGroup>
+		<ItemGroup>
+		  <EmbeddedResource Update="Content\GameText.resx">
+		    <Generator>ResXFileCodeGenerator</Generator>
+		    <LastGenOutput>GameText.Designer.cs</LastGenOutput>
+		  </EmbeddedResource>
+		</ItemGroup>
 
 		<!-- This disables the IDE feature that skips executing msbuild in some build situations. -->
 		<PropertyGroup>

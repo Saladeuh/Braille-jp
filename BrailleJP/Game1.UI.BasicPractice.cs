@@ -1,4 +1,5 @@
 ﻿using AccessibleMyraUI;
+using BrailleJP.Content;
 using BrailleJP.UI;
 using Myra.Graphics2D.UI;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ public partial class Game1
     };
     Label titleLabel = new()
     {
-      Text = $"Basic pratice {culture.DisplayName}",
+      Text = string.Format(GameText.Basic_practice_title, culture.DisplayName),
       HorizontalAlignment = HorizontalAlignment.Center
     };
     basicPracticeGrid.Widgets.Add(titleLabel);

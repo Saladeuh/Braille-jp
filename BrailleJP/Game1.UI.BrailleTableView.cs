@@ -1,4 +1,5 @@
-﻿using BrailleJP.UI;
+﻿using BrailleJP.Content;
+using BrailleJP.UI;
 using Myra.Graphics2D.UI;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ public partial class Game1
     };
     Label titleLabel = new()
     {
-      Text = culture.Name,
+      Text = String.Format(GameText.Braille_tableview_title, culture.DisplayName),
       HorizontalAlignment = HorizontalAlignment.Center
     };
     tableViewGrid.Widgets.Add(titleLabel);
