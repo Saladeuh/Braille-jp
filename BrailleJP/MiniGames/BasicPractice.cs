@@ -46,7 +46,7 @@ Attention ! Vous n’avez qu’un seul essai !";
     _victorySound.Volume = 0.5f;
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
     _failSound.Volume = 0.5f;
-   Entries = Game1.Instance.BrailleTables[tablePath];
+    Entries = Game1.Instance.BrailleTables[tablePath];
     LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
     if (firstPlay)
@@ -71,7 +71,7 @@ Attention ! Vous n’avez qu’un seul essai !";
 
   public void Update(GameTime gameTime, KeyboardState currentKeyboardState)
   {
-    if(!IsRunning) return;
+    if (!IsRunning) return;
     if (!_firstFrameEnterHandled && _isReadingTips && Game1.Instance.IsKeyPressed(currentKeyboardState, Keys.Enter))
     {
       _firstFrameEnterHandled = true;
@@ -81,7 +81,7 @@ Attention ! Vous n’avez qu’un seul essai !";
       _isReadingTips = false;
       PeakRandomLetter();
     }
-    if (_goodAnswers+_fails >= 10 && _goodSound.State != SoundState.Playing)
+    if (_goodAnswers + _fails >= 10 && _goodSound.State != SoundState.Playing)
     {
       Win();
     }

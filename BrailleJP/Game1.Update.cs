@@ -10,6 +10,8 @@ namespace BrailleJP;
 
 public partial class Game1
 {
+  private bool _firstScreenTipsSayed = false;
+
   protected override void Update(GameTime gameTime)
   {
     KeyboardState nativeKeyboardState = Keyboard.GetState();
@@ -26,6 +28,11 @@ public partial class Game1
     KeyboardState currentKeyboardState = new(allPressedKeys.ToArray());
     MouseState currentMouseState = Mouse.GetState();
 
+    if (!_firstScreenTipsSayed && gameTime.TotalGameTime.Seconds >= 2 && Save.Flags.EmptySave)
+    {
+      _firstScreenTipsSayed = true;
+      CrossSpeakManager.Instance.Output(TIPS);
+    }
     _desktop.UpdateInput();
     HandleKeyboardNavigation(currentKeyboardState);
     // quit on escape key

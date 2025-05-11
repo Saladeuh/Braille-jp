@@ -7,8 +7,9 @@ namespace BrailleJP;
 
 public partial class Game1
 {
-  private static readonly string TIPS = @"Ce jeu à pour but de vous faire découvrir et pratiquer le Braille japonais. 
-Pour cela, vous aurez besoin d’utiliser une plage Braille, ainsi qu’un lecteur d’écran la supportant. Si vous arriver à lire ce texte en Braille, tout doit être bon. 
+  private static readonly string TIPS = @"Bienvenue dans cette version beta!
+Ce jeu à pour but de vous faire découvrir et pratiquer le Braille japonais. 
+Pour cela, vous aurez besoin d’utiliser une plage Braille, ainsi qu’un lecteur d’écran la supportant configuré pour utilisé la table braille française unifiée à 8 points. 
 Voici un aperçu des commandes qui vous seront utiles :
 Les flèches vous serve à naviguer dans les menus, entrée à sélectionner, échappe à quitter.
 F2 et F3 servent à ajuster le volume de la musique.
