@@ -31,11 +31,13 @@ namespace BrailleJP.Content {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal GameText() {
         }
-        
-        /// <summary>
-        ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+
+    public static string Word_practice_tips { get; internal set; }
+
+    /// <summary>
+    ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+    /// </summary>
+    [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {

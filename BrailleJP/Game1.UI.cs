@@ -24,7 +24,7 @@ public partial class Game1
     switch (screen)
     {
       case GameScreen.First:
-        _desktop.Root=_firstScreenPanel;
+        _desktop.Root = _firstScreenPanel;
         Widget tipsLabel = _firstScreenPanel.FindChildById("tipsLabel");
         tipsLabel?.SetKeyboardFocus();
         break;
@@ -46,7 +46,13 @@ public partial class Game1
         CreateBasicPracticeUI(culture);
         CurrentPlayingMiniGame = new BasicPractice(culture, Save.Flags.FirstPlayBasicPractice);
         _desktop.Root = _basicPracticePanels[culture];
-        _desktop.Root = _basicPracticePanels[culture];
+        UpdateUIState();
+        break;
+      case GameScreen.WordPractice:
+        MediaPlayer.Play(_basicPracticeSong);
+        CreateWordPracticeUI(culture);
+        CurrentPlayingMiniGame = new WordPractice(culture, Save.Flags.FirstPlayBasicPractice);
+        _desktop.Root = _wordPracticePanels[culture];
         UpdateUIState();
         break;
       case GameScreen.ChoicePractice:

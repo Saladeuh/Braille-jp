@@ -48,7 +48,7 @@ public partial class Game1
         Exit();
       }
     }
-    if ((_gameState.CurrentScreen == GameScreen.BasicPractice || _gameState.CurrentScreen == GameScreen.ChoicePractice)
+    if ((_gameState.CurrentScreen == GameScreen.BasicPractice || _gameState.CurrentScreen == GameScreen.ChoicePractice || _gameState.CurrentScreen == GameScreen.WordPractice)
       && !_gameState.IsPaused)
     {
       if (CurrentPlayingMiniGame.IsRunning)

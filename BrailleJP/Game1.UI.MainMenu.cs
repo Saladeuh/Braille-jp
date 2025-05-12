@@ -48,6 +48,16 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(choicePracticeButton);
 
+    ConfirmButton wordPracticeButton = new(GameText.Main_menu_choice)
+    {
+      Id = "wordPracticeButton"
+    };
+    wordPracticeButton.Click += (s, a) =>
+    {
+      SwitchToScreen(GameScreen.WordPractice);
+    };
+    mainMenuGrid.Widgets.Add(wordPracticeButton);
+
     ConfirmButton basicPracticeButton = new(GameText.Main_menu_basicpractice)
     {
       Id = "basicPracticeButton"
