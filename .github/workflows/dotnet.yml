@@ -60,24 +60,24 @@ jobs:
       run: |
         dotnet tool install -g vpk
         vpk download github --repoUrl https://github.com/${{ github.repository }}
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p artifacts/windows
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p windows
         # Move Velopack files to artifacts directory for uploading
-        mkdir -p artifacts/velopack/windows
-        cp -r ./releases/* artifacts/velopack/windows/
+        mkdir -p velopack/windows
+        cp -r ./releases/* velopack/windows/
         
     - name: Create Velopack Release for macOS
       run: |
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p artifacts/macos
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p macos
         # Move Velopack files to artifacts directory for uploading
-        mkdir -p artifacts/velopack/macos
-        cp -r ./releases/* artifacts/velopack/macos/
+        mkdir -p velopack/macos
+        cp -r ./releases/* velopack/macos/
         
     - name: Create Velopack Release for Linux
       run: |
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p artifacts/linux
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p linux
         # Move Velopack files to artifacts directory for uploading
-        mkdir -p artifacts/velopack/linux
-        cp -r ./releases/* artifacts/velopack/linux/
+        mkdir -p velopack/linux
+        cp -r ./releases/* velopack/linux/
     
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
