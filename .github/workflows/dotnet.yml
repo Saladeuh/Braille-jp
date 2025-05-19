@@ -22,6 +22,21 @@ jobs:
       run: |
         TAGVERSION=$(git describe --tags --abbrev=0)
         echo "TAGVERSION=${TAGVERSION:1}" >> $GITHUB_ENV
+        
+        # Create SemVer compliant version for Velopack (ensure it has 3 parts)
+        SEMVER_VERSION=${TAGVERSION:1}
+        # Count the number of dots in the version
+        DOT_COUNT=$(echo $SEMVER_VERSION | tr -cd '.' | wc -c)
+        
+        # If only has one dot (2 parts like 0.8), add .0 for the patch version
+        if [ $DOT_COUNT -eq 1 ]; then
+          SEMVER_VERSION="${SEMVER_VERSION}.0"
+        # If no dots, add .0.0
+        elif [ $DOT_COUNT -eq 0 ]; then
+          SEMVER_VERSION="${SEMVER_VERSION}.0.0"
+        fi
+        
+        echo "SEMVER_VERSION=${SEMVER_VERSION}" >> $GITHUB_ENV
     - name: Setup Wine
       run: |
         sudo apt update
@@ -45,21 +60,21 @@ jobs:
       run: |
         dotnet tool install -g vpk
         vpk download github --repoUrl https://github.com/${{ github.repository }}
-        vpk pack -u BrailleJP.Windows -v ${{ env.TAGVERSION }} -p artifacts/windows
+        vpk pack -u BrailleJP.Windows -v ${{ env.SEMVER_VERSION }} -p artifacts/windows
         # Move Velopack files to artifacts directory for uploading
         mkdir -p artifacts/velopack/windows
         cp -r ./releases/* artifacts/velopack/windows/
         
     - name: Create Velopack Release for macOS
       run: |
-        vpk pack -u BrailleJP.macOS -v ${{ env.TAGVERSION }} -p artifacts/macos
+        vpk pack -u BrailleJP.macOS -v ${{ env.SEMVER_VERSION }} -p artifacts/macos
         # Move Velopack files to artifacts directory for uploading
         mkdir -p artifacts/velopack/macos
         cp -r ./releases/* artifacts/velopack/macos/
         
     - name: Create Velopack Release for Linux
       run: |
-        vpk pack -u BrailleJP.Linux -v ${{ env.TAGVERSION }} -p artifacts/linux
+        vpk pack -u BrailleJP.Linux -v ${{ env.SEMVER_VERSION }} -p artifacts/linux
         # Move Velopack files to artifacts directory for uploading
         mkdir -p artifacts/velopack/linux
         cp -r ./releases/* artifacts/velopack/linux/
