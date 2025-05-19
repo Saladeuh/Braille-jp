@@ -79,4 +79,7 @@ Vous allez entendre un caractère, puis 4 signes Braille seront affichés.
 Vous devrez choisir lequel correspond en appuyant sur les chiffres de 1-4.
 Pour réécouter le signe, appuyez sur 0.</value>
   </data>
+	<data name="Main_menu_word_practice" xml:space="preserve">
+    <value>Entraînement : Écriture de mots</value>
+  </data>
 </root>

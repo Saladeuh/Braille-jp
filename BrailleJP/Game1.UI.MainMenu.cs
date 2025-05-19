@@ -48,7 +48,7 @@ public partial class Game1
     };
     mainMenuGrid.Widgets.Add(choicePracticeButton);
 
-    ConfirmButton wordPracticeButton = new(GameText.Main_menu_choice)
+    ConfirmButton wordPracticeButton = new(GameText.Main_menu_word_practice)
     {
       Id = "wordPracticeButton"
     };
@@ -67,7 +67,7 @@ public partial class Game1
       SwitchToScreen(GameScreen.BasicPractice);
     };
     mainMenuGrid.Widgets.Add(basicPracticeButton);
-#if DEBUG
+#if false
     ConfirmButton settingsButton = new(GameText.Main_menu_settings)
     {
       Id = "settingsButton"

@@ -41,6 +41,7 @@
 		<PackageReference Include="Nopipeline.Task" Version="2.3.0" />
 		<PackageReference Include="SharpHook" Version="5.3.8" />
 		<PackageReference Include="TOWK.Utility.CrossSpeak" Version="1.0.0" />
+		<PackageReference Include="Velopack" Version="0.0.1251" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\AccessibleMyraUI\AccessibleMyraUI.csproj" />

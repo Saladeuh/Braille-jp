@@ -79,4 +79,7 @@ You will hear a character, then 4 Braille signs will be displayed.
 You must choose which one corresponds by pressing the numbers 1-4.
 To hear the sign again, press 0.</value>
   </data>
+	<data name="Main_menu_word_practice" xml:space="preserve">
+    <value>Training : Write words</value>
+  </data>
 </root>

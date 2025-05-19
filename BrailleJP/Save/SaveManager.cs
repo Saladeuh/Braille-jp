@@ -6,7 +6,15 @@ namespace BrailleJP.Save;
 
 internal class SaveManager
 {
-  private const string DATAFILEPATH = "save.dat";
+  private static string DataPath
+  {
+    get
+    {
+      return Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+        "BrailleJpSave.dat");
+    }
+  }
 
   private static readonly JsonSerializerSettings Settings = new()
   {
@@ -24,9 +32,9 @@ internal class SaveManager
 
   private static SaveParameters? LoadJson()
   {
-    if (File.Exists(DATAFILEPATH))
+    if (File.Exists(DataPath))
     {
-      using StreamReader r = new(DATAFILEPATH);
+      using StreamReader r = new(DataPath);
       string json = r.ReadToEnd();
       try
       {
@@ -52,6 +60,6 @@ internal class SaveManager
 #if !DEBUG
     json = StringCipher.Encrypt(json, Secrets.SAVEKEY);
 #endif
-    File.WriteAllText(DATAFILEPATH, json);
+    File.WriteAllText(DataPath, json);
   }
 }

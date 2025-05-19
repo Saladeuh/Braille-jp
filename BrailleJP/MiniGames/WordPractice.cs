@@ -17,7 +17,7 @@ namespace BrailleJP.MiniGames;
 
 public class WordPractice : IMiniGame
 {
-  public string Tips { get; } = GameText.Word_practice_tips;
+  public string Tips { get; } = GameText.Main_menu_word_practice;
   public int Score { get => _goodAnswers; }
   private readonly CultureInfo Culture;
   private Dictionary<string, SoundEffect> _words;
@@ -59,7 +59,7 @@ public class WordPractice : IMiniGame
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
     if (firstPlay)
     {
-      CrossSpeakManager.Instance.Output(GameText.Word_practice_tips);
+      CrossSpeakManager.Instance.Output(Tips);
       _isReadingTips = true;
     }
     else
