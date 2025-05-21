@@ -42,50 +42,56 @@ jobs:
         sudo apt update
         sudo apt install wine64 p7zip-full curl
         wget -qO- https://raw.githubusercontent.com/MonoGame/MonoGame/78636f8056fa981584e3a2a3e0f22e2efbc43ef8/Tools/MonoGame.Effect.Compiler/mgfxc_wine_setup.sh | sh
+        
+    # Création des artefacts standard
     - name: Build Windows
-      run: dotnet publish BrailleJP/BrailleJP.csproj -r win-x64 -c Release --self-contained --output artifacts/windows
+      run: dotnet publish BrailleJP/BrailleJP.csproj -r win-x64 -c Release --self-contained --output build/windows
     - name: Build macOS
-      run: dotnet publish BrailleJP/BrailleJP.csproj -r osx-x64 -c Release --self-contained --output artifacts/macos
+      run: dotnet publish BrailleJP/BrailleJP.csproj -r osx-x64 -c Release --self-contained --output build/macos
     - name: Build Linux
-      run: dotnet publish BrailleJP/BrailleJP.csproj -r linux-x64 -c Release --self-contained --output artifacts/linux
+      run: dotnet publish BrailleJP/BrailleJP.csproj -r linux-x64 -c Release --self-contained --output build/linux
+    
+    # Création des archives pour les builds standard
     - name: Package Standard Builds
       run: |
-        cd artifacts
-        zip -r BrailleJP-Windows-${{ env.TAGVERSION }}.zip windows
-        zip -r BrailleJP-macOS-${{ env.TAGVERSION }}.zip macos
-        zip -r BrailleJP-Linux-${{ env.TAGVERSION }}.zip linux
+        mkdir -p artifacts/standard
+        cd build
+        zip -r ../artifacts/standard/BrailleJP-Windows-${{ env.TAGVERSION }}.zip windows
+        zip -r ../artifacts/standard/BrailleJP-macOS-${{ env.TAGVERSION }}.zip macos
+        zip -r ../artifacts/standard/BrailleJP-Linux-${{ env.TAGVERSION }}.zip linux
     
-    # Add Velopack packaging for all platforms
+    # Installation de Velopack
+    - name: Install Velopack
+      run: dotnet tool install -g vpk
+    
+    # Téléchargement des versions précédentes pour delta updates
+    - name: Download previous releases
+      run: vpk download github --repoUrl https://github.com/${{ github.repository }}
+        
+    # Création des packages Velopack pour chaque plateforme
     - name: Create Velopack Release for Windows
       run: |
-        dotnet tool install -g vpk
-        vpk download github --repoUrl https://github.com/${{ github.repository }}
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p windows
-        # Move Velopack files to artifacts directory for uploading
-        mkdir -p velopack/windows
-        cp -r ./releases/* velopack/windows/
-        
+        mkdir -p artifacts/velopack/windows
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p windows -o artifacts/velopack/windows
+    
     - name: Create Velopack Release for macOS
       run: |
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p macos
-        # Move Velopack files to artifacts directory for uploading
-        mkdir -p velopack/macos
-        cp -r ./releases/* velopack/macos/
-        
+        mkdir -p artifacts/velopack/macos
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p macos -o artifacts/velopack/macos
+    
     - name: Create Velopack Release for Linux
       run: |
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p linux
-        # Move Velopack files to artifacts directory for uploading
-        mkdir -p velopack/linux
-        cp -r ./releases/* velopack/linux/
+        mkdir -p artifacts/velopack/linux
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p linux -o artifacts/velopack/linux
     
+    # Création de la release GitHub
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          artifacts/BrailleJP-Windows-${{ env.TAGVERSION }}.zip
-          artifacts/BrailleJP-macOS-${{ env.TAGVERSION }}.zip
-          artifacts/BrailleJP-Linux-${{ env.TAGVERSION }}.zip
+          artifacts/standard/BrailleJP-Windows-${{ env.TAGVERSION }}.zip
+          artifacts/standard/BrailleJP-macOS-${{ env.TAGVERSION }}.zip
+          artifacts/standard/BrailleJP-Linux-${{ env.TAGVERSION }}.zip
           artifacts/velopack/windows/*
           artifacts/velopack/macos/*
           artifacts/velopack/linux/*
@@ -94,3 +100,4 @@ jobs:
         draft: false
         prerelease: false
         generate_release_notes: true
+ 
