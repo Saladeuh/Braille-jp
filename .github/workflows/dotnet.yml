@@ -45,11 +45,26 @@ jobs:
         
     # Création des artefacts standard
     - name: Build Windows
-      run: dotnet publish BrailleJP/BrailleJP.csproj -r win-x64 -c Release --self-contained --output build/windows
+      run: |
+        mkdir -p build/windows
+        dotnet publish BrailleJP/BrailleJP.csproj -r win-x64 -c Release --self-contained --output build/windows
+        # Vérification des fichiers générés pour le débogage
+        echo "Contenu du répertoire Windows:"
+        ls -la build/windows/
     - name: Build macOS
-      run: dotnet publish BrailleJP/BrailleJP.csproj -r osx-x64 -c Release --self-contained --output build/macos
+      run: |
+        mkdir -p build/macos
+        dotnet publish BrailleJP/BrailleJP.csproj -r osx-x64 -c Release --self-contained --output build/macos
+        # Vérification des fichiers générés pour le débogage
+        echo "Contenu du répertoire macOS:"
+        ls -la build/macos/
     - name: Build Linux
-      run: dotnet publish BrailleJP/BrailleJP.csproj -r linux-x64 -c Release --self-contained --output build/linux
+      run: |
+        mkdir -p build/linux
+        dotnet publish BrailleJP/BrailleJP.csproj -r linux-x64 -c Release --self-contained --output build/linux
+        # Vérification des fichiers générés pour le débogage
+        echo "Contenu du répertoire Linux:"
+        ls -la build/linux/
     
     # Création des archives pour les builds standard
     - name: Package Standard Builds
@@ -72,17 +87,20 @@ jobs:
     - name: Create Velopack Release for Windows
       run: |
         mkdir -p artifacts/velopack/windows
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p windows -o artifacts/velopack/windows
+        # Spécifier explicitement le chemin du répertoire d'entrée pour Velopack
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p windows --basedir build/windows -o artifacts/velopack/windows
     
     - name: Create Velopack Release for macOS
       run: |
         mkdir -p artifacts/velopack/macos
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p macos -o artifacts/velopack/macos
+        # Spécifier explicitement le chemin du répertoire d'entrée pour Velopack
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p macos --basedir build/macos -o artifacts/velopack/macos
     
     - name: Create Velopack Release for Linux
       run: |
         mkdir -p artifacts/velopack/linux
-        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p linux -o artifacts/velopack/linux
+        # Spécifier explicitement le chemin du répertoire d'entrée pour Velopack
+        vpk pack -u BrailleJP -v ${{ env.SEMVER_VERSION }} -p linux --basedir build/linux -o artifacts/velopack/linux
     
     # Création de la release GitHub
     - name: Create GitHub Release
