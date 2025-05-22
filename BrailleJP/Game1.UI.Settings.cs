@@ -34,7 +34,7 @@ public partial class Game1
       Id = "volumeSlider",
     };
     // Annonce vocale du niveau de volume
-    volumeSlider.ValueChanged += (s, a) =>
+    volumeSlider.ValueChanged += (_, _) =>
     {
       CrossSpeakManager.Instance.Output($"Volume: {(int)(volumeSlider.Value * 100)} pourcent");
     };
@@ -50,7 +50,7 @@ public partial class Game1
     {
       Id = "backButton"
     };
-    backButton.Click += (s, a) =>
+    backButton.Click += (_, _) =>
     {
       // TODO save settings
       SwitchToScreen(GameScreen.MainMenu);

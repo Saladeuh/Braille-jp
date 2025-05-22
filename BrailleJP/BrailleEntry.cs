@@ -11,7 +11,6 @@ public class BrailleEntry
   public string DotPattern { get; set; }
   public string Comment { get; set; }
   public string SourceFile { get; set; }
-  public int LineNumber { get; set; }
 
   // Helper property to get the category/type of the entry
   public string Category => Opcode switch
@@ -45,19 +44,19 @@ public class BrailleEntry
     get
     {
       var brailleTranslator = SharpLouis.Wrapper.Create(Path.GetFileName(this.SourceFile), Game1.LibLouisLoggingClient);
-      brailleTranslator.TranslateString(this.Characters, out var brailleDotChar);
+      var brailleDotChar = "";
+      if (brailleTranslator != null) brailleTranslator.TranslateString(this.Characters, out brailleDotChar);
       return brailleDotChar;
     }
   }
   public SoundEffectInstance Voice { get; set; }
-  public BrailleEntry(string opcode, string characters, string sourceFile, int lineNumber, string dotPattern = "", string comment = "")
+  public BrailleEntry(string opcode, string characters, string sourceFile, string dotPattern = "", string comment = "")
   {
     Opcode = opcode;
     Characters = characters;
     DotPattern = dotPattern;
     Comment = comment;
     SourceFile = sourceFile;
-    LineNumber = lineNumber;
     var fileNameWithoutExt = Path.GetFileNameWithoutExtension(this.SourceFile);
     var soundPath = $"speech/{fileNameWithoutExt}/{DotPattern}";
     try
@@ -65,7 +64,7 @@ public class BrailleEntry
       Voice = Game1.Instance.Content.Load<SoundEffect>(soundPath).CreateInstance();
       Voice.Volume = 1;
     }
-    catch (Exception _)
+    catch (Exception)
     {
       Voice = null;
     }

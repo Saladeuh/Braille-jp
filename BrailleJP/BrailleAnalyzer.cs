@@ -2,7 +2,7 @@
 
 namespace BrailleJP;
 
-public class BrailleAnalyzer
+public static class BrailleAnalyzer
 {
   private const int BRAILLE_UNICODE_OFFSET = 0x2800;
   private const int DOT_COUNT = 8;
@@ -30,7 +30,7 @@ public class BrailleAnalyzer
 
   private static int[] PatternToDots(int pattern)
   {
-    List<int> dots = new();
+    List<int> dots = [];
     for (int i = 0; i < DOT_COUNT; i++)
     {
       if ((pattern & (1 << i)) != 0)

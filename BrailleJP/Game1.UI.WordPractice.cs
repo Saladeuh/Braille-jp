@@ -1,5 +1,4 @@
-﻿using AccessibleMyraUI;
-using BrailleJP.Content;
+﻿using BrailleJP.Content;
 using BrailleJP.UI;
 using Myra.Graphics2D.UI;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ namespace BrailleJP;
 
 public partial class Game1
 {
-  private Dictionary<CultureInfo, Panel?> _wordPracticePanels;
+  private readonly Dictionary<CultureInfo, Panel?> _wordPracticePanels;
   
   private void CreateWordPracticeUI(CultureInfo culture)
   {

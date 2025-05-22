@@ -1,5 +1,4 @@
 ﻿using BrailleJP.Save;
-using CrossSpeak;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -47,8 +46,8 @@ public partial class Game1
     {
       _desktop.OnChar(a.Character);
     };
-    _brailleTableViewPanels = new();
-    _basicPracticePanels = new();
+    _brailleTableViewPanels = [];
+    _basicPracticePanels = [];
     foreach (var culture in SUPPORTEDBRAILLETABLES.Keys)
     {
       _brailleTableViewPanels.Add(culture, null);
@@ -61,13 +60,6 @@ public partial class Game1
     CreateMainMenu();
     CreateSettingsUI();
     CreateFirstScreen();
-    if (Save.Flags.EmptySave)
-    {
-      SwitchToScreen(GameScreen.First);
-    }
-    else
-    {
-      SwitchToScreen(GameScreen.MainMenu);
-    }
+    SwitchToScreen(Save.Flags.EmptySave ? GameScreen.First : GameScreen.MainMenu);
   }
 }

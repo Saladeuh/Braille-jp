@@ -1,6 +1,4 @@
-﻿using AccessibleMyraUI;
-using CrossSpeak;
-using Microsoft.Xna.Framework;
+﻿using CrossSpeak;
 using Microsoft.Xna.Framework.Audio;
 using Myra.Graphics2D.UI;
 using System;
@@ -12,7 +10,7 @@ internal class TableViewEntry : Label
   private readonly SoundEffect _scrollSound;
   private readonly BrailleEntry _entry;
 
-  public TableViewEntry(BrailleEntry brailleEntry) : base()
+  public TableViewEntry(BrailleEntry brailleEntry)
   {
     Text = brailleEntry.ToString();
     _entry = brailleEntry;

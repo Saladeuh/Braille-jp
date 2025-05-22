@@ -1,5 +1,4 @@
-﻿using BrailleJP;
-using CrossSpeak;
+﻿using CrossSpeak;
 using Myra.Events;
 using Myra.Graphics2D.UI;
 using System;
@@ -38,10 +37,9 @@ public class BrailleInputTextField : TextBox
 
   private void AnnounceText()
   {
-    string announcement;
     if (!string.IsNullOrEmpty(Text))
     {
-      announcement = Text;
+      var announcement = Text;
       CrossSpeakManager.Instance.Braille(announcement);
     }
   }

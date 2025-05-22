@@ -9,20 +9,18 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace BrailleJP.MiniGames;
 
 public class BasicPractice : IMiniGame
 {
   public string Tips { get; }=GameText.Basic_practice_tips;
-  public int Score { get => _goodAnswers; }
-  private readonly CultureInfo Culture;
+  public int Score => _goodAnswers;
 
-  public List<BrailleEntry> Entries { get; private set; }
-  public List<BrailleEntry> LetterEntries { get; private set; }
-  public BrailleEntry CurrentEntry { get; private set; }
-  public Wrapper BrailleTranslator { get; private set; }
+  private List<BrailleEntry> Entries { get; set; }
+  private List<BrailleEntry> LetterEntries { get; set; }
+  private BrailleEntry CurrentEntry { get; set; }
+  private Wrapper BrailleTranslator { get; set; }
   public bool IsRunning { get; set; }
 
   private readonly SoundEffectInstance _goodSound;
@@ -37,9 +35,8 @@ public class BasicPractice : IMiniGame
   public BasicPractice(CultureInfo culture, bool firstPlay)
   {
     IsRunning = true;
-    this.Culture = culture;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
-    BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
+    BrailleTranslator = Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
     _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
     _goodSound.Volume = 0.5f;
     _victorySound = Game1.Instance.UIVictorySound.CreateInstance();
@@ -47,7 +44,7 @@ public class BasicPractice : IMiniGame
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
     _failSound.Volume = 0.5f;
     Entries = Game1.Instance.BrailleTables[tablePath];
-    LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
+    LetterEntries = [.. Entries.Where(entry => entry.IsLowercaseLetter())];
     Game1.Instance.PracticeBrailleInput.TextChanged += onBrailleInput;
     if (firstPlay)
     {
@@ -128,7 +125,8 @@ public class BasicPractice : IMiniGame
     _victorySound.Play();
     Stop();
   }
-  public void Stop()
+
+  private void Stop()
   {
     IsRunning = false;
     BrailleTranslator.Free();

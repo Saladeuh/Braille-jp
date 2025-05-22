@@ -32,7 +32,7 @@ public partial class Game1
 
 
     var entries = BrailleTables[SUPPORTEDBRAILLETABLES[culture]];
-    entries.Sort((BrailleEntry e1, BrailleEntry e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
+    entries.Sort((e1, e2) => String.Compare(e1.Characters, e2.Characters, culture, CompareOptions.None));
     if (culture.IetfLanguageTag == "ja-JP")
       entries.SortByGojuon(e => e.Characters);
     foreach (BrailleEntry entry in entries)

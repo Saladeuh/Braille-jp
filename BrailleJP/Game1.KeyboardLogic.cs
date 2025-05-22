@@ -19,8 +19,8 @@ public partial class Game1
   public SaveParameters Save { get; private set; }
 
   private readonly object _keyLock = new();
-  private readonly HashSet<Keys> _hookPressedKeys = new();
-  private readonly HashSet<Keys> _keysToProcess = new(); // Nouvelles touches à traiter
+  private readonly HashSet<Keys> _hookPressedKeys = [];
+  private readonly HashSet<Keys> _keysToProcess = []; // Nouvelles touches à traiter
   private bool _updateProcessed = false;
   public bool KeyboardSDFJKL = false;
 
@@ -74,7 +74,7 @@ public partial class Game1
       }
       if (dots.Count > 0)
       {
-        var brailleChar = BrailleAnalyzer.PatternToChar(BrailleAnalyzer.DotsToPattern(dots.ToArray()));
+        var brailleChar = BrailleAnalyzer.PatternToChar(BrailleAnalyzer.DotsToPattern([.. dots]));
       }
     }
 

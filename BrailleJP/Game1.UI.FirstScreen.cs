@@ -1,7 +1,6 @@
 ﻿using AccessibleMyraUI;
 using BrailleJP.Content;
 using BrailleJP.UI;
-using CrossSpeak;
 using Myra.Graphics2D.UI;
 
 namespace BrailleJP;
@@ -36,7 +35,7 @@ public partial class Game1
     {
       Id = "startButton"
     };
-    startButton.Click += (s, a) =>
+    startButton.Click += (_, _) =>
     {
       Save.Flags.EmptySave = false;
       SwitchToScreen(GameScreen.MainMenu);

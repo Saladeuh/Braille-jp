@@ -131,6 +131,6 @@ public static class Utils
 
   public static Keys ConvertKeyCodeToMonogameKey(KeyCode keyCode)
   {
-    return KEYCODEMAP.ContainsKey(keyCode) ? KEYCODEMAP[keyCode] : Keys.None;
+    return KEYCODEMAP.TryGetValue(keyCode, out var value) ? value : Keys.None;
   }
 }

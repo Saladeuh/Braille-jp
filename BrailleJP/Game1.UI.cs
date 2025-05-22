@@ -15,7 +15,7 @@ public partial class Game1
   private SpriteBatch _spriteBatch;
   private Desktop _desktop;
   private Panel _mainMenuPanel;
-  private Panel _gamePanel;
+  private readonly Panel _gamePanel;
   private Panel _settingsPanel;
   private void SwitchToScreen(GameScreen screen)
   {

@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using SharpLouis;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -15,7 +14,6 @@ public class ChoicePractice : IMiniGame
 {
   public string Tips { get; }=GameText.Choice_practice_tips;
   public int Score { get => _goodGuesses; }
-  private readonly CultureInfo Culture;
   public List<BrailleEntry> Entries { get; private set; }
   public List<BrailleEntry> LetterEntries { get; private set; }
 
@@ -29,7 +27,7 @@ public class ChoicePractice : IMiniGame
   public bool IsRunning { get; set; }
 
   private readonly SoundEffectInstance _goodSound;
-  private SoundEffectInstance _victorySound;
+  private readonly SoundEffectInstance _victorySound;
   private readonly SoundEffectInstance _failSound;
   private bool _isPlayingGoodSound = false;
   private int _goodGuesses;
@@ -42,7 +40,6 @@ public class ChoicePractice : IMiniGame
   public ChoicePractice(CultureInfo culture, bool firstPlay)
   {
     IsRunning = true;
-    this.Culture = culture;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
     BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
     _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
@@ -52,7 +49,7 @@ public class ChoicePractice : IMiniGame
     _failSound = Game1.Instance.UIFailSound.CreateInstance();
     _failSound.Volume = 0.5f;
     Entries = Game1.Instance.BrailleTables[tablePath];
-    LetterEntries = Entries.Where(entry => entry.IsLowercaseLetter()).ToList();
+    LetterEntries = [.. Entries.Where(entry => entry.IsLowercaseLetter())];
     PeakRandomChoices();
     if (firstPlay)
     {

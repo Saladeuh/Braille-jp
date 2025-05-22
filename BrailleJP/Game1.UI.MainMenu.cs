@@ -1,6 +1,5 @@
 ﻿using BrailleJP.Content;
 using BrailleJP.UI;
-using CrossSpeak;
 using Myra.Graphics2D.UI;
 using System.Diagnostics;
 
@@ -32,7 +31,7 @@ public partial class Game1
     {
       Id = "playButton"
     };
-    tableViewButton.Click += (s, a) =>
+    tableViewButton.Click += (_, _) =>
     {
       SwitchToScreen(GameScreen.BrailleTableView);
     };
@@ -42,7 +41,7 @@ public partial class Game1
     {
       Id = "choicePracticeButton"
     };
-    choicePracticeButton.Click += (s, a) =>
+    choicePracticeButton.Click += (_, _) =>
     {
       SwitchToScreen(GameScreen.ChoicePractice);
     };
@@ -52,7 +51,7 @@ public partial class Game1
     {
       Id = "wordPracticeButton"
     };
-    wordPracticeButton.Click += (s, a) =>
+    wordPracticeButton.Click += (_, _) =>
     {
       SwitchToScreen(GameScreen.WordPractice);
     };
@@ -62,7 +61,7 @@ public partial class Game1
     {
       Id = "basicPracticeButton"
     };
-    basicPracticeButton.Click += (s, a) =>
+    basicPracticeButton.Click += (_, _) =>
     {
       SwitchToScreen(GameScreen.BasicPractice);
     };
@@ -83,7 +82,7 @@ public partial class Game1
     {
       Id = "tipsButton"
     };
-    tipsButton.Click += (s, a) =>
+    tipsButton.Click += (_, _) =>
     {
       SwitchToScreen(GameScreen.First);
     };
@@ -94,9 +93,9 @@ public partial class Game1
     {
       Id = "wikiButton"
     };
-    wikiButton.Click += (s, a) =>
+    wikiButton.Click += (_, _) =>
     {
-      System.Diagnostics.Process.Start(new ProcessStartInfo
+      Process.Start(new ProcessStartInfo
       {
         FileName = "https://fr.wikipedia.org/wiki/Braille_japonais",
         UseShellExecute = true
@@ -108,7 +107,7 @@ public partial class Game1
     {
       Id = "quitButton"
     };
-    quitButton.Click += (s, a) =>
+    quitButton.Click += (_, _) =>
     {
       Exit();
     };

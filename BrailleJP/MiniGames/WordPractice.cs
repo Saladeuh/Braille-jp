@@ -7,22 +7,19 @@ using Myra.Events;
 using SharpLouis;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace BrailleJP.MiniGames;
 
 public class WordPractice : IMiniGame
 {
   public string Tips { get; } = GameText.Main_menu_word_practice;
-  public int Score { get => _goodAnswers; }
-  private readonly CultureInfo Culture;
-  private Dictionary<string, SoundEffect> _words;
-  public string CurrentWord { get; private set; }
-  public Wrapper BrailleTranslator { get; private set; }
+  public int Score => _goodAnswers;
+  private readonly Dictionary<string, SoundEffect> _words;
+  private string CurrentWord { get; set; }
+  private Wrapper BrailleTranslator { get; set; }
   public bool IsRunning { get; set; }
 
   private readonly SoundEffectInstance _goodSound;
@@ -37,10 +34,9 @@ public class WordPractice : IMiniGame
   public WordPractice(CultureInfo culture, bool firstPlay)
   {
     IsRunning = true;
-    this.Culture = culture;
     _words = new();
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
-    BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
+    BrailleTranslator = Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
     _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
     _goodSound.Volume = 0.5f;
     _victorySound = Game1.Instance.UIVictorySound.CreateInstance();
@@ -137,7 +133,8 @@ public class WordPractice : IMiniGame
     _victorySound.Play();
     Stop();
   }
-  public void Stop()
+
+  private void Stop()
   {
     IsRunning = false;
     BrailleTranslator.Free();

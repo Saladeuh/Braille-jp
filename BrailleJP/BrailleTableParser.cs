@@ -9,16 +9,16 @@ namespace BrailleJP;
 
 public partial class BrailleTableParser
 {
-  private readonly string baseDirectory;
-  private readonly HashSet<string> processedFiles;
-  private readonly Dictionary<string, string> escapeSequences;
-  private static readonly string[] separator = ["\r\n", "\r", "\n"];
+  private readonly string _baseDirectory;
+  private readonly HashSet<string> _processedFiles;
+  private readonly Dictionary<string, string> _escapeSequences;
+  private static readonly string[] Separator = ["\r\n", "\r", "\n"];
 
   public BrailleTableParser(string baseDirectory = "")
   {
-    this.baseDirectory = baseDirectory;
-    processedFiles = [];
-    escapeSequences = InitializeEscapeSequences();
+    this._baseDirectory = baseDirectory;
+    _processedFiles = [];
+    _escapeSequences = InitializeEscapeSequences();
   }
 
   private static Dictionary<string, string> InitializeEscapeSequences()
@@ -98,15 +98,14 @@ public partial class BrailleTableParser
     return parts.Where(p => !string.IsNullOrWhiteSpace(p)).ToArray();
   }
 
-  private BrailleEntry ParseLine(string line, string sourceFile, int lineNumber)
+  private BrailleEntry ParseLine(string line, string sourceFile)
   {
     // Handle include statements
     if (line.TrimStart().StartsWith("include "))
     {
       return new BrailleEntry("include",
         line[(line.IndexOf("include ") + 8)..].Trim(),
-        sourceFile,
-        lineNumber
+        sourceFile
       );
     }
 
@@ -134,7 +133,6 @@ public partial class BrailleTableParser
     BrailleEntry entry = new(parts[0].ToLower(),
       ProcessEscapeSequences(parts[1]),
            sourceFile,
-      lineNumber,
  parts.Length > 2 ? parts[2] : "",
       comment
     );
@@ -143,20 +141,18 @@ public partial class BrailleTableParser
   }
   public List<BrailleEntry> ParseFile(string filePath, FileEncoding encoding = FileEncoding.UTF8)
   {
-    if (processedFiles.Contains(filePath))
+    if (!_processedFiles.Add(filePath))
       return [];
 
-    processedFiles.Add(filePath);
-
     // Detect and read file with appropriate encoding
-    filePath = Path.Combine(baseDirectory, filePath);
+    filePath = Path.Combine(_baseDirectory, filePath);
     string fileContent = ReadFileWithEncoding(filePath, encoding);
     List<BrailleEntry> entries = new();
-    string[] lines = fileContent.Split(separator, StringSplitOptions.None);
+    string[] lines = fileContent.Split(Separator, StringSplitOptions.None);
 
-    for (int lineNumber = 0; lineNumber < lines.Length; lineNumber++)
+    foreach (var t in lines)
     {
-      string line = lines[lineNumber].Trim();
+      string line = t.Trim();
 
       // Skip blank lines and comments
       if (string.IsNullOrWhiteSpace(line) ||
@@ -164,7 +160,7 @@ public partial class BrailleTableParser
           line.StartsWith('<'))
         continue;
 
-      BrailleEntry entry = ParseLine(line, filePath, lineNumber + 1);
+      BrailleEntry entry = ParseLine(line, filePath);
       if (entry != null)
       {
         if (entry.Opcode == "include")
@@ -209,7 +205,7 @@ public partial class BrailleTableParser
     });
 
     // Handle predefined escape sequences
-    foreach (KeyValuePair<string, string> sequence in escapeSequences)
+    foreach (KeyValuePair<string, string> sequence in _escapeSequences)
     {
       result = result.Replace(sequence.Key, sequence.Value);
     }
@@ -219,11 +215,11 @@ public partial class BrailleTableParser
 
   private static bool IsValidOpcode(string opcode)
   {
-    HashSet<string> validOpcodes = new()
-    {
-              "space", "digit", "letter", "lowercase", "uppercase",
-              "punctuation", "sign", "math", "litdigit", "include"
-          };
+    HashSet<string> validOpcodes =
+    [
+      "space", "digit", "letter", "lowercase", "uppercase",
+      "punctuation", "sign", "math", "litdigit", "include"
+    ];
 
     return validOpcodes.Contains(opcode);
   }
