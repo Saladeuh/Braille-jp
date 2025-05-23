@@ -1,4 +1,5 @@
-﻿using BrailleJP.Save;
+﻿using LinguaBraille;
+using LinguaBraille.Save;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;

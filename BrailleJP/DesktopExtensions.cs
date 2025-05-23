@@ -1,7 +1,7 @@
 ﻿using Myra.Graphics2D.UI;
 using System.Collections.Generic;
 
-namespace BrailleJP;
+namespace LinguaBraille;
 
 public static class DesktopExtensions
 {

@@ -1,6 +1,7 @@
-﻿using BrailleJP.MiniGames;
-using BrailleJP.Save;
-using CrossSpeak;
+﻿using CrossSpeak;
+using LinguaBraille;
+using LinguaBraille.MiniGames;
+using LinguaBraille.Save;
 using Microsoft.Xna.Framework;
 using SharpLouis;
 using System;

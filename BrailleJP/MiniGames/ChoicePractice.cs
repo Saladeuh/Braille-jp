@@ -1,5 +1,7 @@
-﻿using BrailleJP.Content;
+﻿using BrailleJP;
+using LinguaBraille.Content;
 using CrossSpeak;
+using LinguaBraille;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
@@ -8,7 +10,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace BrailleJP.MiniGames;
+namespace LinguaBraille.MiniGames;
 
 public class ChoicePractice : IMiniGame
 {
@@ -41,7 +43,7 @@ public class ChoicePractice : IMiniGame
   {
     IsRunning = true;
     string tablePath = Game1.SUPPORTEDBRAILLETABLES[culture];
-    BrailleTranslator = SharpLouis.Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
+    BrailleTranslator = Wrapper.Create(tablePath, Game1.LibLouisLoggingClient);
     _goodSound = Game1.Instance.UIGoodSound.CreateInstance();
     _goodSound.Volume = 0.5f;
     _victorySound = Game1.Instance.UIVictorySound.CreateInstance();
@@ -93,8 +95,8 @@ public class ChoicePractice : IMiniGame
       ShowChoices();
     }
     else if (_isReadingTips) return;
-    if ((_isPlayingGoodSound && _goodSound.State == SoundState.Stopped)
-      || (_failsOnThisEntry >= 3 && (_isPlayingFailSound && _failSound.State == SoundState.Stopped)))
+    if (_isPlayingGoodSound && _goodSound.State == SoundState.Stopped
+      || _failsOnThisEntry >= 3 && _isPlayingFailSound && _failSound.State == SoundState.Stopped)
     {
       _isPlayingGoodSound = false;
       PeakRandomChoices();

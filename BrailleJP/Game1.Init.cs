@@ -1,4 +1,4 @@
-﻿using BrailleJP.Save;
+﻿using LinguaBraille.Save;
 using CrossSpeak;
 using Microsoft.Xna.Framework.Input;
 using SharpHook;

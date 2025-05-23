@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework.Audio;
+﻿using BrailleJP;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using System.IO;
 
-namespace BrailleJP;
+namespace LinguaBraille;
 
 public class BrailleEntry
 {
@@ -43,9 +44,9 @@ public class BrailleEntry
   {
     get
     {
-      var brailleTranslator = SharpLouis.Wrapper.Create(Path.GetFileName(this.SourceFile), Game1.LibLouisLoggingClient);
+      var brailleTranslator = SharpLouis.Wrapper.Create(Path.GetFileName(SourceFile), Game1.LibLouisLoggingClient);
       var brailleDotChar = "";
-      if (brailleTranslator != null) brailleTranslator.TranslateString(this.Characters, out brailleDotChar);
+      if (brailleTranslator != null) brailleTranslator.TranslateString(Characters, out brailleDotChar);
       return brailleDotChar;
     }
   }
@@ -57,7 +58,7 @@ public class BrailleEntry
     DotPattern = dotPattern;
     Comment = comment;
     SourceFile = sourceFile;
-    var fileNameWithoutExt = Path.GetFileNameWithoutExtension(this.SourceFile);
+    var fileNameWithoutExt = Path.GetFileNameWithoutExtension(SourceFile);
     var soundPath = $"speech/{fileNameWithoutExt}/{DotPattern}";
     try
     {

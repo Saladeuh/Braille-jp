@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrailleJP;
+namespace LinguaBraille;
 
 public static class BrailleAnalyzer
 {
@@ -33,7 +33,7 @@ public static class BrailleAnalyzer
     List<int> dots = [];
     for (int i = 0; i < DOT_COUNT; i++)
     {
-      if ((pattern & (1 << i)) != 0)
+      if ((pattern & 1 << i) != 0)
       {
         dots.Add(i + 1);
       }
@@ -45,7 +45,7 @@ public static class BrailleAnalyzer
     int pattern = 0;
     foreach (int dot in dots)
     {
-      pattern |= (1 << (dot - 1));
+      pattern |= 1 << dot - 1;
     }
     return pattern;
   }

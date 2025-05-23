@@ -1,6 +1,7 @@
 ﻿using AccessibleMyraUI;
-using BrailleJP.UI;
 using CrossSpeak;
+using LinguaBraille;
+using LinguaBraille.UI;
 using Microsoft.Xna.Framework;
 using Myra.Graphics2D.UI;
 

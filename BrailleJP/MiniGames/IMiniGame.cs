@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace BrailleJP.MiniGames;
+namespace LinguaBraille.MiniGames;
 
 public interface IMiniGame
 {

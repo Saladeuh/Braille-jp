@@ -1,4 +1,5 @@
-﻿using BrailleJP.Content;
+﻿using BrailleJP;
+using LinguaBraille.Content;
 using CrossSpeak;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
@@ -11,7 +12,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace BrailleJP.MiniGames;
+namespace LinguaBraille.MiniGames;
 
 public class WordPractice : IMiniGame
 {
@@ -124,7 +125,7 @@ public class WordPractice : IMiniGame
     }
     if (e.NewValue.Length >= wantedBrailleChars.Length)
     {
-      Game1.Instance.PracticeBrailleInput.Text = String.Empty;
+      Game1.Instance.PracticeBrailleInput.Text = string.Empty;
     }
   }
 

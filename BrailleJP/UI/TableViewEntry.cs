@@ -1,9 +1,11 @@
-﻿using CrossSpeak;
+﻿using BrailleJP;
+using CrossSpeak;
+using LinguaBraille;
 using Microsoft.Xna.Framework.Audio;
 using Myra.Graphics2D.UI;
 using System;
 
-namespace BrailleJP.UI;
+namespace LinguaBraille.UI;
 
 internal class TableViewEntry : Label
 {

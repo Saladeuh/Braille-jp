@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace BrailleJP.Save;
+namespace LinguaBraille.Save;
 
 internal class SaveManager
 {
@@ -30,7 +30,7 @@ internal class SaveManager
     return parameters;
   }
 
-  private static SaveParameters? LoadJson()
+  private static SaveParameters LoadJson()
   {
     if (File.Exists(DataPath))
     {

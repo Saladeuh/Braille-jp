@@ -1,4 +1,4 @@
-﻿namespace BrailleJP.Save
+﻿namespace LinguaBraille.Save
 {
   internal class Secrets
   {

@@ -2,12 +2,13 @@
 using Myra.Graphics2D.UI;
 using SharpHook;
 using System.Collections.Generic;
-using BrailleJP.UI;
 using CrossSpeak;
 using Microsoft.Xna.Framework.Media;
-using BrailleJP.Save;
 using System;
-using BrailleJP.Content;
+using LinguaBraille.Content;
+using LinguaBraille.Save;
+using LinguaBraille.UI;
+using LinguaBraille;
 
 namespace BrailleJP;
 

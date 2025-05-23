@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrailleJP;
+namespace LinguaBraille;
 
 public class GameState
 {

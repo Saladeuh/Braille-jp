@@ -1,6 +1,7 @@
 ﻿using AccessibleMyraUI;
-using BrailleJP.Content;
-using BrailleJP.UI;
+using LinguaBraille.Content;
+using LinguaBraille;
+using LinguaBraille.UI;
 using Myra.Graphics2D.UI;
 
 namespace BrailleJP;

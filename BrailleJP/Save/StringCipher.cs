@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BrailleJP.Save;
+namespace LinguaBraille.Save;
 
 public static class StringCipher
 {
@@ -63,7 +63,7 @@ public static class StringCipher
     byte[] ivStringBytes = cipherTextBytesWithSaltAndIv.Skip(Keysize / 8).Take(Keysize / 8).ToArray();
     // Get the actual cipher text bytes by removing the first 64 bytes from the cipherText string.
     byte[] cipherTextBytes = cipherTextBytesWithSaltAndIv.Skip(Keysize / 8 * 2)
-        .Take(cipherTextBytesWithSaltAndIv.Length - (Keysize / 8 * 2)).ToArray();
+        .Take(cipherTextBytesWithSaltAndIv.Length - Keysize / 8 * 2).ToArray();
 
     using (Rfc2898DeriveBytes password = new(passPhrase, saltStringBytes, DerivationIterations))
     {

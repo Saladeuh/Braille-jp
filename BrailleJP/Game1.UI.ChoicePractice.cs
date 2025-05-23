@@ -1,4 +1,4 @@
-﻿using BrailleJP.Content;
+﻿using LinguaBraille.Content;
 using Myra.Graphics2D.UI;
 using System.Collections.Generic;
 using System.Globalization;

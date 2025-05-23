@@ -2,7 +2,7 @@
 using SharpHook.Native;
 using System.Collections.Generic;
 
-namespace BrailleJP;
+namespace LinguaBraille;
 
 public static class Utils
 {

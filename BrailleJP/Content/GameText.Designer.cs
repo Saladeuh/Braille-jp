@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BrailleJP.Content {
+namespace LinguaBraille.Content {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BrailleJP.Content {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BrailleJP.Content.GameText", typeof(GameText).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LinguaBraille.Content.GameText", typeof(GameText).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,9 +1,10 @@
-﻿using CrossSpeak;
+﻿using BrailleJP;
+using CrossSpeak;
 using Myra.Events;
 using Myra.Graphics2D.UI;
 using System;
 
-namespace BrailleJP.UI;
+namespace LinguaBraille.UI;
 
 public class BrailleInputTextField : TextBox
 {

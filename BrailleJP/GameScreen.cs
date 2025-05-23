@@ -1,4 +1,4 @@
-﻿namespace BrailleJP;
+﻿namespace LinguaBraille;
 
 public enum GameScreen
 {

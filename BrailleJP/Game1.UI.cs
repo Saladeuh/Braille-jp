@@ -1,5 +1,6 @@
-﻿using BrailleJP.MiniGames;
-using BrailleJP.UI;
+﻿using LinguaBraille.MiniGames;
+using LinguaBraille.UI;
+using LinguaBraille;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;

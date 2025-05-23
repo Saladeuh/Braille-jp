@@ -1,4 +1,4 @@
-﻿namespace BrailleJP.Save;
+﻿namespace LinguaBraille.Save;
 public class Flags
 {
   public bool EmptySave = true;

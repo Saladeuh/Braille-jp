@@ -1,6 +1,6 @@
 ﻿using CrossSpeak;
 
-namespace BrailleJP;
+namespace LinguaBraille;
 
 public class LibLouisLoggingClient : SharpLouis.IClient
 {

@@ -7,7 +7,6 @@ namespace AccessibleMyraUI;
 public class AccessibleToggleButton : Button
 {
   private readonly bool _isToggled;
-  public event EventHandler ToggledChanged;
 
   public AccessibleToggleButton(string text, bool isToggled = false, int width = 200)
   {

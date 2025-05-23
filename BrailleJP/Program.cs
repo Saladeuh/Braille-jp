@@ -7,9 +7,9 @@ internal class Program
   private static void Main(string[] args)
   {
     using BrailleJP.Game1 game = new();
-//#if !DEBUG
+/*
     VelopackApp.Build().Run();
-//#endif
+*/
     game.Run();
   }
   private static async Task UpdateMyApp()
